@@ -1,5 +1,7 @@
 <?php
 require_once '../includes/Header.php';
+require_once '../db/connection.php'; 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +12,9 @@ require_once '../includes/Header.php';
     <title>Sensli</title>
 </head>
 <body>
-    <H1> ¡Educación de Calidad</br>
-        Futuro Brillante!</H1>
+    <!-- <H1>Bienvenid@ <?php echo $admin_name; ?></H1> -->
+     <h1>Bienvenid@</h1>
 
-        <img src="../assets/img/image.png" alt="SENA">
 
     <button type="button" class="IS" onclick="window.location.href='login.php'">Iniciar Sesión</button>
 
