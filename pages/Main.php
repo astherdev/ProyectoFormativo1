@@ -1,8 +1,8 @@
 <?php
-require_once '../includes/Header.php';
-require_once '../db/connection.php'; 
+require_once '../db/connection.php';  
+require_once '../includes/Header.php'; ?>
 
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +12,9 @@ require_once '../db/connection.php';
     <title>Sensli</title>
 </head>
 <body>
-    <!-- <H1>Bienvenid@ <?php echo $admin_name; ?></H1> -->
-     <h1>Bienvenid@</h1>
+    <H1>Bienvenid@ admin</H1>
 
+        <img src="../assets/img/image.png" alt="SENA">
 
     <button type="button" class="IS" onclick="window.location.href='login.php'">Iniciar Sesión</button>
 

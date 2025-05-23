@@ -1,0 +1,58 @@
+* {
+    font-family: Ruda;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: #39A900;
+    width: 100%;
+    padding: 10px 3%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#logoSena {
+    width: 100px;
+    height: 100px;
+}
+
+#titulo-header h2 {
+    color: white;
+    font-size: 24px;
+    margin-left: 50px;
+}
+
+#links-header {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.header_links {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #titulo-header {
+        margin: 10px 0;
+    }
+
+    #links-header {
+        justify-content: flex-start;
+        gap: 20px;
+        margin-top: 10px;
+    }
+}
