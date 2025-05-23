@@ -5,10 +5,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: black;
-}
-
 #header {
     background-color: #39A900;
     width: 100%;
