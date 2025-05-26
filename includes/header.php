@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="header">
-        <img id="logoSena" src="../assets/img/Logo-Sena-Negativo.png" alt="Logo">
+        <img id="logoSena" src="/Sensli/ProyectoFormativo1/assets/img/Logo-Sena-Negativo.png" alt="Logo_Sena">
         <div id="titulo-header">
             <h2>Inicio</h2>
         </div>

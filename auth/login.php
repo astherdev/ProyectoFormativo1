@@ -24,8 +24,7 @@
             </div>
             <span>Usar correo y contraseña enviados a su gmail</span>
 
-            <div class="container-input">
-                <ion-icon name="mail-unread-outline"></ion-icon>
+            <div class="container-select">
                 <select name="tipoDocu" required>
                     <option value="">Tipo de documento</option>
                     <option value="TI">Tarjeta de Identidad</option>
