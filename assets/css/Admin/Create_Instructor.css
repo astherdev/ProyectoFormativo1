@@ -6,15 +6,14 @@
 }
 
 #infoAdmin{
-    margin-top: 1%;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    align-items: center;
     border-radius: 15px;
     width: 70%;
     height: 70%;
-    border: 3px solid black;
 }
 
 #infoAdmin h1{
@@ -24,9 +23,13 @@
 
 #infoContent{
     display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin: 0 auto;
+    flex-direction: row;
+    gap: 10%;
+    width: 80%;
+}
+
+.columna{
+    width: 100%;
 }
 
 .form_icon{
@@ -34,7 +37,8 @@
     height: 25px;
 }
 
-#infoContent input, select{
+.columna input, select{
+    width: 100%;
     font-size: 20px;
     font-weight: bold;
     height: 40px;
@@ -50,7 +54,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-    justify-content: left;
 }
 
 .formLabel label{
@@ -58,15 +61,15 @@
     font-weight: bold;
 }
 
-#Edit_button{
+#Confirm_button{
     align-items: center;
     font-size: 20px;
     color: white;
     height: 50px;
-    width: 50%;
+    width: 20%;
     border-radius: 10px;
     border: none;
-    background-color: #00324D;
+    background-color: #39A900;
     margin: 0 auto;
     margin-top: 5%;
     margin-bottom: 5%;

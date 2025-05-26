@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
-    <link rel="stylesheet" href="../../assets/css/Admin/View_Profile.css">
+    <link rel="stylesheet" href="../../assets/css/Admin/Edit_Profile.css">
     <title>View Profile</title>
 </head>
 <body>
@@ -54,7 +54,7 @@
                 </div>
                 <input type="text" placeholder="" id = "idInput">
                 
-                <button id = "Edit_button">Editar</button>
+                <button id = "Confirm_button">Confirmar</button>
             </div>
         </div>
     </div>
