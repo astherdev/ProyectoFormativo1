@@ -13,7 +13,8 @@
 </head>
 <body>
     <?php 
-        include "../../includes/header.php";
+        
+        require_once '../../includes/header.php';
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
@@ -58,6 +59,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <?php include "../../includes/footer.php";?>
+=======
+
+    <?php require_once ('../../includes/footer.php');?>
+>>>>>>> 215c41ff5b32649922fabc4ccff9057dc696f476
 </body>
 </html>
