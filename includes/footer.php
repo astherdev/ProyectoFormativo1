@@ -13,9 +13,9 @@
     <footer>
         <div id="footer">
             <div id="iconos-footer">
-                <a href="https://www.facebook.com/tuempresa" ><img  class="logos"src="/Sensli/ProyectoFormativo/assets/img/facebook.png"></a>
-                <a href="https://www.twitter.com/tuempresa" ><img  class="logos"src="/Sensli/ProyectoFormativo/assets/img/gorjeo.png"></a>
-                <a href="https://www.instagram.com/tuempresa" ><img class="logos" src="/Sensli/ProyectoFormativo/assets/img/instagram.png"></a>
+                <a href="https://www.facebook.com/tuempresa" ><img  class="logos"src="../assets/img/facebook.png"></a>
+                <a href="https://www.twitter.com/tuempresa" ><img  class="logos"src="../assets/img/gorjeo.png"></a>
+                <a href="https://www.instagram.com/tuempresa" ><img class="logos" src="../assets/img/instagram.png"></a>
             </div>
             <div id="ContentRights">
                 <p>&copy; Sena, Todos los derechos reservados</p>
