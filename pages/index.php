@@ -2,7 +2,7 @@
 require_once '../includes/Header.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,15 @@ require_once '../includes/Header.php';
     <title>Sensli</title>
 </head>
 <body>
-    <H1> ¡Educación de Calidad</br>
-        Futuro Brillante!</H1>
+
+    <div id="principal-content">
+        <h1>¡Educación de Calidad<br>Futuro Brillante!</h1>
 
         <img src="../assets/img/sena.png" alt="SENA">
-
-    <button type="button" class="IS" onclick="window.location.href='login.php'">Iniciar Sesión</button>
-
+    </div>
+    <button type="button" class="IS" onclick="window.location.href='login.php'">
+        Iniciar Sesión
+    </button>
 </body>
 </html>
 <?php

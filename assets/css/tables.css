@@ -13,15 +13,14 @@ body {
     padding-bottom: 120px; /* Para que el footer fijo no tape contenido */
 }
 
-
 #header {
     background-color: #39A900;
     width: 100%;
-  /* si quieres que ocupe toda la anchura del viewport */
-  max-width: 100vw;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* para que el padding no afecte el ancho total */
+    padding: 10px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 /* Logo */
@@ -57,7 +56,6 @@ body {
     color: white;
     font-size: 16px;
 }
-
 /* ========= BOTÓN HAMBURGUESA ========= */
 .menu-toggle {
     display: flex;
@@ -129,38 +127,112 @@ body {
     background-color: #00324D;
     border-radius: 5px;
 }
+/* TABLA */
 
-/* ========= BOTÓN DE INICIAR SESIÓN ========= */
-.IS {
-    margin-top: 30px;
-    background-color: #00324D;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.ficha-container {
+  margin-top: 5%; /* o el valor que prefieras */
+  background: #fff;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-left: 7%;
+  margin-right: 7%;
 }
 
-.IS:hover {
-    background-color: #39A900;
+
+.ficha-titulo {
+  text-align: center;
+  background: #00324D;
+  color: white;
+  padding: 10px;
+  margin: -20px -20px 20px;
+  font-size: 24px;
+  border-radius: 5px;
 }
 
-/* ========= FOOTER FIJO ========= */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #39A900;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 999;
+.ficha-selectores {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
+.ficha-selectores select {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.subtitulo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.tabla-ficha {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+  
+}
+
+.tabla-ficha th{
+  border-left: none;
+  border-right: none;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+.tabla-ficha td {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  border-left: none;
+  border-right: none;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.tabla-ficha th {
+  background: #24242433;
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn.verde {
+  background-color: #39A900;
+}
+
+.btn.rojo {
+  background-color: #e74c3c;
+}
+
+.btn.azul {
+  background-color: #00324D;
+}
+
+.btn.gris {
+  background-color: #00324D;
+}
 /* ========= RESPONSIVE ========= */
 @media (max-width: 768px) {
     #header {
