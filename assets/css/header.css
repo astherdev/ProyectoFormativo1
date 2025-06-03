@@ -1,0 +1,155 @@
+* {
+    font-family: 'Ruda', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: #39A900;
+    width: 100%;
+    padding: 10px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Logo */
+#logoSena {
+    width: 100px;
+    height: 100px;
+}
+
+/* Título */
+#titulo-header h2 {
+    color: white;
+    font-size: 24px;
+    margin-left: 30px;
+}
+
+/* Enlaces arriba a la derecha */
+#links-header {
+    display: flex;
+    gap: 40px;
+    margin-left: auto;
+}
+
+.header_links {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* ========= BOTÓN HAMBURGUESA ========= */
+.menu-toggle {
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+/* ESTADO ABIERTO: convertir en X */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* ========= MENÚ OCULTO POR DEFECTO ========= */
+.menu {
+    background-color: #00324D;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Cuando se abre el menú */
+.menu.open {
+    max-height: 200px; /* ajusta según número de elementos */
+}
+
+/* Estilo general del menú */
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #00324D;
+    border-radius: 5px;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+    #header {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    #links-header {
+        display: none;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 250px;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .menu.open {
+        max-height: 500px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .menu li a {
+        padding: 15px 20px;
+        width: 100%;
+    }
+}
