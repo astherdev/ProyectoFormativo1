@@ -1,0 +1,41 @@
+* {
+    font-family: 'Ruda', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: #39A900;
+    width: 100%;
+    padding: 10px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+#logoSena {
+    width: 50px;
+    height: 50px;
+}
+
+
+#titulo-header h2 {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+#links-header {
+    display: flex;
+    gap: 40px;
+    margin-left: auto;
+}
+
+.header_links {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
