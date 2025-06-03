@@ -33,11 +33,17 @@
     margin-left: 30px;
 }
 
-/* Agrupa íconos a la derecha */
+
 #header-icons {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
+}
+
+#moon-icon{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }
 
 #menuIcon{
@@ -91,7 +97,7 @@
     background-color: #0055aa; 
     border-radius: 3px;
 }
-
+#moon:hover,
 #menuIcon:hover,
 #xClose:hover,
 #profileU:hover {

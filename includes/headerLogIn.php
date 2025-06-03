@@ -20,6 +20,9 @@
         </div>
         
         <div id="header-icons">
+            <div id="moon">
+                <img id="moon-icon" src="/Sensli1/ProyectoFormativo/assets/icons/lunas.png" alt="">
+            </div>
             <div id="hamburger">
                 <img id="menuIcon" src="/Sensli1/ProyectoFormativo/assets/icons/menu.png" alt="">
                 <img id="xClose" src="/Sensli1/ProyectoFormativo/assets/icons/x.png" alt="">
