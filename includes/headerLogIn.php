@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/headerLogIn.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/headerLogIn.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
     <div id="header">
         <div id="header-left">
-            <img id="logoSena" src="../assets/img/Logo-Sena-Negativo.png" alt="Logo" class="logo">
+            <img id="logoSena" src="/Sensli1/ProyectoFormativo/assets/img/Logo-Sena-Negativo.png" alt="Logo" class="logo">
             <div id="titulo-header">
                 <h2>Inicio</h2>
         </div>
@@ -21,11 +21,11 @@
         
         <div id="header-icons">
             <div id="hamburger">
-                <img id="menuIcon" src="../assets/icons/menu.png" alt="">
-                <img id="xClose" src="../assets/icons/x.png" alt="">
+                <img id="menuIcon" src="/Sensli1/ProyectoFormativo/assets/icons/menu.png" alt="">
+                <img id="xClose" src="/Sensli1/ProyectoFormativo/assets/icons/x.png" alt="">
             </div>
             <div id="profile">
-                <img id="profileU" src="../assets/icons/usuario.png" alt="">
+                <img id="profileU" src="/Sensli1/ProyectoFormativo/assets/icons/usuario.png" alt="">
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
             <li><a href="../pages/Index.php">Cerrar Sesion</a></li>
         </ul>
     </nav>
-<script src="../assets/js/hambur.js" defer></script>
+<script src="/Sensli1/ProyectoFormativo/assets/js/hambur.js" defer></script>
 
 </body>
 </html>

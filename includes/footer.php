@@ -10,17 +10,15 @@
     <title></title>
 </head>
 <body>
-    <footer>
-        <div id="footer">
-            <div id="iconos-footer">
-                <a href="https://www.facebook.com/tuempresa" ><img  class="logos"src="/Sensli1/ProyectoFormativo/assets/img/facebook.png"></a>
-                <a href="https://www.twitter.com/tuempresa" ><img  class="logos"src="/Sensli1/ProyectoFormativo/assets/img/gorjeo.png"></a>
-                <a href="https://www.instagram.com/tuempresa" ><img class="logos" src="/Sensli1/ProyectoFormativo/assets/img/instagram.png"></a>
-            </div>
-            <div id="ContentRights">
-                <p>&copy; Sena, Todos los derechos reservados</p>
-            </div>
+    <div id="footer">
+        <div id="iconos-footer">
+            <a href="https://www.facebook.com/tuempresa" ><img  class="logos"src="/Sensli1/ProyectoFormativo/assets/img/facebook.png"></a>
+            <a href="https://www.twitter.com/tuempresa" ><img  class="logos"src="/Sensli1/ProyectoFormativo/assets/img/gorjeo.png"></a>
+            <a href="https://www.instagram.com/tuempresa" ><img class="logos" src="/Sensli1/ProyectoFormativo/assets/img/instagram.png"></a>
         </div>
-    </footer>
+        <div id="ContentRights">
+            <p>&copy; Sena, Todos los derechos reservados</p>
+        </div>
+    </div>
 </body>
 </html>
