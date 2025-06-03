@@ -16,7 +16,7 @@
             <a href="https://www.twitter.com/tuempresa" ><img  class="logos"src="/Sensli1/ProyectoFormativo/assets/img/gorjeo.png"></a>
             <a href="https://www.instagram.com/tuempresa" ><img class="logos" src="/Sensli1/ProyectoFormativo/assets/img/instagram.png"></a>
         </div>
-        <div id="ContentRights">
+        <div id="contentRights">
             <p>&copy; Sena, Todos los derechos reservados</p>
         </div>
     </div>
