@@ -15,65 +15,80 @@
     position: relative;
 }
 
+/* Contenedor para logo + título (izquierda) */
+#left-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Contenedor para menú + usuario (derecha) */
+#right-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 /* Logo */
 #logoSena {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 /* Título */
 #titulo-header h2 {
     color: white;
     font-size: 24px;
-    margin-left: 30px;
+    margin: 0;
 }
 
-/* Enlaces arriba a la derecha */
-#links-header {
-    display: flex;
-    gap: 40px;
-    margin-left: auto;
-}
-
-.header_links {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-}
-
-/* ========= BOTÓN HAMBURGUESA ========= */
+/* Botón hamburguesa */
 .menu-toggle {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Íconos del menú hamburguesa */
+.menu-toggle .icon {
   width: 30px;
-  height: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.menu-toggle .bar {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: black;
-  transition: all 0.3s ease;
-}
-
-/* ESTADO ABIERTO: convertir en X */
-.menu-toggle.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.open .bar:nth-child(2) {
+  height: 30px;
+  position: absolute;
   opacity: 0;
+  transform: scale(0.9) rotate(0deg);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
 }
 
-.menu-toggle.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+.menu-toggle .icon-hamburger {
+  opacity: 1;
+  pointer-events: auto;
 }
 
+.menu-toggle.open .icon-hamburger {
+  opacity: 0;
+  transform: scale(0.9) rotate(90deg);
+  pointer-events: none;
+}
+
+.menu-toggle.open .icon-close {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  pointer-events: auto;
+}
+
+/* Imagen usuario */
+#user-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+}
 
 /* ========= MENÚ OCULTO POR DEFECTO ========= */
 .menu {
@@ -90,7 +105,7 @@
 
 /* Cuando se abre el menú */
 .menu.open {
-    max-height: 200px; /* ajusta según número de elementos */
+    max-height: 200px;
 }
 
 /* Estilo general del menú */

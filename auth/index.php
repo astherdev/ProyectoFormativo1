@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/headerLogIn.php';
+require_once '../includes/Header.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

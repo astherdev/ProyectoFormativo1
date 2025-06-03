@@ -6,12 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/Admin/createInstructor.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/Admin/Create_Instructor.css">
     <title>Create Intructors</title>
 </head>
 <body>
     <?php 
-        include "../../includes/headerLogOut.php";
+        include "../../includes/headerLogIn.php";
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">

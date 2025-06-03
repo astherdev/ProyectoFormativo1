@@ -1,9 +1,9 @@
 <?php
-require_once '../includes/Header.php'; 
+require_once '../includes/headerLogIn.php'; 
 
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,9 +68,9 @@ require_once '../includes/Header.php';
     <button class="btn verde">Crear Ficha</button>
     <button class="btn rojo">Inactivar</button>
     <button class="btn azul">Generar Reporte</button>
-    <button class="btn gris">Editar</button>
+    <button onclick="location.href='./admin/EditToken.php'" class="btn gris">Editar</button>
     <button class="btn verde">Agregar Aprendiz</button>
-    <button class="btn gris">Editar Juicios</button>
+    <button  onclick="location.href='./admin/EditJudgments.php'" class="btn gris">Editar Juicios</button>
   </div>
 </div>
 

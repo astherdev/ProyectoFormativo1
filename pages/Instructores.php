@@ -1,5 +1,5 @@
 <?php 
-require_once '../includes/Header.php'; 
+require_once '../includes/headerLogIn.php'; 
 
 ?>
 <!DOCTYPE html>
@@ -47,10 +47,10 @@ require_once '../includes/Header.php';
   </div>
 
   <div class="acciones">
-    <button class="btn verde">Crear Instructor</button>
+    <button class="btn verde" onclick="location.href='./admin/CreateInstructor.php'">Crear Instructor</button>
     <button class="btn rojo">Inactivar</button>
-    <button class="btn azul">Generar Reporte</button>
-    <button class="btn gris">Editar</button>
+    <button class="btn azul" >Generar Reporte</button>
+    <button class="btn gris" onclick="location.href='./admin/EditInstructor.php'">Editar</button>
   </div>
 </div>
 

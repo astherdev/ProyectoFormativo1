@@ -1,5 +1,5 @@
 <?php
-include '../includes/headerLogOut.php'; 
+require_once '../includes/headerLogIn.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include '../includes/headerLogOut.php';
     
     <div class="contenedor-modulos-scroll">
 
-    <?php foreach ($fichas as $ficha): ?>
+       <?php foreach ($fichas as $ficha): ?>
     <div class="modulo">
         <h4 class="tipo-ficha"><?= $ficha['tipo'] ?></h4>
         <div class="modulo-header">
@@ -43,4 +43,4 @@ include '../includes/headerLogOut.php';
 </body>
 </html>
 
-<?php include '../includes/footer.php'; ?>
+<?php require_once '../includes/Footer.php'; ?>
