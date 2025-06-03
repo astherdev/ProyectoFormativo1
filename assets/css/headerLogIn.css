@@ -54,6 +54,7 @@
 }
 
 #profileU{
+    margin-top: 0.5px;
     cursor: pointer;
     width: 35px;
     height: 35px;
@@ -69,6 +70,12 @@
     justify-content: space-around;
     margin: 0;
     padding: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center; 
+    gap: 10px;            
 }
 
 .menu ul li a {
@@ -100,6 +107,30 @@
 
 #menuNav.active {
     display: block;
+}
+
+
+
+#home-icon{
+    width: 30px;
+    height: 30px;
+}
+
+#ficha-icon{
+    width: 30px;
+    height: 30px;
+}
+
+
+#instructor-icon{
+    width: 30px;
+    height: 30px;
+}
+
+
+#exit-icon{
+    width: 30px;
+    height: 30px;
 }
 
 

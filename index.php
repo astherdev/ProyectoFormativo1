@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-    include "includes/headerLogOut.php";
+    include "includes/headerLogIn.php";
 ?>
     <div id="principal-content">
         <h1>¡Educación de Calidad<br>Futuro Brillante!</h1>
