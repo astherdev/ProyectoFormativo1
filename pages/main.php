@@ -1,5 +1,5 @@
 <?php
-include '../includes/headerLogOut.php'; 
+include '../includes/headerLogIn.php'; 
 ?>
 
 <!DOCTYPE html>
