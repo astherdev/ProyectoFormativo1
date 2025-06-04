@@ -22,9 +22,7 @@
                 <p>&copy; Sena, Todos los derechos reservados</p>
             </div>
         </div>
-        <div id="ContentRights">
-            <p>&copy; Sena, Todos los derechos reservados</p>
-        </div>
+       
     </div>
 </body>
 </html>

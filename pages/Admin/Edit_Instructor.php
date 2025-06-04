@@ -12,8 +12,8 @@
     <title>Create Intructors</title>
 </head>
 <body>
-    <?php 
-        include "../../includes/header.php";
+    <?php
+        include "../../includes/headerLogIn.php";
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">

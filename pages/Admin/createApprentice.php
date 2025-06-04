@@ -10,7 +10,7 @@
     <title>Agregar Aprendiz</title>
 </head>
 <body>
-    <?php include '../../includes/headerLogOut.php'; ?>
+    <?php include '../../includes/headerLogIn.php'; ?>
 
     <div id="container">
         <h1>Agregar Aprendiz</h1>

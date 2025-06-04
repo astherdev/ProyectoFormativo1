@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php 
-        include "../../includes/headerLogOut.php";
+        include "../../includes/headerLogIn.php";
     ?>
     <div id="container">
         <h1>Información del aprendiz</h1>

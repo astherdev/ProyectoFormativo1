@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/Header.php'; 
+require_once '../includes/headerLogIn.php'; 
 
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,8 @@ require_once '../includes/Header.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/tables.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/tables.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <title>Sensli</title>
 </head>
 
@@ -63,7 +64,7 @@ require_once '../includes/Header.php';
 
   </div>
 </div>
-
+<script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
 <?php require_once '../includes/Footer.php'; ?>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <body>
     <?php 
         
-        require_once '../../includes/header.php';
+        require_once '../../includes/headerLogIn.php';
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">

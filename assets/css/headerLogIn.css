@@ -102,12 +102,16 @@
 }
 
 #menuNav {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 1.1s ease;
 }
 
 #menuNav.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
+
 
 
 
