@@ -9,7 +9,10 @@
     width: 20px;
     height: 20px;
 }
+
 #footer {
+    text-align: center;
+    justify-content: center;
     position: absolute;
     background-color: #39A900;
     width: 100%;
@@ -18,30 +21,30 @@
     display: flex;
     align-items: center;
     bottom: 0;
-    align-items: center;
-    gap: 34.3%;
 }
 
+#iconos-footer {
+    width: 46%;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    gap: 20px;
+}
 
-#ContentRights{
+#contentRights{
+    width: 54%;
     align-items: center;
     text-align: center;
-    justify-content: center;
+    justify-content: left;
     display: flex;
 }
 
-#ContentRights p{
+#contentRights p{
     color: white;
     font-size: 13px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#iconos-footer {
-    display: flex;
-    flex-direction: row;
-    margin-left: 0;
-    gap: 20px;
 }
