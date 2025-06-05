@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php 
-        include "../../includes/headerLogOut.php";
+        include "../../includes/headerLogIn.php";
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
