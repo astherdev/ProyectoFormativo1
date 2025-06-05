@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/Header.php';
+    include "../../includes/headersLogIn/headerLogIn.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,10 +10,8 @@ require_once '../includes/Header.php';
     <title>Sensli</title>
 </head>
 <body>
-
     <div id="principal-content">
         <h1>¡Educación de Calidad<br>Futuro Brillante!</h1>
-
         <img src="../assets/img/sena.png" alt="SENA">
     </div>
     <button type="button" class="IS" onclick="window.location.href='login.php'">
@@ -22,5 +20,5 @@ require_once '../includes/Header.php';
 </body>
 </html>
 <?php
-require_once '../includes/Footer.php';
+    require_once '../includes/Footer.php';
 ?>
