@@ -1,6 +1,5 @@
 <?php
-require_once '../includes/headerLogIn.php'; 
-
+	include "../../includes/headersLogIn/headerTokens.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +10,6 @@ require_once '../includes/headerLogIn.php';
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <title>Sensli</title>
 </head>
-
 <body>
 
 <div class="ficha-container">
