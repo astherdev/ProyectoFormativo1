@@ -1,14 +1,20 @@
+<?php 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/Admin/editProfile.css">
-    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/Admin/View_Profile.css">
+    <title>View Profile</title>
 </head>
 <body>
     <?php 
-        include "../../includes/headerLogIn.php";
+        
+        require_once '../../includes/headerLogIn.php';
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
@@ -49,7 +55,7 @@
                 </div>
                 <input type="text" placeholder="" id = "idInput">
                 
-                <button id = "Confirm_button">Confirmar</button>
+                <button id = "Edit_button">Editar</button>
             </div>
         </div>
     </div>

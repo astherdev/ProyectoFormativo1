@@ -1,5 +1,5 @@
 <?php 
-require_once '../includes/Header.php'; 
+require_once '../includes/headerLogIn.php'; 
 
 ?>
 <!DOCTYPE html>
@@ -8,6 +8,7 @@ require_once '../includes/Header.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/tables.css">
+     <link rel="stylesheet" href="../assets/css/ModePage.css">
     <title>Sensli</title>
 </head>
 
@@ -47,13 +48,13 @@ require_once '../includes/Header.php';
   </div>
 
   <div class="acciones">
-    <button class="btn verde">Crear Instructor</button>
+    <button class="btn verde" onclick="location.href='./admin/CreateInstructor.php'">Crear Instructor</button>
     <button class="btn rojo">Inactivar</button>
-    <button class="btn azul">Generar Reporte</button>
-    <button class="btn gris">Editar</button>
+    <button class="btn azul" >Generar Reporte</button>
+    <button class="btn gris" onclick="location.href='./admin/EditInstructor.php'">Editar</button>
   </div>
 </div>
-
+<script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
 <?php require_once '../includes/Footer.php'; ?>
 </body>
 </html>

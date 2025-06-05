@@ -13,8 +13,9 @@ body {
     padding-bottom: 120px; /* Para que el footer fijo no tape contenido */
 }
 
-
-
+#principal-content{
+    margin-top: 8%;
+}
 
 /* ========= BOTÓN DE INICIAR SESIÓN ========= */
 .IS {
