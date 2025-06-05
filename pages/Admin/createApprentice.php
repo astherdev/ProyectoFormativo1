@@ -11,7 +11,6 @@
 </head>
 <body>
     <?php include '../../includes/headerLogIn.php'; ?>
-
     <div id="container">
         <h1>Agregar Aprendiz</h1>
 
