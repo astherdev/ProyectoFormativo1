@@ -10,7 +10,7 @@
     <title>Create Intructors</title>
 </head>
 <body>
-    <?php 
+    <?php
         include '../../includes/headersLogIn/headerInstructors.php';
     ?>
     <div id = "generalDiv">
