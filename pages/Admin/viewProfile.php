@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php 
-        include "../../includes/headersLogIn/headerLogIn.php";
+        include "../../includes/headersLogIn/headerProfile.php";
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
