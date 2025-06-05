@@ -5,6 +5,22 @@
     font-family: Ruda;
 }
 
+.selects {
+    display: flex;
+    gap: 30px; 
+    justify-content: center; 
+    margin: 20px 0;
+}
+
+.selects select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #B6B2B2;
+    width: 300px;
+}
+
 #container{
     margin: 0 auto;
     margin-top: 50px;
@@ -19,16 +35,24 @@
 }
 
 #leftContent {
+    margin: 0 auto;
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto;
+    word-break: break-word; 
+    justify-content: center;
 }
 
 #nameApprentice{
     color: #39A900;
-    font-size: 60px;
+    font-size: 50px;
     margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 h2{
     font-size: 50px;

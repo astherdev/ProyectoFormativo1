@@ -11,11 +11,23 @@
 </head>
 <body>
     <?php
-    include '../../includes/headerLogIn.php';
+    include '../../includes/headersLogIn/headerLogIn.php';
     ?>
+    <div class="selects">
+        <select name="ficha" id="ficha">
+            <option value="1">Ficha 1</option>
+            <option value="2">Ficha 2</option>
+            <option value="3">Ficha 3</option>
+        </select>
+        <select name="aprendiz" id="aprendiz">
+            <option value="1">Aprendiz 1</option>
+            <option value="2">Aprendiz 2</option>
+            <option value="3">Aprendiz 3</option>
+        </select>
+    </div>
     <div id="container">
         <div id="leftContent">
-            <h2 id="nameApprentice">Aprendiz</h2>
+            <h2 id="nameApprentice">Isaac Echeverrinche Garcia Lopez 1</h2>
             <div id="leftInformation">
                 <p class="infoApprentice">
                     <span class="label">Correo: Ejemplo@gmail.com </span>
