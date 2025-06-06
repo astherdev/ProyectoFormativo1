@@ -20,7 +20,7 @@
     <div>
       <div class="flex items-center gap-4 mb-8">
         <img src="/Sensli1/ProyectoFormativo/assets/img/Logo-Sena-Negativo.png" alt="Logo" class="w-12 h-12" />
-        <h2 class="text-xl font-semibold">Sensli</h2>
+        <h2 class="text-xl font-semibold">Inicio</h2>
       </div>
 
       <!-- Navegación -->
