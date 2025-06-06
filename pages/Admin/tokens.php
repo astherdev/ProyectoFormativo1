@@ -59,12 +59,12 @@
 			</table>
 		</div>
 		<div class="acciones">
-			<button class="btn verde">Crear Ficha</button>
-			<button class="btn rojo">Inactivar</button>
-			<button class="btn azul">Generar Reporte</button>
-			<button class="btn gris">Editar</button>
-			<button class="btn verde">Agregar Aprendiz</button>
-			<button class="btn gris">Editar Juicios</button>
+			<button class="btn verde" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/createToken'">Crear Ficha</button>
+			<button class="btn rojo" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/tokens.php'">Inactivar</button>
+			<button class="btn azul" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/tokens'">Generar Reporte</button>
+			<button class="btn gris" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/editToken'">Editar</button>
+			<button class="btn verde" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/createApprentice'">Agregar Aprendiz</button>
+			<button class="btn gris" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/editJudgments'">Editar Juicios</button>
 		</div>
 	</div>
   	<?php include '../../includes/Footer.php'; ?>

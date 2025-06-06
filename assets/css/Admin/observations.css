@@ -155,8 +155,15 @@ h2{
     color: white;
     margin-top: 40px;
     border-style: none;
+    transition: 0.2s;
 
 }
+
+#addObservationButton:hover{
+    background-color: #00293e;
+    cursor: pointer;
+}
+
 #leftInformation,
 #rightTitle,
 #rightInformation,
