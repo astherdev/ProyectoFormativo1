@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/viewApprentice.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +12,7 @@
 </head>
 <body>
     <?php 
-        include "../../includes/headerLogIn.php";
+        include "/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/headerLogIn.php";
     ?>
     <div id="container">
         <h1>Información del aprendiz</h1>
@@ -31,20 +32,20 @@
             <div class="columna">
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/avatar.png" class="form_icon">Nombre</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/avatar.png" class="form_icon">Nombre</label>
                         <input type="text">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/phone.png" class="form_icon">Numero Telefonico</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/phone.png" class="form_icon">Numero Telefonico</label>
                         <input type="text">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/seeDocuments.png" class="form_icon">Tipo de Documento</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" class="form_icon">Tipo de Documento</label>
                         <select name="tipoDocumento" id="tipoDocumento">
                             <option value="CC">Cédula de Ciudadanía</option>
                             <option value="TI">Tarjeta de Identidad</option>
@@ -55,7 +56,7 @@
 
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/documents.png" class="form_icon">Número de Identificación</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/documents.png" class="form_icon">Número de Identificación</label>
                         <input type="text">
                     </div>
                 </div>
@@ -64,25 +65,25 @@
             <div class="columna">
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/avatar.png" class="form_icon">Apellidos</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/avatar.png" class="form_icon">Apellidos</label>
                         <input type="text">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/mail.png" class="form_icon">Correo</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/mail.png" class="form_icon">Correo</label>
                         <input type="text">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/encendido.png" class="form_icon">Estado</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/encendido.png" class="form_icon">Estado</label>
                         <input type="text">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="../../assets/icons/pasador-de-ubicacion.png" class="form_icon">Etapa de Formación</label>
+                        <label><img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/pasador-de-ubicacion.png" class="form_icon">Etapa de Formación</label>
                         <input type="text">
                     </div>
                 </div>
@@ -93,9 +94,9 @@
             <button id="generarR">Generar Reporte</button>
         </div>
     </div>
-    
+    <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
     <?php
-    include '../../includes/footer.php';
+    include '/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/footer.php';
     ?>
 </body>
 </html>

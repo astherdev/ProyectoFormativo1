@@ -1,0 +1,78 @@
+.Principal-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    padding: 20px;
+    font-family: Ruda;
+}
+
+.selects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+select, input, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #B6B2B2;
+    width: 300px;
+    color: black;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+    overflow-y: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #6e6e6e;
+}
+
+.confirm {
+    padding: 10px 20px;
+    background-color: #39A900;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:200px;
+    height:40px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+}
+#observation {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #B6B2B2;
+    width: 600px;
+    height: 120px;
+    resize: none;
+    overflow-y: auto;
+    color: black;
+    box-sizing: border-box;
+}
+
+#observation::placeholder {
+    color: #6e6e6e;
+}
