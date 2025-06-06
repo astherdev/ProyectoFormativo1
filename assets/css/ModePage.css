@@ -23,15 +23,14 @@ body.dark table, h3 {
 /* ... resto de tu CSS ... */
 
 #theme-toggle-button {
-  margin-top: -0.85rem; /* Ajusta el valor según lo que necesites */
+  display: flex;
   font-size: 17px;
-  position: relative;
-  display: inline-block;
   width: 2.5rem;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-
-/* ... demás estilos que ya tienes ... */
 
 
 /* Hide default HTML checkbox */

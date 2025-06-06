@@ -97,7 +97,7 @@
                 </select>
             </div>
             <div id = "buttonsDiv">
-                <button id = "Update_button">Actualizar</button>
+                <button id = "Update_button" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/tokens'">Actualizar</button>
             </div>
         </div>
     </div>

@@ -137,4 +137,10 @@
     border-radius: 10px;
     border: none;
     background-color: #00324D;
+    transition: 0.2s;
+}
+
+#Update_button:hover{
+    background-color: #00293e;
+    cursor: pointer;
 }

@@ -71,7 +71,7 @@
                 <img id="xClose" src="/Sensli1/ProyectoFormativo/assets/icons/x.png" alt="">
             </div>
             <div id="profile">
-                <img id="profileU" src="/Sensli1/ProyectoFormativo/assets/icons/usuario.png" alt="">
+                <a href = "viewProfile.php"><img id="profileU" src="/Sensli1/ProyectoFormativo/assets/icons/usuario.png" alt=""></a>
             </div>
         </div>
     </div>

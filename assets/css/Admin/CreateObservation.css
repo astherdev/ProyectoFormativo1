@@ -29,9 +29,9 @@ h1{
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px 20px 20px 20px; /* Reducí el padding-top */
+    padding: 10px 20px 20px 20px;
     font-family: Ruda;
-    margin-top: 0; /* Asegurate de que no tenga margen superior */
+    margin-top: 0;
 }
 .selects {
     display: flex;
@@ -73,6 +73,12 @@ textarea::placeholder {
     cursor: pointer;
     width:200px;
     height:40px;
+    transition: 0.2s;
+}
+
+.confirm:hover{
+    background-color: #287700;
+    cursor: pointer;
 }
 
 h1 {

@@ -88,7 +88,7 @@
         </div>
 
         <div class="buttonsInfo">
-            <button id="crearA">Crear Aprendiz</button>
+            <button id="crearA" href = "createAprentice">Crear Aprendiz</button>
             <button id="cargarA">Cargar Aprendiz</button>
         </div>
     </div>

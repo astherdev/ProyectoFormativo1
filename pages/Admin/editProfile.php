@@ -53,7 +53,7 @@
                 </div>
                 <input type="text" placeholder="" id = "idInput">
                 
-                <button id = "Confirm_button">Confirmar</button>
+                <button id = "Confirm_button" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/viewProfile.php'">Confirmar</button>
             </div>
         </div>
     </div>

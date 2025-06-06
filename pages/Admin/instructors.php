@@ -42,10 +42,10 @@
 			</table>
 		</div>
 		<div class="acciones">
-			<button class="btn verde">Crear Instructor</button>
-			<button class="btn rojo">Inactivar</button>
-			<button class="btn azul">Generar Reporte</button>
-			<button class="btn gris">Editar</button>
+			<button class="btn verde" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/createInstructor.php'">Crear Instructor</button>
+			<button class="btn rojo" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/instructors.php'">Inactivar</button>
+			<button class="btn azul" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/instructors.php'">Generar Reporte</button>
+			<button class="btn gris" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/editInstructor.php'">Editar</button>
 		</div>
 	</div>
 	<?php include '../../includes/footer.php'; ?>

@@ -71,7 +71,7 @@
                     </select>
                 </div>
             </div>
-            <button id = "Confirm_button">Aceptar</button>
+            <button id = "Confirm_button" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/instructors.php'">Aceptar</button>
         </div>
     </div>
     <?php include "../../includes/footer.php";?>

@@ -91,4 +91,10 @@
     margin: 0 auto;
     margin-top: 10%;
     margin-bottom: 5%;
+    transition: 0.2s;
+}
+
+#Edit_button:hover{
+    background-color: #00293e;
+    cursor: pointer;
 }
