@@ -1,5 +1,5 @@
 <?php
-    include "../../includes/headerLogOut.php";
+    include "../../includes/headersLogIn/headerLogIn.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,6 +11,7 @@
     <title>Sensli</title>
 </head>
 <body>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id="principal-content">
         <h1>¡Educación de Calidad<br>Futuro Brillante!</h1>
         <img src="../../assets/img/sena.png" alt="SENA">

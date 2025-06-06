@@ -10,7 +10,27 @@ body {
     overflow-x: hidden;
     background-color: #fff;
     text-align: center;
-    padding-bottom: 120px; /* Para que el footer fijo no tape contenido */
+}
+
+#backpage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    background-color: #00324D;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#backImg{
+    width: 20px;
+    height: 20px;
 }
 
 #principal-content{
@@ -36,17 +56,6 @@ body {
     background-color: #39A900;
 }
 
-/* ========= FOOTER FIJO ========= */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #39A900;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 999;
-}
 
 /* ========= RESPONSIVE ========= */
 @media (max-width: 768px) {

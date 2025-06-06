@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php
-    include '../../includes/headersLogIn/headerObservation.php';
+    include '../../includes/headersLogIn/headerLogIn.php';
     ?>
     <h1>Crear Observaciones</h1>
     <div class="Principal-cont">

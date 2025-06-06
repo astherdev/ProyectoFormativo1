@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php 
-        include "../../includes/headersLogIn/headerJudgments.php";
+        include "../../includes/headersLogIn/headerLogIn.php";
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">

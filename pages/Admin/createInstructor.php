@@ -6,14 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/css/Admin/createInstructor.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/createInstructor.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <title>Create Intructors</title>
 </head>
 <body>
     <?php 
 
-        include "/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/headerLogIn.php";
+         include '../../includes/headersLogIn/headerLogIn.php';
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
@@ -21,50 +21,50 @@
             <div id="infoContent">
                 <div class = "columna">
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Nombre</label>
                     </div>
                     <input type="text" placeholder="Yuly Paulín Sáenz" id = "nameInput">
     
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/phone.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/phone.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Número Telefonico</label>
                     </div>
                     <input type="text" placeholder="" id = "phoneInput">
     
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/mail.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/mail.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Correo</label>
                     </div>
                     <input type="text" placeholder="@gmail.com" id = "mailInput">
     
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Número de Documento</label>
                     </div>
                     <input type="text" placeholder="" id = "idInput">
                 </div>
                 <div class = "columna">
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Apellidos</label>
                     </div>
                     <input type="text" placeholder="Yuly Paulín Sáenz" id = "nameInput">
     
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/lock.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/lock.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Contraseña</label>
                     </div>
                     <input type="text" placeholder="" id = "phoneInput">
     
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/documents.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/documents.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Tipo de documento</label>
                     </div>
                     <input type="text" placeholder="@gmail.com" id = "mailInput">
     
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Cargo</label>
                     </div>
                     <select id = "documentType" name = "documentType" type="select" required>
@@ -79,6 +79,6 @@
         </div>
     </div>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
-    <?php include "/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/footer.php";?>
+    <?php include "../../includes/footer.php";?>
 </body>
 </html>
