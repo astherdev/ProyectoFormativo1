@@ -73,4 +73,10 @@
     margin: 0 auto;
     margin-top: 10%;
     margin-bottom: 5%;
+    transition: 0.2s;
+}
+
+#Confirm_button:hover{
+    background-color: #287700;
+    cursor: pointer;
 }

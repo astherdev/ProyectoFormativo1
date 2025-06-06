@@ -54,7 +54,7 @@
                 </div>
                 <input type="text" placeholder="" id = "idInput">
                 
-                <button id = "Edit_button">Editar</button>
+                <button id = "Edit_button" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/editProfile.php'">Editar</button>
             </div>
         </div>
     </div>
