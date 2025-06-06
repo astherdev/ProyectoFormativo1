@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php
-    include '../../includes/headersLogIn/headerLogIn.php';
+    include '../../includes/headersLogIn/headerObservation.php';
     ?>
     <div class="selects">
         <select name="ficha" id="ficha">
