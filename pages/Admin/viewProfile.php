@@ -58,11 +58,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-
-    <?php require_once ('../../includes/footer.php');?>
-=======
     <?php include "../../includes/footer.php";?>
->>>>>>> e2686e1afbd37782934186170e7663571e247b6a
 </body>
 </html>
