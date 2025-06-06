@@ -21,16 +21,8 @@
     width: 300px;
 }
 
-#container {
-    margin: 0 auto;
-    margin-top: 50px;
-    width: 80%;
-    min-width: 700px; /* evita que se comprima demasiado */
-    max-width: 1200px;
-    height: 60vh;
-    min-height: 500px; /* asegura espacio mínimo */
+#containerObservations {
 
-#container{
     margin: 0 auto;
     margin-top: 50px;
     width: 80%;
@@ -42,12 +34,8 @@
     border-radius: 10px;
     gap: 2%;
     overflow: auto; /* permite scroll si hay zoom o contenido extra */
-}
-
-
 
 }
-
 
 #leftContent {
     margin: 0 auto;
@@ -167,6 +155,7 @@ h2{
     color: white;
     margin-top: 40px;
     border-style: none;
+
 }
 #leftInformation,
 #rightTitle,

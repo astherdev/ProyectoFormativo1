@@ -27,7 +27,7 @@
             <option value="3">Aprendiz 3</option>
         </select>
     </div>
-    <div id="container">
+    <div id="containerObservations">
         <div id="leftContent">
             <h2 id="nameApprentice">Isaac Echeverrinche Garcia Lopez 1</h2>
             <div id="leftInformation">

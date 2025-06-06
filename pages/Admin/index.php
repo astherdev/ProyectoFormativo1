@@ -1,5 +1,5 @@
 <?php
-    include "../../includes/headerLogOut.php";
+    include "../../includes/headersLogIn/headerLogIn.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
