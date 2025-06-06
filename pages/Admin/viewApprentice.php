@@ -12,13 +12,9 @@
 </head>
 <body>
     <?php 
-<<<<<<< HEAD
-        include "../../includes/headerLogIn.php";
-=======
         include "../../includes/headersLogIn/headerLogIn.php";
->>>>>>> develop
     ?>
-    <div id="container">
+    <div id="containerViewApprentice">
         <h1>Información del aprendiz</h1>
         <div class="selects">
             <select name="ficha" id="ficha">
@@ -94,8 +90,8 @@
             </div>
         </div>
         <div class="buttonsInfo">
-            <button id="editar">Editar</button>
-            <button id="generarR">Generar Reporte</button>
+            <button id="editar" onclick="window.location.href='../pages/Admin/editApprentice.php'">Editar</button>
+             <button id="generarR"  >Generar Reporte</button> <!-- Hacer link de descarga de la info de lo que se necesita de un aprendiz-->
         </div>
     </div>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>

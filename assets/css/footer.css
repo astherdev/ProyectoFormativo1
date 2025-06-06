@@ -6,13 +6,8 @@
 }
 
 .logos {
-<<<<<<< HEAD
-    width: 30px;
-    height: 30px;
-=======
     width: 20px;
     height: 20px;
->>>>>>> develop
 }
 
 #footer {
@@ -21,39 +16,11 @@
     position: absolute;
     background-color: #39A900;
     width: 100%;
-<<<<<<< HEAD
-    height: 70px;
-    padding: 10px 3%;
-    display: flex;
-    align-items: center;
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    gap: 34.3%;
-}
-
-
-#ContentRights{
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-}
-
-#ContentRights p{
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-=======
     height: 50px;
     padding: 10px 3%;
     display: flex;
     align-items: center;
     bottom: 0;
->>>>>>> develop
 }
 
 #iconos-footer {

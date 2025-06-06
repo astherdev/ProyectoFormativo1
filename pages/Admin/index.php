@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD:pages/index.php
-require_once '../includes/headerLogIn.php';
-=======
     include "../../includes/headersLogIn/headerLogIn.php";
->>>>>>> develop:pages/Admin/index.php
 ?>
 <!DOCTYPE html>
 <html lang="es">

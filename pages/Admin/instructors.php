@@ -47,6 +47,6 @@
 			<button class="btn gris">Editar</button>
 		</div>
 	</div>
-	<?php require_once '../../includes/Footer.php'; ?>
+	<?php include '../../includes/footer.php'; ?>
 </body>
 </html>

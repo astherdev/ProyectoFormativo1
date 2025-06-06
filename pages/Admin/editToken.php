@@ -6,24 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../../assets/css/header.css">
-    <link rel="stylesheet" href="../../assets/css/footer.css">
-    <link rel="stylesheet" href="../../assets/css/Admin/Edit_token.css">
-=======
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/editToken.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
->>>>>>> develop
     <title>Edit Token</title>
 </head>
 <body>
     <?php 
-<<<<<<< HEAD
-        include  "../../includes/header.php";
-=======
         include "../../includes/headersLogIn/headerLogIn.php";
 
->>>>>>> develop
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
@@ -85,7 +75,7 @@
                 </div>
             </div>
             <div id = "buttonsDiv">
-                <button id = "Confirm_button">Aceptar</button>
+                <button id = "Confirm_button" onclick="window.location.href='../pages/tokens.php'">Aceptar</button>
                 <button id = "Cancel_button">Cancelar</button>
             </div>
         </div>

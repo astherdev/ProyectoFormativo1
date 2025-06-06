@@ -11,10 +11,6 @@
     <title>Agregar Aprendiz</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <?php include '../../includes/headerLogIn.php'; ?>
-=======
->>>>>>> develop
 
     <?php  include '../../includes/headersLogIn/headerLogIn.php'; ?>
 

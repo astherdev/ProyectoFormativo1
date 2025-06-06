@@ -12,11 +12,7 @@
 </head>
 <body>
     <?php
-<<<<<<< HEAD
-    include '../../includes/headerLogIn.php';
-=======
     include '../../includes/headersLogIn/headerLogIn.php';
->>>>>>> develop
     ?>
     <div id="container">
         <h1>Información del aprendiz</h1>

@@ -6,24 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../../assets/css/header.css">
-    <link rel="stylesheet" href="../../assets/css/footer.css">
-    <link rel="stylesheet" href="../../assets/css/Admin/Create_Instructor.css">
-=======
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/createInstructor.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
->>>>>>> develop
     <title>Create Intructors</title>
 </head>
 <body>
     <?php 
-<<<<<<< HEAD
-        include "../../includes/headerLogIn.php";
-=======
 
          include '../../includes/headersLogIn/headerLogIn.php';
->>>>>>> develop
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
