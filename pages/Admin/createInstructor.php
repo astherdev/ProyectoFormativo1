@@ -12,6 +12,7 @@
 </head>
 <body>
     <?php 
+
         include "/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/headerLogIn.php";
     ?>
     <div id = "generalDiv">

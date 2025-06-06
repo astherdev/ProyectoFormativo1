@@ -8,13 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
-    <link rel="stylesheet" href="../../assets/css/Admin/View_Profile.css">
+    <link rel="stylesheet" href="../../assets/css/Admin/viewProfile.css">
     <title>View Profile</title>
 </head>
 <body>
     <?php 
-        
-        require_once '../../includes/headerLogIn.php';
+        include "../../includes/headersLogIn/headerProfile.php";
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
@@ -59,7 +58,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <?php require_once ('../../includes/footer.php');?>
+=======
+    <?php include "../../includes/footer.php";?>
+>>>>>>> e2686e1afbd37782934186170e7663571e247b6a
 </body>
 </html>

@@ -13,8 +13,9 @@
     <?php
     include '../../includes/headersLogIn/headerObservation.php';
     ?>
+    <h1>Crear Observaciones</h1>
     <div class="Principal-cont">
-        <h1>Crear Observaciones</h1>
+        
             <div class="selects">
                 <select name="ficha" id="ficha">
                     <option value="1">2895664(diurna)</option>

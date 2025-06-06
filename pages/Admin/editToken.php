@@ -12,7 +12,10 @@
 </head>
 <body>
     <?php 
+
         include "/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/headersLogIn/headerLogIn.php";
+
+
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
