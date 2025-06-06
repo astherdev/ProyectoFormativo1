@@ -20,7 +20,7 @@
     <div>
       <div class="flex items-center gap-4 mb-8">
         <img src="/Sensli1/ProyectoFormativo/assets/img/Logo-Sena-Negativo.png" alt="Logo" class="w-12 h-12" />
-        <h2 class="text-xl font-semibold">Inicio</h2>
+        <h2 class="text-xl font-semibold">Sensli</h2>
       </div>
 
       <!-- Navegación -->
@@ -32,7 +32,7 @@
           </li>
           <li class="flex items-center gap-3">
             <img src="/Sensli1/ProyectoFormativo/assets/icons/mesa.png" class="w-5 h-5" />
-            <a href="/Sensli1/ProyectoFormativo/pages/Admin/viewoken.php" class="hover:underline">Fichas</a>
+            <a href="/Sensli1/ProyectoFormativo/pages/Admin/viewToken.php" class="hover:underline">Fichas</a>
           </li>
           <li class="flex items-center gap-3">
             <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" />
