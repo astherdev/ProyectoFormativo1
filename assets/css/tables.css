@@ -10,7 +10,7 @@ body {
     overflow-x: hidden;
     background-color: #fff;
     text-align: center;
-    padding-bottom: 120px; /* Para que el footer fijo no tape contenido */
+    padding-bottom: 120px;
 }
 
 /* TABLA */
@@ -106,18 +106,41 @@ body {
 
 .btn.verde {
   background-color: #39A900;
+  transition: 0.2s;
+}
+
+.btn.verde:hover{
+  background-color: #287700;
+  cursor: pointer;
 }
 
 .btn.rojo {
   background-color: #e74c3c;
+  transition: 0.2s;
+}
+.btn.rojo:hover{
+  background-color: #ab392d;
+  cursor: pointer;
 }
 
 .btn.azul {
   background-color: #00324D;
+  transition: 0.2s;
+}
+
+.btn.azul:hover{
+  background-color: #00293e;
+  cursor: pointer;
 }
 
 .btn.gris {
   background-color: #00324D;
+  transition: 0.2s;
+}
+
+.btn.gris:hover{
+  background-color: #00293e;
+  cursor: pointer;
 }
 /* ========= RESPONSIVE ========= */
 @media (max-width: 768px) {

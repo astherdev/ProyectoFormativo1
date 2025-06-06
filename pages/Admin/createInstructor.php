@@ -75,7 +75,7 @@
                     </select>
                 </div>
             </div>
-            <button id = "Confirm_button">Confirmar</button>
+            <button id = "Confirm_button" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/instructors.php'">Confirmar</button>
         </div>
     </div>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>

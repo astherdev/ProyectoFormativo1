@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/viewApprentice.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/updateApprentice.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
     <?php
     include '../../includes/headersLogIn/headerLogIn.php';
     ?>
-    <div id="container">
+    <div id="containerViewApprentice">
         <h1>Información del aprendiz</h1>
         <div class="selects">
             <select name="ficha" id="ficha">
@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="buttonsInfo">
-            <button id="actualizar">Actualizar</button>
+            <button id="actualizar" onclick = "window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/tokens.php'">Actualizar</button>
         </div>
     </div>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>

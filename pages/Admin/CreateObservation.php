@@ -42,9 +42,8 @@
                 <textarea name="observation" id="observation" placeholder="Ingrese la descripción de la observación..."></textarea>
                 </select>
             </div>
-                <button class="confirm"> Confirmar</button>
+                <button class="confirm" onclick = "window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/observations'"> Confirmar</button>
     </div>
-
      <?php
     include '../../includes/footer.php';
     ?>

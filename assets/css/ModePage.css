@@ -23,15 +23,17 @@ body.dark table, h3 {
 
 
 #theme-toggle-button {
-  margin-top: -0.85rem;
+  display: flex;
   font-size: 17px;
-  position: relative;
-  display: inline-block;
   width: 2.5rem;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 
+/* Hide default HTML checkbox */
 #toggle {
   opacity: 0;
   width: 0;
