@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 .error {
     background-color: #f44336;
     color: white;
@@ -23,6 +24,8 @@
     text-align: center;
 }
 
+=======
+>>>>>>> develop
 body {
     position: relative;
     margin: 0;

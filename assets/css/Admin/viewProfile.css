@@ -58,7 +58,7 @@
     font-weight: bold;
 }
 
-#Confirm_button{
+#Edit_button{
     align-items: center;
     font-size: 20px;
     color: white;
@@ -66,8 +66,8 @@
     width: 50%;
     border-radius: 10px;
     border: none;
-    background-color: #39A900;
+    background-color: #00324D;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: 5%;
 }

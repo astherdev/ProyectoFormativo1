@@ -1,0 +1,98 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+body.dark, #generalDiv.dark, #infoAdmin.dark, #infoContent.dark {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+}
+
+body, #generalDiv, #infoAdmin, #infoContent {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sobrescribir tablas en modo oscuro para que mantengan colores claros */
+body.dark table, h3 {
+  color: #000000 !important;
+  /* Si usas variables, aquí no las usamos para evitar herencia */
+}
+
+/* ... resto de tu CSS ... */
+
+#theme-toggle-button {
+  margin-top: -0.85rem; /* Ajusta el valor según lo que necesites */
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+/* ... demás estilos que ya tienes ... */
+
+
+/* Hide default HTML checkbox */
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
+}
+
+/* night sky background */
+#toggle:checked + svg #container {
+  fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked + svg #button {
+  transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+  opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+  opacity: 0;
+}
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+  opacity: 1;
+}
