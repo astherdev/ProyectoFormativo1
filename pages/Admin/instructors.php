@@ -47,6 +47,6 @@
 			<button class="btn gris" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/editInstructor.php'">Editar</button>
 		</div>
 	</div>
-	<?php require_once '../../includes/Footer.php'; ?>
+	<?php include '../../includes/footer.php'; ?>
 </body>
 </html>

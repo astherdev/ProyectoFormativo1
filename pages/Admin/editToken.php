@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div id = "buttonsDiv">
-                <button id = "Confirm_button">Aceptar</button>
+                <button id = "Confirm_button" onclick="window.location.href='../pages/tokens.php'">Aceptar</button>
                 <button id = "Cancel_button">Cancelar</button>
             </div>
         </div>

@@ -1,16 +1,12 @@
 <?php
-<<<<<<< HEAD
-require_once '../includes/headersLogIn/headerLogIn.php'; 
-=======
-    require_once '../includes/Header.php'; 
->>>>>>> e2686e1afbd37782934186170e7663571e247b6a
+    require_once '../includes/headersLogIn/headerLogIn.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/main.css">
     <title>Sensli</title>
 </head>
 <body>
@@ -23,7 +19,7 @@ require_once '../includes/headersLogIn/headerLogIn.php';
             <div class="modulo">
                 <h4 class="tipo-ficha"><?= $ficha['tipo'] ?></h4>
                 <div class="modulo-header">
-                    <img src="../assets/img/Logo-Sena-Negativo.png" alt="SENA" class="logo-modulo">
+                    <img src="/Sensli1/ProyectoFormativo/assets/img/Logo-Sena-Negativo.png" alt="SENA" class="logo-modulo">
                     <div class="datos">
                         <strong><?= $ficha['numero'] ?></strong><br>
                         Instructor de Grupo: <?= $ficha['instructor'] ?><br>
@@ -39,9 +35,4 @@ require_once '../includes/headersLogIn/headerLogIn.php';
     </div>
 </body>
 </html>
-<<<<<<< HEAD
-
 <?php require_once '../includes/Footer.php'; ?>
-=======
-<?php require_once '../includes/Footer.php'; ?>
->>>>>>> e2686e1afbd37782934186170e7663571e247b6a

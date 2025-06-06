@@ -79,10 +79,10 @@
     <nav class="menu" id="menuNav">
         <ul>
 
-            <li><img class="hambur-icons" id="home-icon" src="/Sensli1/ProyectoFormativo/assets/icons/casa.png"><a href="../pages/Admin/main.php">Inicio</a></li>
-            <li><img class="hambur-icons" id="ficha-icon" src="/Sensli1/ProyectoFormativo/assets/icons/mesa.png"><a href="../pages/Admin/tokens.php">Fichas</a></li>
-            <li><img class="hambur-icons" id="instructor-icon" src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png"><a href="../pages/Admin/Instructors.php">Instructores</a></li>
-            <li><img class="hambur-icons" id="exit-icon" src="/Sensli1/ProyectoFormativo/assets/icons/puerta-abierta.png"><a href="../pages/Admin/Index.php">Cerrar Sesion</a></li>
+            <li><img class="hambur-icons" id="home-icon" src="/Sensli1/ProyectoFormativo/assets/icons/casa.png"><a href="/Sensli1/ProyectoFormativo/pages/main.php">Inicio</a></li>
+            <li><img class="hambur-icons" id="ficha-icon" src="/Sensli1/ProyectoFormativo/assets/icons/mesa.png"><a href="/Sensli1/ProyectoFormativo/pages/Admin/tokens.php">Fichas</a></li>
+            <li><img class="hambur-icons" id="instructor-icon" src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png"><a href="/Sensli1/ProyectoFormativo/pages/Admin/instructors.php">Instructores</a></li>
+            <li><img class="hambur-icons" id="exit-icon" src="/Sensli1/ProyectoFormativo/assets/icons/puerta-abierta.png"><a href="/Sensli1/ProyectoFormativo/pages/Admin/index.php">Cerrar Sesion</a></li>
         </ul>
     </nav>
 
