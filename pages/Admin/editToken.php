@@ -6,12 +6,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/Admin/editToken.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/css/Admin/editToken.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <title>Edit Token</title>
 </head>
 <body>
     <?php 
-        include "../../includes/headersLogIn/headerTokens.php";
+
+        include "/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/headersLogIn/headerLogIn.php";
+
+
     ?>
     <div id = "generalDiv">
         <div id="infoAdmin">
@@ -19,13 +23,13 @@
             <div id="infoContent">
                 <div class = "columna">
                     <div class = "formLabel">
-                        <img src="../../assets/icons/users.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/users.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Número de Ficha</label>
                     </div>
                     <input type="text" placeholder="2895664" id = "tokenNum">
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/book.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/book.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Instructor de Grupo</label>
                     </div>
                     <select id = "groupInstru" name = "groupInstru" type="select" required>
@@ -36,7 +40,7 @@
                     </select>
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Estado</label>
                     </div>
                     <select id = "stateInput" name = "stateInput" type="select" required>
@@ -47,26 +51,26 @@
                     </select>
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/finish.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/finish.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Fecha de Fin</label>
                     </div>
                     <input type="date" id = "tokenEnd">
                 </div>
                 <div class = "columna">
                     <div class = "formLabel">
-                        <img src="../../assets/icons/road.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/road.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Etapa</label>
                     </div>
                     <input type="text" placeholder="Lectiva" id = "tokenStage">
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/lock.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/lock.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Tipo de Oferta</label>
                     </div>
                     <input type="text" placeholder="Abierta" id = "tokenType">
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/turnOnOff.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/assets/icons/turnOnOff.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Fecha de Inicio</label>
                     </div>
                     <input type = "date" id = "tokenStart">
@@ -78,6 +82,6 @@
             </div>
         </div>
     </div>
-    <?php include "../../includes/footer.php";?>
+    <?php include "/Sensli1/ProyectoFormativo//Sensli1/ProyectoFormativo/includes/footer.php";?>
 </body>
 </html>

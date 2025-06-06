@@ -10,6 +10,7 @@
     <title>Create Intructors</title>
 </head>
 <body>
+
     <?php 
         include '../../includes/headersLogIn/headerInstructors.php';
     ?>

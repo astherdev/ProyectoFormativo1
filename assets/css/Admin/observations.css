@@ -21,6 +21,15 @@
     width: 300px;
 }
 
+#container {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 80%;
+    min-width: 700px; /* evita que se comprima demasiado */
+    max-width: 1200px;
+    height: 60vh;
+    min-height: 500px; /* asegura espacio mínimo */
+
 #container{
     margin: 0 auto;
     margin-top: 50px;
@@ -32,7 +41,13 @@
     background-color: #D9D9D9;
     border-radius: 10px;
     gap: 2%;
+    overflow: auto; /* permite scroll si hay zoom o contenido extra */
 }
+
+
+
+}
+
 
 #leftContent {
     margin: 0 auto;
@@ -43,6 +58,8 @@
     overflow-y: auto;
     word-break: break-word; 
     justify-content: center;
+    overflow: auto;
+
 }
 
 #nameApprentice{
@@ -73,6 +90,9 @@ h2{
     font-size: 25px;
     margin-bottom: 10px;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+
 }
 
 #separationLine{
@@ -89,6 +109,8 @@ h2{
     width: 90%;
     height: 60px;
     border-radius: 10px 10px 0px 0;
+    
+
 }
 
 #rightContent{
@@ -98,6 +120,8 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: auto;
+
 }
 
 #rightInformation {
@@ -106,6 +130,8 @@ h2{
     justify-content: flex-start;
     align-items: flex-start; 
     width: 100%;             
+    max-width: 90%;
+
     max-width: 800px;
     height: auto;
     background-color: #F2F2F2;
@@ -140,4 +166,13 @@ h2{
     border-radius: 10px;
     color: white;
     margin-top: 40px;
+    border-style: none;
+}
+#leftInformation,
+#rightTitle,
+#rightInformation,
+.infoObservation,
+.label {
+  color: #000000 !important;
+
 }
