@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 require_once '../includes/headersLogIn/headerLogIn.php'; 
-=======
-    require_once '../includes/Header.php'; 
->>>>>>> e2686e1afbd37782934186170e7663571e247b6a
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,9 +35,5 @@ require_once '../includes/headersLogIn/headerLogIn.php';
     </div>
 </body>
 </html>
-<<<<<<< HEAD
 
-<?php require_once '../includes/Footer.php'; ?>
-=======
-<?php require_once '../includes/Footer.php'; ?>
->>>>>>> e2686e1afbd37782934186170e7663571e247b6a
+<?php require_once '../includes/footer.php'; ?>
