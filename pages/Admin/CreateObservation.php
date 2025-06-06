@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/CreateObservation.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/createObservation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
@@ -13,9 +13,9 @@
     <?php
     include '../../includes/headersLogIn/headerLogIn.php';
     ?>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <h1>Crear Observaciones</h1>
     <div class="Principal-cont">
-        
             <div class="selects">
                 <select name="ficha" id="ficha">
                     <option value="1">2895664(diurna)</option>

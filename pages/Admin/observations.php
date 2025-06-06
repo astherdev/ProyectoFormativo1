@@ -11,8 +11,9 @@
 </head>
 <body>
     <?php
-    include '../../includes/headersLogIn/headerObservation.php';
+    include '../../includes/headersLogIn/headerLogIn.php';
     ?>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div class="selects">
         <select name="ficha" id="ficha">
             <option value="1">Ficha 1</option>

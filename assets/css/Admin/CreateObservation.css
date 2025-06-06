@@ -1,3 +1,23 @@
+#backpage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    background-color: #00324D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#backImg{
+    width: 20px;
+    height: 20px;
+}
 h1{
     top:0;
     margin-top:0;

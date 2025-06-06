@@ -13,6 +13,26 @@ body {
     padding-bottom: 120px; /* Para que el footer fijo no tape contenido */
 }
 
+#backpage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    background-color: #00324D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#backImg{
+    width: 20px;
+    height: 20px;
+}
 
 /* TABLA */
 

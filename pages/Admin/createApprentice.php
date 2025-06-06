@@ -13,7 +13,7 @@
 <body>
 
     <?php  include '../../includes/headersLogIn/headerLogIn.php'; ?>
-
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id="containerApprentice">
         <h1>Agregar Aprendiz</h1>
 

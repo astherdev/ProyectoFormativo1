@@ -1,5 +1,5 @@
 <?php
-	include "../../includes/headersLogIn/headerTokens.php";
+	include "../../includes/headersLogIn/headerLogIn.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,6 +11,7 @@
     <title>Sensli</title>
 </head>
 <body>
+	<button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
 	<div class="ficha-container">
 			<h2 class="ficha-titulo">Programas De Formacion</h2>
 		<div class="ficha-selectores">

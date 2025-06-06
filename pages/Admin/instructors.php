@@ -11,6 +11,7 @@
     <title>Sensli</title>
 </head>
 <body>
+	<button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
 	<div class="ficha-container">
 		<h2 class="ficha-titulo">INSTRUCTORES</h2>
 		<h3 class="subtitulo">Gestion De Personal</h3>
@@ -47,6 +48,6 @@
 			<button class="btn gris">Editar</button>
 		</div>
 	</div>
-	<?php require_once '../../includes/Footer.php'; ?>
+	<?php include '../../includes/footer.php'; ?>
 </body>
 </html>

@@ -13,8 +13,9 @@
 <body>
     <?php 
         
-        require_once '../../includes/headersLogIn/headerLogIn.php';
+        include '../../includes/headersLogIn/headerLogIn.php';
     ?>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id = "generalDiv">
         <div id="infoAdmin">
             <h1>Información Administrador</h1>

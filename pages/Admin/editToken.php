@@ -15,6 +15,7 @@
         include "../../includes/headersLogIn/headerLogIn.php";
 
     ?>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id = "generalDiv">
         <div id="infoAdmin">
             <h1>Editar Ficha</h1>
@@ -75,7 +76,7 @@
                 </div>
             </div>
             <div id = "buttonsDiv">
-                <button id = "Confirm_button">Aceptar</button>
+                <button id = "Confirm_button" onclick="window.location.href='../pages/tokens.php'">Aceptar</button>
                 <button id = "Cancel_button">Cancelar</button>
             </div>
         </div>
