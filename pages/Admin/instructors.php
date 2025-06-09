@@ -1,7 +1,7 @@
 <?php 
-  include "../../includes/headersLogIn/headerLogIn.php";
+   include "../../includes/headersLogIn/headerLogIn.php";
 	// conexión
-	$conn = new mysqli("localhost", "root", "123456", "sensli", 3306);
+	include '../../db/connection.php';
 
 	if ($conn->connect_error) {
 		die("Conexión fallida: " . $conn->connect_error);
