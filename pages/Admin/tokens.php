@@ -1,99 +1,142 @@
 <?php
-  include '../../includes/headersLogIn/headerLogIn.php';
+include "../../includes/headersLogIn/headerLogIn.php";
+include '../../db/connection.php';
 
-  	// conexión
-	include '../../db/connection.php';
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
 
-	if ($conn->connect_error) {
-		die("Conexión fallida: " . $conn->connect_error);
-	}
+$sql = "SELECT * FROM fichas WHERE Estado = 'Activo'";
+$resultado = $conn->query($sql);
 
-	// consulta
-	$sql = "SELECT * FROM aprendiz";
-	$resultado = $conn->query($sql);
-
-	$datos = [];
-	if ($resultado && $resultado->num_rows > 0) {
-		while($fila = $resultado->fetch_assoc()) {
-			$datos[] = $fila;
-		}
-	}
+$datos = [];
+if ($resultado && $resultado->num_rows > 0) {
+    while ($fila = $resultado->fetch_assoc()) {
+        $datos[] = $fila;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/tables.css">
+  <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
+  <style>
+    .ficha-seleccionada {
+      background-color: rgb(165, 0, 0);
+    }
+    tr {
+      cursor: pointer;
+    }
+  </style>
   <title>Sensli</title>
 </head>
-<body class="bg-white text-center pb-28 overflow-x-hidden font-sans">
+<body>
+  <div class="flex justify-start items-start min-h-screen ml-[250px] mt-16"> 
+    <div class="ficha-container">
+      <h2 class="ficha-titulo">Programas De Formación</h2>
 
-  <div class="max-w-full mx-auto mt-12 px-6 py-5 bg-white rounded-lg shadow-lg border border-transparent max-w-[90%]">
-    <h2 class="text-center bg-[#00324D] text-white p-3 mb-5 rounded-md text-2xl font-semibold">
-      FICHA
-    </h2>
+      <div class="ficha-selectores">
+        <select>
+          <option selected disabled>Programa De Formación</option>
+        </select>
+      </div>
 
-    <div class="flex justify-center gap-5 mb-6">
-      <select class="p-2 text-base rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00324D]">
-        <option selected disabled>Ficha 123456 (Diurna)</option>
-      </select>
-      <select class="p-2 text-base rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00324D]">
-        <option selected disabled>Programa de Formación</option>
-      </select>
-    </div>
+      <h3 class="subtitulo">Fichas</h3>
 
-    <h3 class="text-center mb-3 text-xl font-medium">APRENDICES</h3>
+      <div class="tabla-scroll">
+        <table class="tabla-ficha">
+          <thead>
+            <tr>
+              <th>Código Ficha</th>
+              <th>Versión</th>
+              <th>Denominación</th>
+              <th>No Ficha</th>
+              <th>Jefe de Grupo</th>
+              <th>Modalidad</th>
+              <th>Estado</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Fin</th>
+              <th>Aprendices</th>
+              <th>Etapa</th>
+              <th>Tipo Oferta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($datos as $fila): ?>
+              <tr id="ficha-<?= htmlspecialchars($fila['No_Ficha']) ?>" onclick="seleccionarFicha('<?= htmlspecialchars($fila['No_Ficha']) ?>')">
+                <td><?= htmlspecialchars($fila['Codigo_Ficha']) ?></td>
+                <td><?= htmlspecialchars($fila['Version']) ?></td>
+                <td><?= htmlspecialchars($fila['Denominacion']) ?></td>
+                <td><?= htmlspecialchars($fila['No_Ficha']) ?></td>
+                <td><?= htmlspecialchars($fila['Jefe_Grupo']) ?></td>
+                <td><?= htmlspecialchars($fila['Modalidad']) ?></td>
+                <td><?= htmlspecialchars($fila['Estado']) ?></td>
+                <td><?= htmlspecialchars($fila['Fecha_Inicio']) ?></td>
+                <td><?= htmlspecialchars($fila['Fecha_Fin']) ?></td>
+                <td><?= htmlspecialchars($fila['Aprendices']) ?></td>
+                <td><?= htmlspecialchars($fila['Etapa']) ?></td>
+                <td><?= htmlspecialchars($fila['Tipo_Oferta']) ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
 
-    <div class="overflow-x-auto mb-6">
-      <table class="min-w-[1200px] w-full border-collapse">
-  <thead>
-    <tr class="bg-gray-200 text-center text-sm font-semibold">
-      <th class="p-2 border-b-4 border-black">Tipo de documento</th>
-      <th class="p-2 border-b-4 border-black">Número de Documento</th>
-      <th class="p-2 border-b-4 border-black">Nombres</th>
-      <th class="p-2 border-b-4 border-black">Apellidos</th>
-      <th class="p-2 border-b-4 border-black">Estado</th>
-      <th class="p-2 border-b-4 border-black">Competencia</th>
-      <th class="p-2 border-b-4 border-black">Resultado de aprendizaje</th>
-      <th class="p-2 border-b-4 border-black">Juicio de evaluación</th>
-      <th class="p-2 border-b-4 border-black">Fecha y hora de juicio</th>
-      <th class="p-2 border-b-4 border-black">Funcionario que registró el juicio</th>
-      <th class="p-2 border-b-4 border-black">Porcentaje Aprobado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($datos as $fila): ?>
-    <tr class="text-center text-sm">
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Tipo_Documento']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['No_Documento']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Nombre']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['No_Telefonico']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Correo']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Estado']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Etapa']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Tipo_Oferta']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Fecha_y_hora_de_juicio']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Funcionario_Registro']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Porcentaje_Aprobado']) ?></td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
-
-    </div>
-
-    <div class="flex justify-center gap-3 flex-wrap">
-      <button class="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700 transition">Crear Ficha</button>
-      <button class="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700 transition">Inactivar</button>
-      <button class="px-4 py-2 text-white bg-[#00324D] rounded hover:bg-[#002136] transition">Generar Reporte</button>
-      <button class="px-4 py-2 text-white bg-[#00324D] rounded hover:bg-[#002136] transition">Editar</button>
-      <button class="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700 transition">Agregar Aprendiz</button>
-      <button class="px-4 py-2 text-white bg-[#00324D] rounded hover:bg-[#002136] transition">Editar Juicios</button>
+      <div class="acciones">
+        <button class="btn verde" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/createFichas.php'">Crear Ficha</button>
+        <button id="btn-inactivar" class="btn rojo" onclick="inactivarFicha()" disabled>Inactivar Ficha</button>
+        <button class="btn gris" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/viewToken.php'">Ver Fichas</button>
+      </div>
     </div>
   </div>
 
-  <?php include '../../includes/Footer.php'; ?>
+  <script>
+    let fichaSeleccionadaId = null;
+
+    function seleccionarFicha(id) {
+     
+      if (fichaSeleccionadaId === id) {
+        // Remover la clase de selección
+        document.getElementById('ficha-' + id).classList.remove('ficha-seleccionada');
+        fichaSeleccionadaId = null;  // Deseleccionar la ficha
+        document.getElementById('btn-inactivar').disabled = true;  // Desactivar el botón
+      } else {
+        // Deseleccionar la ficha previamente seleccionada
+        document.querySelectorAll('.tabla-ficha tr').forEach(row => {
+          row.classList.remove('ficha-seleccionada');
+        });
+
+        // Seleccionar una nueva ficha
+        fichaSeleccionadaId = id;
+        document.getElementById('ficha-' + id).classList.add('ficha-seleccionada');
+        document.getElementById('btn-inactivar').disabled = false;  // Habilita el botón
+      }
+    }
+
+    function inactivarFicha() {
+      if (!fichaSeleccionadaId) return;
+
+      fetch('../../backend/inactivarFicha.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'id=' + encodeURIComponent(fichaSeleccionadaId)
+      })
+      .then(res => res.text())
+      .then(response => {
+        if (response === 'OK') {
+          document.getElementById('ficha-' + fichaSeleccionadaId).remove();
+          fichaSeleccionadaId = null;
+          document.getElementById('btn-inactivar').disabled = true;
+        } else {
+          alert('Error al inactivar la ficha: ' + response);
+        }
+      });
+    }
+  </script>
+
+  <?php require_once '../../includes/Footer.php'; ?>
 </body>
 </html>

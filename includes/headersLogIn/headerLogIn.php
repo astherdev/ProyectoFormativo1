@@ -32,7 +32,7 @@
           </li>
           <li class="flex items-center gap-3">
             <img src="/Sensli1/ProyectoFormativo/assets/icons/mesa.png" class="w-5 h-5" />
-            <a href="/Sensli1/ProyectoFormativo/pages/Admin/viewToken.php" class="hover:underline">Fichas</a>
+            <a href="/Sensli1/ProyectoFormativo/pages/Admin/tokens.php" class="hover:underline">Fichas</a>
           </li>
           <li class="flex items-center gap-3">
             <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" />
@@ -126,10 +126,7 @@
     </div>
   </nav>
 
-  <!-- Contenido principal (puedes añadir aquí el contenido de la página) -->
-  <main class="flex-1 ml-64 pt-16 p-6 bg-gray-50 min-h-screen">
-    <!-- Más contenido aquí -->
-  </main>
+
 
   <script>
     // Toggle sidebar (para móviles)
