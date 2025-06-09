@@ -126,11 +126,6 @@
     </div>
   </nav>
 
-  <!-- Contenido principal (puedes añadir aquí el contenido de la página) -->
-  <main class="flex-1 ml-64 pt-16 p-6 bg-gray-50 min-h-screen">
-    <!-- Más contenido aquí -->
-  </main>
-
   <script>
     // Toggle sidebar (para móviles)
     const sidebarToggle = document.getElementById('sidebarToggle');
