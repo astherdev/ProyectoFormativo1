@@ -43,7 +43,13 @@
 
 /* ========= BOTÓN DE INICIAR SESIÓN ========= */
 .IS {
+    margin: 0 auto;
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 200px;
     background-color: #00324D;
     color: white;
     border: none;
