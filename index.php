@@ -1,25 +1,20 @@
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <title>Sensli</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400..900&display=swap" rel="stylesheet" />
 </head>
-<body>
-<?php
-    include "includes/headerLogIn.php";
-?>
-    <div id="principal-content">
-        <h1>¡Educación de Calidad<br>Futuro Brillante!</h1>
+<body class="bg-gray-100 min-h-screen">
 
-        <img src="assets/img/Sena.png" alt="SENA">
-    </div>
-    <button type="button" class="IS" onclick="window.location.href='/Sensli1/ProyectoFormativo/auth/login.php'">
-        Iniciar Sesión
-    </button>
+  <!-- Sidebar (headerLogIn.php) -->
+  <?php include "includes/headerLogIn.php"; ?>
+
+  <!-- Contenido principal con espacio para el sidebar -->
+ 
+
 </body>
 </html>
->>>>>>> develop
