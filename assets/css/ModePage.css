@@ -17,10 +17,10 @@ body, #generalDiv, #infoAdmin, #infoContent {
 /* Sobrescribir tablas en modo oscuro para que mantengan colores claros */
 body.dark table, h3 {
   color: #000000 !important;
-  /* Si usas variables, aquí no las usamos para evitar herencia */
+  
 }
 
-/* ... resto de tu CSS ... */
+
 
 #theme-toggle-button {
   display: flex;
@@ -52,17 +52,15 @@ body.dark table, h3 {
   transition-duration: 0.25s;
 }
 
-/* night sky background */
 #toggle:checked + svg #container {
   fill: #2b4360;
 }
 
-/* move button to right when checked */
+
 #toggle:checked + svg #button {
   transform: translate(28px, 2.333px);
 }
 
-/* show/hide sun and moon based on checkbox state */
 #sun {
   opacity: 1;
 }
@@ -79,7 +77,7 @@ body.dark table, h3 {
   opacity: 1;
 }
 
-/* show or hide background items on checkbox state */
+
 #cloud {
   opacity: 1;
 }

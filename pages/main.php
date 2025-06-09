@@ -1,5 +1,5 @@
 <?php
-    require_once '../includes/headersLogIn/headerLogIn.php'; 
+require_once '../includes/headersLogIn/headerLogIn.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,6 +10,7 @@
     <title>Sensli</title>
 </head>
 <body>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div class="principal-content">
         <h1>Bienvenid@ <span class="admin">[Admin]</span></h1>
         <p>Ahora puedes navegar por el sistema <br> libremente</p>
@@ -35,4 +36,5 @@
     </div>
 </body>
 </html>
-<?php require_once '../includes/Footer.php'; ?>
+
+<?php require_once '../includes/footer.php'; ?>

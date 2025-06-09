@@ -5,12 +5,36 @@
     box-sizing: border-box;
 }
 
-body {
-    width: 100%;
-    overflow-x: hidden;
-    background-color: #fff;
-    text-align: center;
-    padding-bottom: 120px; /* Para que el footer fijo no tape contenido */
+.titulo-principal {
+  font-size: 2.5rem;     
+  font-weight: 800; 
+  margin-top: 150px;      
+  margin-bottom: 100px;    
+  text-align: center;         
+  font-family: 'Ruda', sans-serif;
+}
+
+
+#backpage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    background-color: #00324D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#backImg{
+    width: 20px;
+    height: 20px;
 }
 
 #principal-content{
@@ -19,11 +43,11 @@ body {
 
 /* ========= BOTÓN DE INICIAR SESIÓN ========= */
 .IS {
-    margin-top: 30px;
+    margin-top: 50px;
     background-color: #00324D;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px 40px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
@@ -34,43 +58,4 @@ body {
 
 .IS:hover {
     background-color: #39A900;
-}
-
-
-/* ========= RESPONSIVE ========= */
-@media (max-width: 768px) {
-    #header {
-        flex-wrap: wrap;
-        align-items: flex-start;
-    }
-
-    #links-header {
-        display: none;
-    }
-
-    .menu {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 250px;
-        max-height: 0;
-        transition: max-height 0.3s ease-in-out;
-        position: absolute;
-        top: 100%;
-        left: 0;
-    }
-
-    .menu.open {
-        max-height: 500px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-    }
-
-    .menu li a {
-        padding: 15px 20px;
-        width: 100%;
-    }
 }
