@@ -55,7 +55,7 @@
                 
             </div>
             <div id="rightButton">
-                <button id="addObservationButton">Añadir Observación</button>
+                <button id="addObservationButton" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/CreateObservation'">Añadir Observación</button>
             </div>
     </div>
     <?php

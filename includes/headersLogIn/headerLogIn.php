@@ -1,93 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/headerLogIn.css">
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
-    <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400..900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Ruda', sans-serif;
+    }
+  </style>
 </head>
-<body>
-    <div id="header">
-        <div id="header-left">
-            <img id="logoSena" src="/Sensli1/ProyectoFormativo/assets/img/Logo-Sena-Negativo.png" alt="Logo" class="logo">
-            <div id="titulo-header">
-                <h2>Inicio</h2>
-            </div>
-        </div>
-        <div id="header-icons">
-            <label id="theme-toggle-button">
-                <input type="checkbox" id="toggle">
-                <svg viewBox="0 0 69.667 44" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(3.5 3.5)" data-name="Component 15 – 1" id="Component_15_1">
-                        <g filter="url(#container)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
-                            <rect fill="#83cbd8" transform="translate(3.5 3.5)" rx="17.5" height="35" width="60.667" data-name="container" id="container"></rect>
-                        </g>
-                        <g transform="translate(2.333 2.333)" id="button">
-                            <g data-name="sun" id="sun">
-                                <g filter="url(#sun-outer)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
-                                    <circle fill="#f8e664" transform="translate(5.83 5.83)" r="15.167" cy="15.167" cx="15.167" data-name="sun-outer" id="sun-outer-2"></circle>
-                                </g>
-                                <g filter="url(#sun)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
-                                    <path fill="rgba(246,254,247,0.29)" transform="translate(9.33 9.33)" d="M11.667,0A11.667,11.667,0,1,1,0,11.667,11.667,11.667,0,0,1,11.667,0Z" data-name="sun" id="sun-3"></path>
-                                </g>
-                                    <circle fill="#fcf4b9" transform="translate(8.167 8.167)" r="7" cy="7" cx="7" id="sun-inner"></circle>
-                            </g>
-                            <g data-name="moon" id="moon">
-                                <g filter="url(#moon)" transform="matrix(1, 0, 0, 1, -31.5, -5.83)">
-                                    <circle fill="#cce6ee" transform="translate(31.5 5.83)" r="15.167" cy="15.167" cx="15.167" data-name="moon" id="moon-3"></circle>
-                                </g>
-                                <g fill="#a6cad0" transform="translate(-24.415 -1.009)" id="patches">
-                                    <circle transform="translate(43.009 4.496)" r="2" cy="2" cx="2"></circle>
-                                    <circle transform="translate(39.366 17.952)" r="2" cy="2" cx="2" data-name="patch"></circle>
-                                    <circle transform="translate(33.016 8.044)" r="1" cy="1" cx="1" data-name="patch"></circle>
-                                    <circle transform="translate(51.081 18.888)" r="1" cy="1" cx="1" data-name="patch"></circle>
-                                    <circle transform="translate(33.016 22.503)" r="1" cy="1" cx="1" data-name="patch"></circle>
-                                    <circle transform="translate(50.081 10.53)" r="1.5" cy="1.5" cx="1.5" data-name="patch"></circle>
-                                </g>
-                            </g>
-                        </g>
-                        <g filter="url(#cloud)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
-                            <path fill="#fff" transform="translate(-3466.47 -160.94)" d="M3512.81,173.815a4.463,4.463,0,0,1,2.243.62.95.95,0,0,1,.72-1.281,4.852,4.852,0,0,1,2.623.519c.034.02-.5-1.968.281-2.716a2.117,2.117,0,0,1,2.829-.274,1.821,1.821,0,0,1,.854,1.858c.063.037,2.594-.049,3.285,1.273s-.865,2.544-.807,2.626a12.192,12.192,0,0,1,2.278.892c.553.448,1.106,1.992-1.62,2.927a7.742,7.742,0,0,1-3.762-.3c-1.28-.49-1.181-2.65-1.137-2.624s-1.417,2.2-2.623,2.2a4.172,4.172,0,0,1-2.394-1.206,3.825,3.825,0,0,1-2.771.774c-3.429-.46-2.333-3.267-2.2-3.55A3.721,3.721,0,0,1,3512.81,173.815Z" data-name="cloud" id="cloud"></path>
-                        </g>
-                        <g fill="#def8ff" transform="translate(3.585 1.325)" id="stars">
-                            <path transform="matrix(-1, 0.017, -0.017, -1, 24.231, 3.055)" d="M.774,0,.566.559,0,.539.458.933.25,1.492l.485-.361.458.394L1.024.953,1.509.592.943.572Z"></path>
-                            <path transform="matrix(-0.777, 0.629, -0.629, -0.777, 23.185, 12.358)" d="M1.341.529.836.472.736,0,.505.46,0,.4.4.729l-.231.46L.605.932l.4.326L.9.786Z" data-name="star"></path>
-                            <path transform="matrix(0.438, 0.899, -0.899, 0.438, 23.177, 29.735)" d="M.015,1.065.475.9l.285.365L.766.772l.46-.164L.745.494.751,0,.481.407,0,.293.285.658Z" data-name="star"></path>
-                            <path transform="translate(12.677 0.388) rotate(104)" d="M1.161,1.6,1.059,1,1.574.722.962.607.86,0,.613.572,0,.457.446.881.2,1.454l.516-.274Z" data-name="star"></path>
-                            <path transform="matrix(-0.07, 0.998, -0.998, -0.07, 11.066, 15.457)" d="M.873,1.648l.114-.62L1.579.945,1.03.62,1.144,0,.706.464.157.139.438.7,0,1.167l.592-.083Z" data-name="star"></path>
-                            <path transform="translate(8.326 28.061) rotate(11)" d="M.593,0,.638.724,0,.982l.7.211.045.724.36-.64.7.211L1.342.935,1.7.294,1.063.552Z" data-name="star"></path>
-                            <path transform="translate(5.012 5.962) rotate(172)" d="M.816,0,.5.455,0,.311.323.767l-.312.455.516-.215.323.456L.827.911,1.343.7.839.552Z" data-name="star"></path>
-                            <path transform="translate(2.218 14.616) rotate(169)" d="M1.261,0,.774.571.114.3.487.967,0,1.538.728,1.32l.372.662.047-.749.728-.218L1.215.749Z" data-name="star"></path>
-                        </g>
-                    </g>
-                </svg>
-            </label>
-            <div id="hamburger">
-                <img id="menuIcon" src="/Sensli1/ProyectoFormativo/assets/icons/menu.png" alt="">
-                <img id="xClose" src="/Sensli1/ProyectoFormativo/assets/icons/x.png" alt="">
-            </div>
-            <div id="profile">
-                <a href = "viewProfile.php"><img id="profileU" src="/Sensli1/ProyectoFormativo/assets/icons/usuario.png" alt=""></a>
-            </div>
-        </div>
+<body class="flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#00324D] text-white h-screen fixed flex flex-col justify-between py-6 px-4">
+    <!-- Logo y título -->
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <img src="/Sensli1/ProyectoFormativo/assets/img/Logo-Sena-Negativo.png" alt="Logo" class="w-12 h-12" />
+        <h2 class="text-xl font-semibold">Inicio</h2>
+      </div>
+
+      <!-- Navegación -->
+      <nav>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3">
+            <img src="/Sensli1/ProyectoFormativo/assets/icons/casa.png" class="w-5 h-5" />
+            <a href="/Sensli1/ProyectoFormativo/pages/main.php" class="hover:underline">Inicio</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <img src="/Sensli1/ProyectoFormativo/assets/icons/mesa.png" class="w-5 h-5" />
+            <a href="/Sensli1/ProyectoFormativo/pages/Admin/viewToken.php" class="hover:underline">Fichas</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" />
+            <a href="/Sensli1/ProyectoFormativo/pages/Admin/instructors.php" class="hover:underline">Instructores</a>
+          </li>
+          
+        </ul>
+      </nav>
     </div>
 
-    <nav class="menu" id="menuNav">
-        <ul>
+    <!-- Parte inferior (iconos) -->
+    <div class="flex flex-col items-center gap-4">
+      <!-- Toggle (sin funcionalidad ya que no quieres modo oscuro) -->
+      <label>
+        <input type="checkbox" id="toggle" class="hidden" />
+        <span class="text-sm">Modo Claro/Oscuro</span>
+      </label>
 
-            <li><img class="hambur-icons" id="home-icon" src="/Sensli1/ProyectoFormativo/assets/icons/casa.png"><a href="/Sensli1/ProyectoFormativo/pages/main.php">Inicio</a></li>
-            <li><img class="hambur-icons" id="ficha-icon" src="/Sensli1/ProyectoFormativo/assets/icons/mesa.png"><a href="/Sensli1/ProyectoFormativo/pages/Admin/tokens.php">Fichas</a></li>
-            <li><img class="hambur-icons" id="instructor-icon" src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png"><a href="/Sensli1/ProyectoFormativo/pages/Admin/instructors.php">Instructores</a></li>
-            <li><img class="hambur-icons" id="exit-icon" src="/Sensli1/ProyectoFormativo/assets/icons/puerta-abierta.png"><a href="/Sensli1/ProyectoFormativo/pages/Admin/index.php">Cerrar Sesion</a></li>
-        </ul>
-    </nav>
+      <!-- Iconos perfil y menú -->
+      <div class="flex items-center gap-4">
+        <img src="/Sensli1/ProyectoFormativo/assets/icons/menu.png" alt="menu" class="w-6 h-6" />
+        <img src="/Sensli1/ProyectoFormativo/assets/icons/usuario.png" alt="usuario" class="w-6 h-6" />
+      </div>
+    </div>
+  </aside>
 
-<script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
-<script src="/Sensli1/ProyectoFormativo/assets/js/hambur.js" defer></script>
+  <!-- Header (navbar) sin modo oscuro -->
+  <nav class="fixed top-0 left-64 right-0 h-16 bg-white border-b border-gray-200 flex items-center px-6 z-40">
+    <div class="flex justify-between w-full items-center">
+      <!-- Izquierda: botón menú hamburguesa para móviles -->
+      <button
+        type="button"
+        class="inline-flex items-center p-2 text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="logo-sidebar"
+        aria-expanded="false"
+        id="sidebarToggle"
+      >
+        <span class="sr-only">Abrir sidebar</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
 
+      <!-- Logo y título -->
+      <a href="#" class="flex items-center gap-3">
+        <img src="/Sensli1/ProyectoFormativo/assets/img/Logo-Sena-Negativo.png" alt="Logo" class="h-8 w-8" />
+        <span class="text-xl font-semibold text-black">SENSLI</span>
+      </a>
+
+      <!-- Derecha: perfil usuario -->
+      <div class="relative">
+  <button
+    id="userMenuButton"
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="flex items-center focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full"
+  >
+    <img
+      src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png"
+      alt="Perfil"
+      class="w-8 h-8 rounded-full"
+    />
+  </button>
+
+  <!-- Menú desplegable usuario (oculto por defecto con 'hidden') -->
+  <div
+    id="userDropdown"
+    class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg hidden"
+  >
+    <div class="px-4 py-3 text-gray-800 border-b border-gray-200">
+      <p class="text-sm font-semibold">Neil Sims</p>
+      <p class="text-xs truncate">neil.sims@flowbite.com</p>
+    </div>
+    <ul>
+      <li>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Dashboard</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Earnings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cerrar Sesión</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </nav>
+
+  <!-- Contenido principal (puedes añadir aquí el contenido de la página) -->
+  <main class="flex-1 ml-64 pt-16 p-6 bg-gray-50 min-h-screen">
+    <!-- Más contenido aquí -->
+  </main>
+
+  <script>
+    // Toggle sidebar (para móviles)
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('aside');
+    sidebarToggle?.addEventListener('click', () => {
+      if (sidebar.classList.contains('-translate-x-full')) {
+        sidebar.classList.remove('-translate-x-full');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+
+    // Toggle menú usuario
+const userMenuButton = document.getElementById('userMenuButton');
+const userDropdown = document.getElementById('userDropdown');
+
+userMenuButton?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  userDropdown.classList.toggle('hidden');
+  userMenuButton.setAttribute(
+    'aria-expanded',
+    userDropdown.classList.contains('hidden') ? 'false' : 'true'
+  );
+});
+
+// Cerrar menú al hacer clic fuera
+window.addEventListener('click', (e) => {
+  if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
+    userDropdown.classList.add('hidden');
+    userMenuButton.setAttribute('aria-expanded', 'false');
+  }
+});
+
+  </script>
 </body>
 </html>

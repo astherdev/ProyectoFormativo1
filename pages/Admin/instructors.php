@@ -1,5 +1,22 @@
 <?php 
   include "../../includes/headersLogIn/headerLogIn.php";
+	// conexión
+	$conn = new mysqli("localhost", "root", "123456", "sensli", 3306);
+
+	if ($conn->connect_error) {
+		die("Conexión fallida: " . $conn->connect_error);
+	}
+
+	// consulta
+	$sql = "SELECT * FROM instructores";
+	$resultado = $conn->query($sql);
+
+	$datos = [];
+	if ($resultado && $resultado->num_rows > 0) {
+		while($fila = $resultado->fetch_assoc()) {
+			$datos[] = $fila;
+		}
+	}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,14 +47,15 @@
 			<tbody>
 				<?php foreach ($datos as $fila): ?>
 					<tr>
-						<td><?= htmlspecialchars($fila['nombres']) ?></td>
-						<td><?= htmlspecialchars($fila['apellidos']) ?></td>
+						<td><?= htmlspecialchars($fila['Nombre']) ?></td>
+						<td><?= htmlspecialchars($fila['Apellidos']) ?></td>
 						<td><?= htmlspecialchars($fila['Correo']) ?></td>
-						<td><?= htmlspecialchars($fila['tipo_documento']) ?></td>
-						<td><?= htmlspecialchars($fila['No_documento']) ?></td>
-						<td><?= htmlspecialchars($fila['cargo']) ?></td>
+						<td><?= htmlspecialchars($fila['Tipo_Documento']) ?></td>
+						<td><?= htmlspecialchars($fila['No_Documento']) ?></td>
+						<td><?= htmlspecialchars($fila['Cargo']) ?></td>
 					</tr>
 				<?php endforeach; ?>
+
 			</tbody>
 			</table>
 		</div>

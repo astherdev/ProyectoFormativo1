@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="buttonsInfo">
-            <button id="actualizar">Actualizar</button>
+            <button id="actualizar" onclick = "window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/tokens.php'">Actualizar</button>
         </div>
     </div>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
