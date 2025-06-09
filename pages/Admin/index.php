@@ -32,7 +32,7 @@
             <h1 class="titulo-principal">¡Educación de Calidad<br>Futuro Brillante!</h1>
             <img src="../../assets/img/sena.png" alt="SENA" class="mx-auto" />
         </div>
-        <button type="button" class="IS" onclick="window.location.href='../auth/login.php'">
+        <button type="button" class="IS" onclick="window.location.href='../../auth/login.php'">
             Iniciar Sesión
         </button>
     </div>
