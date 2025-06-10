@@ -115,15 +115,20 @@ body {
 }
 
 button{
-    width: 250px;
-    height: 45px;
-    font-size: 20px;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    margin-top: 30px;
+        margin-top: 35px;
+    font-size: 1rem;
     background-color: #00324D;
     color: white;
+    height: 45px;
+    width: 200px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #39A900;
 }
 
 .container-welcome{
