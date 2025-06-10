@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/createApprentice.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,10 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
     <title>Agregar Aprendiz</title>
 </head>
-<body>
+<body class="flex min-h-screen">
 
-    <?php  include '../../includes/headersLogIn/headerLogIn.php'; ?>
+  <?php include "../../includes/sidebar.php"; ?>
 
+  <div class="flex-1 flex flex-col">
+    <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+
+
+    <main>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id="containerApprentice">
         <h1>Agregar Aprendiz</h1>
 
@@ -88,10 +95,11 @@
         </div>
 
         <div class="buttonsInfo">
-            <button id="crearA" href = "createAprentice">Crear Aprendiz</button>
+            <button id="crearA">Crear Aprendiz</button>
             <button id="cargarA">Cargar Aprendiz</button>
         </div>
     </div>
+    </main>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
     <?php include '../../includes/footer.php'; ?>
 </body>

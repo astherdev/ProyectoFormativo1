@@ -14,6 +14,7 @@
     <?php 
         include "../../includes/headersLogIn/headerLogIn.php";
     ?>
+    <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id="containerViewApprentice">
         <h1>Información del aprendiz</h1>
         <div class="selects">

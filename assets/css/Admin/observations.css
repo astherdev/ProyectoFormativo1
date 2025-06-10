@@ -5,11 +5,31 @@
     font-family: Ruda;
 }
 
+#backpage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    background-color: #00324D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#backImg{
+    width: 20px;
+    height: 20px;
+}
+
 .selects {
     display: flex;
     gap: 30px; 
     justify-content: center; 
-    margin: 20px 0;
 }
 
 .selects select {
@@ -19,12 +39,13 @@
     border: none;
     background-color: #B6B2B2;
     width: 300px;
+    margin-bottom: 10px;
 }
 
 #containerObservations {
 
     margin: 0 auto;
-    margin-top: 50px;
+    margin-bottom: 50px;
     width: 80%;
     height: 60vh;
     display: flex;
@@ -46,8 +67,6 @@
     overflow-y: auto;
     word-break: break-word; 
     justify-content: center;
-    overflow: auto;
-
 }
 
 #nameApprentice{
@@ -78,9 +97,6 @@ h2{
     font-size: 25px;
     margin-bottom: 10px;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-
 }
 
 #separationLine{
@@ -97,8 +113,6 @@ h2{
     width: 90%;
     height: 60px;
     border-radius: 10px 10px 0px 0;
-    
-
 }
 
 #rightContent{
@@ -108,8 +122,6 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: auto;
-
 }
 
 #rightInformation {
@@ -118,8 +130,6 @@ h2{
     justify-content: flex-start;
     align-items: flex-start; 
     width: 100%;             
-    max-width: 90%;
-
     max-width: 800px;
     height: auto;
     background-color: #F2F2F2;
@@ -172,3 +182,11 @@ h2{
   color: #000000 !important;
 
 }
+
+
+
+/*
+
+
+
+*/

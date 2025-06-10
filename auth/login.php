@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-=======
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/login.css">
->>>>>>> develop
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,13 +15,6 @@
     <div class="container-form">
     <form class="sign-in" action="../auth/login.php" method="POST">
         <h2>Iniciar Sesión</h2>
-
-        <div class="social-networks">
-            <ion-icon name="logo-linkedin"></ion-icon>
-            <ion-icon name="logo-whatsapp"></ion-icon>
-            <ion-icon name="logo-instagram"></ion-icon>
-            <ion-icon name="logo-facebook"></ion-icon>
-        </div>
         <span>Usar correo y contraseña enviados a su gmail</span>
 
         <div class="container-select">
@@ -54,6 +44,12 @@
         <div class="welcome-sign-up welcome">
             <h3>¡Bienvenido!</h3>
             <p>Ingrese sus datos personales para usar todas las funciones del sitio </p>
+            <div class="social-networks">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <ion-icon name="logo-whatsapp"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-facebook"></ion-icon>
+            </div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

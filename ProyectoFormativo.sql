@@ -38,6 +38,7 @@ CREATE TABLE `aprendiz` (
   `Etapa` char(50) NOT NULL,
   `Tipo_Oferta` char(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+COMMIT;
 
 -- --------------------------------------------------------
 

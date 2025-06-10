@@ -6,112 +6,163 @@
 }
 
 
+#backpage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    background-color: #00324D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#backImg{
+    width: 20px;
+    height: 20px;
+}
+
 h1 {
     margin-top: 20px;
 }
 
+/* Contenedor general del formulario */
 #containerApprentice {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background-color: #F2F2F2;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 1100px;
 }
 
-input {
-    font-size: 20px;
-    font-weight: bold;
-    height: 40px;
-    border: none;
-    background-color: #B6B2B2;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    padding-left: 10px;
-    width: 100%;
+#containerApprentice h1 {
+  font-size: 2rem;
+  color: #00324D;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.selects {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin: 20px 0;
-}
-
+/* Select ficha */
 .selects select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: #B6B2B2;
-    width: 300px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #f9fafb;
 }
 
-#tipoDocumento {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: #B6B2B2;
-    width: 100%;
-    margin-bottom: 20px;
-    }
+/* Layout columnas */
+.container-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
 
-.form_icon {
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
+/* Columna de inputs */
+.columna {
+  flex: 1 1 400px;
+}
+
+/* Grupo del label e input */
+.form-group {
+  margin-bottom: 1.5rem;
 }
 
 .label-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #374151;
 }
 
 .label-group label {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
+.form_icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
 
+.label-group input,
+.label-group select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.label-group input:focus,
+.label-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Botones de acción */
 .buttonsInfo {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin: 30px 0;
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-button {
-    font-size: 15px;
-    color: white;
-    height: 45px;
-    width: 250px;
-    border-radius: 10px;
-    border: none;
-    background-color: #00324D;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    cursor: pointer;
+.buttonsInfo button {
+  font-size: 1rem;
+  color: white;
+  height: 45px;
+  width: 200px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #crearA {
-    background-color: #39A900;
+  background-color: #00324D;
 }
 
-.container-input {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 20px;
-    flex-wrap: wrap;
+#crearA:hover {
+  background-color: #39A900;
 }
 
-.columna {
-    display: flex;
+#cargarA {
+  background-color: #00324D;
+}
+
+#cargarA:hover {
+  background-color: #39A900;
+}
+
+/* Responsive extras */
+@media (max-width: 768px) {
+  #containerApprentice {
+    padding: 1.5rem;
+  }
+
+  .buttonsInfo {
     flex-direction: column;
-    width: 300px;
-}
+    gap: 1rem;
+  }
 
+  .buttonsInfo button {
+    width: 100%;
+  }
+}
