@@ -18,7 +18,7 @@
 
     <main>
       <div class="w-full flex justify-start mb-0">
-        <button id="backpage" onclick="history.back()" class="flex items-center gap-2 text-sm text-[#00324D] hover:underline">
+        <button id="backpage" onclick="history.back()">
           <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />
         </button>
       </div>

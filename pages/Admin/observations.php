@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/observations.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
-    <title></title>
+    <title>Observations</title>
 </head>
-<body>
-    <?php
-    include '../../includes/headersLogIn/headerLogIn.php';
-    ?>
+<body class="flex min-h-screen">
+
+    <?php include "../../includes/sidebar.php"; ?>
+
+    <div class="flex-1 flex flex-col">
+    <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+
+
+    <main>
     <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div class="selects">
         <select name="ficha" id="ficha">
@@ -58,6 +64,7 @@
                 <button id="addObservationButton" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/CreateObservation'">Añadir Observación</button>
             </div>
     </div>
+    </main>
     <?php
     include '../../includes/footer.php';
     ?>

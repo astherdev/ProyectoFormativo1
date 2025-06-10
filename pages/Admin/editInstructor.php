@@ -1,26 +1,29 @@
-<?php 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/header.css">
-    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../assets/css/Admin/editInstructor.css">
-    <title>Create Intructors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
+    <title>Edit Instructor</title>
 </head>
-<body>
+<body class="flex min-h-screen">
 
-    <?php 
-        include '../../includes/headersLogIn/headerLogIn.php';
-    ?>
+  <?php include "../../includes/sidebar.php"; ?>
+
+  <div class="flex-1 flex flex-col">
+    <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+
+
+    <main>
     <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id = "generalDiv">
-        <div id="infoAdmin">
+        <div id="infoAdminEditInstructor">
             <h1>Editar Instructor</h1>
-            <div id="infoContent">
+            <div id="infoContentInstructorEdit">
                 <div class = "columna">
                     <div class = "formLabel">
                         <img src="../../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
@@ -74,6 +77,7 @@
             <button id = "Confirm_button" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/instructors.php'">Aceptar</button>
         </div>
     </div>
+    </main>
     <?php include "../../includes/footer.php";?>
 </body>
 </html>

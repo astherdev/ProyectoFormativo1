@@ -1,100 +1,129 @@
-#generalDiv{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ruda', sans-serif;
 }
 
-#backpage{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin: 10px;
-    background-color: #00324D;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    width: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
+#backpage {
+  background-color: #00324D;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  width: 50px;
+  transition: background-color 0.2s ease;
 }
 
-#backImg{
-    width: 20px;
-    height: 20px;
+#backpage:hover {
+  background-color: #002B3D;
 }
 
-#infoAdmin{
-    margin-top: 1%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    border-radius: 15px;
-    width: 70%;
-    height: 70%;
-    border: 3px solid black;
+#backImg {
+  width: 20px;
+  height: 20px;
 }
 
-#infoAdmin h1{
-    font-size: 55px;
-    margin: 4% 0 3% 0;
+
+#infoAdminEditProfile {
+    background-color: #F2F2F2;
+  margin: 0.5rem auto 0 auto;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 1100px;
 }
 
-#infoContent{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin: 0 auto;
+#infoAdminEditProfile h1 {
+  font-size: 2rem;
+  color: #00324D;
+  margin-bottom: 2rem;
 }
 
-.form_icon{
-    width: 25px;
-    height: 25px;
+
+#infoContent {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
 }
 
-#infoContent input, select{
-    font-size: 20px;
-    font-weight: bold;
-    height: 40px;
-    border: none;
-    background-color: #B6B2B2;
-    margin-bottom: 4%;
-    border-radius: 5px;
-    padding-left: 10px;
+
+.formLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  justify-content: flex-start;
+  color: #374151;
 }
 
-.formLabel{
-    gap: 1%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: left;
+.formLabel label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #00324D;
 }
 
-.formLabel label{
-    font-size: 23px;
-    font-weight: bold;
+.form_icon {
+  width: 25px;
+  height: 25px;
 }
 
-#Confirm_button{
-    align-items: center;
-    font-size: 20px;
-    color: white;
-    height: 50px;
-    width: 50%;
-    border-radius: 10px;
-    border: none;
-    background-color: #39A900;
-    margin: 0 auto;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    transition: 0.2s;
+
+#infoContent input,
+#infoContent select {
+  font-size: 1rem;
+  height: 45px;
+  background-color: #ffffff;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  padding: 0 15px;
+  border: 1px solid #cbd5e1;
+  color: #333;
+  transition: border-color 0.3s ease;
 }
 
-#Confirm_button:hover{
-    background-color: #287700;
-    cursor: pointer;
+#infoContent input:focus,
+#infoContent select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+
+#Confirm_button {
+  background-color: #00324D;
+  color: white;
+  font-size: 18px;
+  width: 40%;
+  height: 50px;
+  margin: 40px auto 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#Confirm_button:hover {
+  background-color: #39A900;
+}
+
+@media (max-width: 768px) {
+  #infoContent {
+    width: 90%;
+  }
+
+  #Confirm_button {
+    width: 100%;
+  }
 }
