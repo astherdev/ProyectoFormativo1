@@ -1,11 +1,20 @@
-#generalDiv{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ruda', sans-serif;
+}
+
+
+#generalDiv {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
 }
 
-#backpage{
+
+#backpage {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -21,83 +30,118 @@
     cursor: pointer;
 }
 
-#backImg{
+#backImg {
     width: 20px;
     height: 20px;
 }
 
-#infoAdmin{
-    display: flex;
-    flex-direction: column;
+#infoAdminInstructor {
+    background-color: #F2F2F2;
+    margin: 2rem auto 0 auto;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    width: 70%;
-    height: 70%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 1100px;
 }
 
-#infoAdmin h1{
-    font-size: 55px;
-    margin: 4% 0 3% 0;
+
+#infoAdminInstructor h1 {
+    font-size: 2rem;
+    color: #00324D;
+    margin-bottom: 2rem;
 }
 
-#infoContent{
+
+#infoContentInstructor {
+    background-color: #f2f2f2;
     display: flex;
-    flex-direction: row;
-    gap: 10%;
-    width: 80%;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
 }
 
-.columna{
-    width: 100%;
+
+.columna {
+    flex: 1 1 400px;
 }
 
-.form_icon{
+
+.formLabel {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    gap: 0.5rem;
+}
+
+.formLabel label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form_icon {
     width: 25px;
     height: 25px;
 }
 
-.columna input, select{
+.columna input,
+.columna select {
     width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    height: 40px;
-    border: none;
-    background-color: #B6B2B2;
-    margin-bottom: 4%;
-    border-radius: 5px;
-    padding-left: 10px;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background-color: #fff;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease;
 }
 
-.formLabel{
-    gap: 1%;
-    display: flex;
-    align-items: center;
-    text-align: center;
+.columna input:focus,
+.columna select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-.formLabel label{
-    font-size: 23px;
-    font-weight: bold;
-}
 
-#Confirm_button{
-    align-items: center;
-    font-size: 20px;
+#Confirm_button {
+    margin-top: 35px;
+    font-size: 1rem;
+    background-color: #00324D;
     color: white;
-    height: 50px;
-    width: 20%;
-    border-radius: 10px;
+    height: 45px;
+    width: 200px;
+    border-radius: 8px;
     border: none;
-    background-color: #39A900;
-    margin: 0 auto;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    transition: 0.2s;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#Confirm_button:hover{
-    background-color: #287700;
-    cursor: pointer;
+#Confirm_button:hover {
+    background-color: #29A900;
+}
+
+
+@media (max-width: 768px) {
+    #infoAdmin,
+    #infoAdminEditInstructor,
+    #infoAdminInstructor {
+        padding: 1.5rem;
+    }
+
+    #infoContent,
+    #infoContentInstructorEdit,
+    #infoContentInstructor {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #Confirm_button {
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }

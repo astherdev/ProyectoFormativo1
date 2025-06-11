@@ -1,11 +1,13 @@
-#generalDiv{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+* {
+    font-family: 'Ruda', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#backpage{
+
+
+#backpage {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -21,119 +23,125 @@
     cursor: pointer;
 }
 
-#backImg{
+#backImg {
     width: 20px;
     height: 20px;
 }
 
-#infoAdmin{
-    margin-top: 1%;
+
+#generalDiv {
     display: flex;
-    flex-direction: column;
-    text-align: center;
     justify-content: center;
-    border-radius: 15px;
-    width: 70%;
-    height: 85%;
-    border: 3px solid black;
+    align-items: start;
+    min-height: calc(100vh - 80px);
+    padding: 2rem 1rem;
 }
 
-#infoAdmin h1{
-    font-size: 55px;
-    margin: 4% 0 3% 0;
-}
-
-#infoContent{
+#infoAdmin {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    margin: 0 auto;
-}
-
-.form_icon{
-    width: 25px;
-    height: 25px;
-}
-
-#infoContent select{
-    font-size: 20px;
-    font-weight: bold;
-    height: 40px;
-    border: none;
-    background-color: #B6B2B2;
-    margin-bottom: 4%;
-    border-radius: 5px;
-    padding-left: 10px;
-}
-
-.infoObservation{
-    text-align: left;
-    display: flex;
     align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-    height: 40px;
-    border: none;
-    background-color: #B6B2B2;
-    margin-bottom: 4%;
-    border-radius: 5px;
-    color: #5D5050;
-    padding-left: 10px;
+    background-color: #F2F2F2;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    text-align: center;
 }
 
-#observationTitle{
+#infoAdmin h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00324D;
+    margin-bottom: 30px;
+}
+
+
+#infoContent {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-    height: 40px;
-    border: none;
-    background-color: #B6B2B2;
-    margin-bottom: 4%;
-    border-radius: 5px;
-    color: #5D5050;
-    padding-left: 10px;
+    width: 100%;
 }
 
-#observationDescription{
-    text-align: left;
-    flex-wrap: wrap;
-    padding: 10px 10px 0px 15px;
-    font-size: 20px;
+
+.formLabel label,
+#detailLabel label {
     font-weight: bold;
+    color: #00324D;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#selectObservation,
+.infoObservation,
+#observationTitle,
+#observationDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+}
+
+
+#selectObservation {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+
+.infoObservation p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #374151;
+    background-color: #E5E7EB;
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+#observationTitle p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E293B;
+    background-color: #E0F2FE;
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+
+#observationDescription {
+    max-height: 300px;
     overflow-y: auto;
-    font-weight: bold;
-    height: 180px;
-    border: none;
-    background-color: #B6B2B2;
-    margin-bottom: 4%;
-    color: #5D5050;
-    border-radius: 5px;
-    word-break: break-word;
+    background-color: #FFFFFF;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    line-height: 1.6;
+    color: #1E293B;
 }
 
-.formLabel{
-    gap: 1%;
-    display: flex;
-    align-items: center;
+#observationDescription p {
     text-align: center;
-    justify-content: left;
-}
-
-.formLabel label{
-    font-size: 23px;
-    font-weight: bold;
-}
-
-#detailLabel{
-    gap: 1%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-
-#detailLabel label{
-    font-size: 23px;
-    font-weight: bold;
+    white-space: pre-line;
+    font-size: 15px;
+    text-align: justify;
 }

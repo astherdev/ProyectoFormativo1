@@ -1,37 +1,36 @@
 * {
-    font-family: Ruda;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Ruda;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
 #backpage{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin: 10px;
-    background-color: #00324D;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    width: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 10px;
+  background-color: #00324D;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  width: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 #backImg{
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 h1 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-/* Contenedor general del formulario */
 #containerApprentice {
   background-color: #F2F2F2;
   margin: auto;
@@ -50,7 +49,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-/* Select ficha */
+
 .selects select {
   display: block;
   margin: 0 auto 2rem auto;
@@ -61,7 +60,7 @@ h1 {
   background-color: #f9fafb;
 }
 
-/* Layout columnas */
+
 .container-input {
   display: flex;
   flex-wrap: wrap;
@@ -69,12 +68,12 @@ h1 {
   justify-content: center;
 }
 
-/* Columna de inputs */
+
 .columna {
   flex: 1 1 400px;
 }
 
-/* Grupo del label e input */
+
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -115,7 +114,6 @@ h1 {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-/* Botones de acción */
 .buttonsInfo {
   margin-top: 2rem;
   text-align: center;
@@ -151,7 +149,7 @@ h1 {
   background-color: #39A900;
 }
 
-/* Responsive extras */
+
 @media (max-width: 768px) {
   #containerApprentice {
     padding: 1.5rem;
