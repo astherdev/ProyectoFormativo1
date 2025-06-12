@@ -1,5 +1,4 @@
 <?php
-  include '../../includes/headersLogIn/headerLogIn.php';
 
   	// conexión
 	include '../../db/connection.php';
@@ -28,7 +27,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Sensli</title>
 </head>
-<body class="bg-white text-center pb-28 overflow-x-hidden font-sans">
+<body class="flex min-h-screen">
+
+    <?php include "../../includes/sidebar.php"; ?>
+
+    <div class="flex-1 flex flex-col">
+    <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+
+
+    <main>
 
   <div class="max-w-full mx-auto mt-12 px-6 py-5 bg-white rounded-lg shadow-lg border border-transparent max-w-[90%]">
     <h2 class="text-center bg-[#00324D] text-white p-3 mb-5 rounded-md text-2xl font-semibold">
@@ -54,12 +61,11 @@
       <th class="p-2 border-b-4 border-black">Número de Documento</th>
       <th class="p-2 border-b-4 border-black">Nombres</th>
       <th class="p-2 border-b-4 border-black">Apellidos</th>
+      <th class="p-2 border-b-4 border-black">Número telefónico</th>
       <th class="p-2 border-b-4 border-black">Estado</th>
       <th class="p-2 border-b-4 border-black">Competencia</th>
       <th class="p-2 border-b-4 border-black">Resultado de aprendizaje</th>
-      <th class="p-2 border-b-4 border-black">Juicio de evaluación</th>
-      <th class="p-2 border-b-4 border-black">Fecha y hora de juicio</th>
-      <th class="p-2 border-b-4 border-black">Funcionario que registró el juicio</th>
+      <th class="p-2 border-b-4 border-black">Tipo de Oferta</th>
       <th class="p-2 border-b-4 border-black">Porcentaje Aprobado</th>
     </tr>
   </thead>
@@ -69,14 +75,13 @@
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Tipo_Documento']) ?></td>
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['No_Documento']) ?></td>
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Nombre']) ?></td>
+      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Apellidos']) ?></td>
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['No_Telefonico']) ?></td>
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Correo']) ?></td>
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Estado']) ?></td>
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Etapa']) ?></td>
       <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Tipo_Oferta']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Fecha_y_hora_de_juicio']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Funcionario_Registro']) ?></td>
-      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Porcentaje_Aprobado']) ?></td>
+      <td class="py-2 border-t-4 border-b-4 border-black"><?= htmlspecialchars($fila['Porcentaje_Aprobado']) ?>%</td>
     </tr>
     <?php endforeach; ?>
   </tbody>
@@ -93,7 +98,7 @@
       <button class="px-4 py-2 text-white bg-[#00324D] rounded hover:bg-[#002136] transition">Editar Juicios</button>
     </div>
   </div>
-
+</main>
   <?php include '../../includes/Footer.php'; ?>
 </body>
 </html>
