@@ -36,8 +36,10 @@
     </style>
 </head>
 <body class="bg-gray-100">
+    <?php include '../../includes/sidebar.php'; ?>
 
-	<div class="flex justify-start items-start min-h-screen ml-[250px] mt-16"> <!-- Agregado mt-16 para moverlo hacia abajo -->
+    <main>
+	<div class="flex justify-start items-start min-h-screen ml-[0px] mt-16"> <!-- Agregado mt-16 para moverlo hacia abajo -->
 		<div class="ficha-container bg-white p-6 shadow-lg rounded-lg w-full max-w-6xl">
 			<h2 class="ficha-titulo text-center text-2xl font-bold mb-4">INSTRUCTORES</h2>
 			<h3 class="subtitulo text-center text-lg text-gray-700 mb-6">Gestión De Personal</h3>
@@ -124,5 +126,6 @@
             });
         }
     </script>
+</main>
 </body>
 </html>

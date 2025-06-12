@@ -12,7 +12,7 @@
       <a href="https://www.instagram.com/tuempresa" target="_blank">
         <img src="/Sensli1/ProyectoFormativo/assets/img/instagram.png" alt="Instagram" class="w-6 h-6 hover:scale-110 transition-transform">
       </a>
-    </div>
+        </div>
 
     <!-- Texto centrado en el contenedor -->
     <div id="contentRights" class="flex-1 text-center">

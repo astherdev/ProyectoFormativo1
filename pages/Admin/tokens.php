@@ -1,5 +1,4 @@
 <?php
-include "../../includes/headersLogIn/headerLogIn.php";
 include '../../db/connection.php';
 
 if ($conn->connect_error) {
@@ -34,6 +33,9 @@ if ($resultado && $resultado->num_rows > 0) {
   <title>Sensli</title>
 </head>
 <body>
+  <?php include '../../includes/sidebar.php'; ?>
+  <?php include '../../includes/headersLogIn/headerLogIn.php'; ?>
+  <main>
   <div class="flex justify-start items-start min-h-screen ml-[250px] mt-16"> 
     <div class="ficha-container">
       <h2 class="ficha-titulo">Programas De Formación</h2>

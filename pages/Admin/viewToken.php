@@ -1,6 +1,4 @@
 <?php
-  include '../../includes/headersLogIn/headerLogIn.php';
-
   	// conexión
 	include '../../db/connection.php';
 
@@ -39,8 +37,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Sensli</title>
 </head>
-<body class="bg-white text-center pb-28 overflow-x-hidden font-sans">
+<body class="flex min-h-screen bg-gray-100">
+  <?php include '../../includes/sidebar.php'; ?>
 
+  <?php include '../../includes/headersLogIn/headerLogIn.php'; ?>
+<main>
   <div class="flex justify-start items-start min-h-screen ml-[250px] mt-16"> <!-- Mover a la derecha y hacia abajo -->
     <div class="max-w-full mx-auto mt-12 px-6 py-5 bg-white rounded-lg shadow-lg border border-transparent max-w-[90%]">
       <h2 class="text-center bg-[#00324D] text-white p-3 mb-5 rounded-md text-2xl font-semibold">
@@ -130,5 +131,6 @@
       }
     }
   </script>
+</main>
 </body>
 </html>
