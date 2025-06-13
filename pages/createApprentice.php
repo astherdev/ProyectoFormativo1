@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/createApprentice.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/createApprentice.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +12,13 @@
     <title>Agregar Aprendiz</title>
 </head>
 <body class="flex min-h-screen">
-
-  <?php include "../../includes/sidebar.php"; ?>
-
+  <?php include "../includes/sidebar.php"; ?>
   <div class="flex-1 flex flex-col">
-    <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
-
-
+    <?php include "../includes/headerLogIn.php"; ?>
     <main>
     <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div id="containerApprentice">
         <h1>Agregar Aprendiz</h1>
-
         <div class="selects">
             <select name="ficha" id="ficha">
                 <option value="1">Ficha 1</option>
@@ -31,7 +26,6 @@
                 <option value="3">Ficha 3</option>
             </select>
         </div>
-
         <div class="container-input">
             <div class="columna">
                 <div class="form-group">
@@ -46,7 +40,6 @@
                         <input type="text">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="label-group">
                         <label><img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" class="form_icon">Tipo de Documento</label>
@@ -64,7 +57,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="columna">
                 <div class="form-group">
                     <div class="label-group">
@@ -96,14 +88,13 @@
                 </div>
             </div>
         </div>
-
         <div class="buttonsInfo">
-            <button id="crearA">Crear Aprendiz</button>
-            <button id="cargarA">Cargar Aprendiz</button>
+            <button id="crearA" onclick="window.location.href='../pages/viewToken.php'">Crear Aprendiz</button>
+            <button id="cargarA" onclick="window.location.href='../pages/viewToken.php'">Cargar Aprendiz</button>
         </div>
     </div>
     </main>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
-    <?php include '../../includes/footer.php'; ?>
+    <?php include "../includes/footer.php";?>
 </body>
 </html>

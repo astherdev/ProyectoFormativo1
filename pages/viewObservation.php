@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../../assets/css/Admin/viewObservation.css">
+    <link rel="stylesheet" href="../assets/css/viewObservation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
     <title>View Observation</title>
 </head>
 <body class="flex min-h-screen">
-
-    <?php include "../../includes/sidebar.php"; ?>
-
+    <?php include "../includes/sidebar.php"; ?>
     <div class="flex-1 flex flex-col">
-        <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+        <?php include "../includes/headerLogIn.php"; ?>
     <main>
         <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
         <div id = "generalDiv">
@@ -63,6 +61,6 @@
             </div>
         </div>
     </main>
-    <?php include "../../includes/footer.php";?>
+    <?php include "../includes/footer.php";?>
 </body>
 </html>

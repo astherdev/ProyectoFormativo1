@@ -31,7 +31,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
     <div class="flex flex-col flex-1">
 
-        <?php include "../includes/headersLogIn/headerLogIn.php"; ?>
+        <?php include "../includes/headerLogIn.php"; ?>
 
         <main >
             <div class="w-full flex justify-start mb-0">

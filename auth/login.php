@@ -4,22 +4,24 @@ session_start();
 // Conexión a la base de datos
 $host = "localhost";
 $user = "root";
-$pass = "123456"; // Cambia si tienes contraseña
+$pass = "123456";
 $db = "sensli";
 $conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
-// * --------------------------------------------------------------------------- *
+
+// * ------------------------------------------------------------------------------- *
 // Procesar el formulario
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipoDocu = $_POST['tipoDocu'];
     $no_documento = (int)$_POST['email'];
     $password = $_POST['password'];
 
     // Consulta para buscar solo al administrador
-    $sql = "SELECT * FROM perfil WHERE Tipo_Documento='$tipoDocu' AND No_Documento='$no_documento' AND Rol='Admin'";
+    $sql = "SELECT * FROM perfil WHERE Tipo_Documento='$tipoDocu' AND No_Documento='$no_documento' AND Rol='Admin' Or Rol = 'Instructor'";
     $result = $conn->query($sql);
 
     if ($row = $result->fetch_assoc()) {
@@ -35,15 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('Datos incorrectos o no eres administrador');</script>";
     }
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/login.css">
-    <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800
@@ -57,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form class="sign-in" action="../auth/login.php" method="POST">
         <h2>Iniciar Sesión</h2>
         <span>Usar correo y contraseña enviados a su gmail</span>
-
         <div class="container-select">
             <select name="tipoDocu" required>
                 <option value="">Tipo de documento</option>
@@ -67,19 +67,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <option value="CE">Cédula de Extranjería</option>
             </select>
         </div>
-
         <div class="container-input">
             <ion-icon name="mail-unread-outline"></ion-icon>
             <input type="text" name="email" placeholder="Número de documento">
         </div>
-
         <div class="container-input">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" name="password" placeholder="Password">
         </div>
         <button type="submit">Iniciar Sesión</button>
     </form>
-
     </div>
     <div class="container-welcome">
         <div class="welcome-sign-up welcome">

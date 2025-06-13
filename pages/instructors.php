@@ -1,5 +1,5 @@
 <?php 
-include '../../db/connection.php';
+include '../db/connection.php';
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
@@ -21,23 +21,17 @@ if ($resultado && $resultado->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensli</title>
-    <link rel="stylesheet" href="../../assets/css/tables.css">
-    <link rel="stylesheet" href="../../assets/css/ModePage.css">
+    <link rel="stylesheet" href="../assets/css/tables.css">
+    <link rel="stylesheet" href="../assets/css/ModePage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
      <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex">
-
-    <?php include '../../includes/sidebar.php'; ?>
-
+    <?php include '../includes/sidebar.php'; ?>
     <div class="flex-1 flex flex-col min-h-screen">
-
-     
-        <?php include '../../includes/headersLogIn/headerLogIn.php'; ?>
-
-
+        <?php include '../includes/headerLogIn.php'; ?>
         <main>
              <div class="w-full flex justify-start mb-0">
                 <button id="backpage" onclick="history.back()">
@@ -76,23 +70,18 @@ if ($resultado && $resultado->num_rows > 0) {
                         </table>
                     </div>
                     <div class="acciones mt-6 flex justify-center space-x-4">
-                        <button class="btn verde px-6 py-2 rounded-md text-white bg-green-500 hover:bg-green-600" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/createInstructor.php'">Crear Instructor</button>
+                        <button class="btn verde px-6 py-2 rounded-md text-white bg-green-500 hover:bg-green-600" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/createInstructor.php'">Crear Instructor</button>
                         <button id="btn-inactivar" class="btn rojo px-6 py-2 rounded-md text-white bg-red-500 hover:bg-red-600" onclick="inactivarInstructor()" disabled>Inactivar</button>
-                        <button class="btn azul px-6 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-600" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/instructors.php'">Generar Reporte</button>
-                        <button class="btn gris px-6 py-2 rounded-md text-white bg-gray-500 hover:bg-gray-600" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/editInstructor.php'">Editar</button>
+                        <button class="btn azul px-6 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-600" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/instructors.php'">Generar Reporte</button>
+                        <button class="btn gris px-6 py-2 rounded-md text-white bg-gray-500 hover:bg-gray-600" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/editInstructor.php'">Editar</button>
                     </div>
                 </div>
             </div>
         </main>
-
-     
-        <?php include '../../includes/footer.php'; ?>
-
+        <?php include '../includes/footer.php'; ?>
     </div>
-
     <script>
         let instructorSeleccionadoId = null;
-
         function seleccionarInstructor(id) {
             if (instructorSeleccionadoId === id) {
                 document.getElementById('instructor-' + id).classList.remove('instructor-seleccionado');
