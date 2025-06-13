@@ -11,7 +11,7 @@ $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
-// * --------------------------------------------------------------------------- *
+// * ------------------------------------------------------------------------------- *
 // Procesar el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipoDocu = $_POST['tipoDocu'];
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Consulta para buscar solo al administrador
-    $sql = "SELECT * FROM perfil WHERE Tipo_Documento='$tipoDocu' AND No_Documento='$no_documento' AND Rol='Admin'";
+    $sql = "SELECT * FROM perfil WHERE Tipo_Documento='$tipoDocu' AND No_Documento='$no_documento' AND Rol='Admin' Or Rol = 'Instructor'";
     $result = $conn->query($sql);
 
     if ($row = $result->fetch_assoc()) {
