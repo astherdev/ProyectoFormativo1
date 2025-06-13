@@ -52,7 +52,6 @@ function detectarDelimitador($linea) {
             echo "<button type='submit' class='ml-4 px-3 py-1 text-sm bg-green-600 text-white rounded hover:bg-green-700'>Reactivar</button>";
             echo "</form></div>";
 
-
             $lineas = explode("\n", $row['contenido']);
             $lineas = array_filter($lineas);
 
@@ -60,18 +59,82 @@ function detectarDelimitador($linea) {
                 $delimitador = detectarDelimitador($lineas[0]);
 
                 if ($delimitador) {
+                    echo "<div class='mb-6 p-4 bg-gray-50 rounded border'>";
+                    echo "<h3 class='font-bold mb-2'>Información del Reporte:</h3><ul class='list-disc pl-5'>";
+
+                    while (count($lineas) > 0) {
+                        $lineaActual = array_shift($lineas);
+                        if ($lineaActual === null || trim($lineaActual) === '') continue;
+
+                        $campos = str_getcsv($lineaActual, $delimitador);
+                        $primerCampo = strtoupper(trim($campos[0] ?? ''));
+
+                        if (
+                            in_array("Nombre", $campos) ||
+                            in_array("Nombres", $campos) ||
+                            in_array("Juicio de Evaluación", $campos)
+                        ) {
+                            array_unshift($lineas, $lineaActual);
+                            break;
+                        }
+
+                        if (!empty($primerCampo)) {
+                            $etiqueta = rtrim($campos[0], " \t\n\r\0\x0B");
+                            $etiqueta .= (str_ends_with($etiqueta, ':') ? '' : ':');
+                            echo "<li><strong>" . htmlspecialchars($etiqueta) . "</strong> " . htmlspecialchars($campos[2] ?? '') . "</li>";
+                        }
+                    }
+
+                    echo "</ul></div>";
+
+                    if (count($lineas) === 0) {
+                        echo "<p class='text-red-600'>No se encontraron datos evaluativos.</p>";
+                        continue;
+                    }
+
+                    $cabecera = str_getcsv(array_shift($lineas), $delimitador);
+                    $cabecera[] = "Porcentaje_TyT";
+
+                    $porcentajes = [];
+
+                    foreach ($lineas as $linea) {
+                        $campos = str_getcsv($linea, $delimitador);
+                        if (count($campos) < 8) continue;
+
+                        $nombreCompleto = strtoupper(trim($campos[2] . ' ' . $campos[3]));
+                        $juicio = strtoupper(trim($campos[7]));
+
+                        if (!isset($porcentajes[$nombreCompleto])) {
+                            $porcentajes[$nombreCompleto] = ['total' => 0, 'aprobados' => 0];
+                        }
+
+                        $porcentajes[$nombreCompleto]['total']++;
+
+                        if ($juicio === 'APROBADO') {
+                            $porcentajes[$nombreCompleto]['aprobados']++;
+                        }
+                    }
+
                     echo "<div class='overflow-auto max-h-[700px] border border-gray-300 rounded-lg mb-10'>";
                     echo "<table class='min-w-full text-left text-sm text-gray-800 border border-gray-300 table-auto'>";
+                    echo "<tr class='border-b border-gray-200'>";
+                    foreach ($cabecera as $campo) {
+                        echo "<th class='px-4 py-2 bg-gray-200 border border-gray-300 font-medium text-sm'>" . htmlspecialchars($campo) . "</th>";
+                    }
+                    echo "</tr>";
 
-                    foreach ($lineas as $i => $linea) {
+                    foreach ($lineas as $linea) {
                         $campos = str_getcsv($linea, $delimitador);
+                        $nombreCompleto = strtoupper(trim($campos[2] . ' ' . $campos[3]));
+                        $total = $porcentajes[$nombreCompleto]['total'] ?? 0;
+                        $aprobados = $porcentajes[$nombreCompleto]['aprobados'] ?? 0;
+                        $porcentaje = $total > 0 ? round(($aprobados / $total) * 100, 2) . "%" : "0%";
+
                         echo "<tr class='border-b border-gray-200'>";
                         foreach ($campos as $campo) {
-                            $campo = htmlspecialchars($campo);
-                            echo $i === 0
-                                ? "<th class='px-4 py-2 bg-gray-200 border border-gray-300 font-medium text-sm'>$campo</th>"
-                                : "<td class='px-4 py-2 border border-gray-200'>$campo</td>";
+                            echo "<td class='px-4 py-2 border border-gray-200'>" . htmlspecialchars($campo) . "</td>";
                         }
+                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje</td>";
                         echo "</tr>";
                     }
 

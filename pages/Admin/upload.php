@@ -31,8 +31,9 @@ if (isset($_FILES['archivo']) && $_FILES['archivo']['error'] === UPLOAD_ERR_OK) 
     // Insertar en la base de datos
     $sql = "INSERT INTO archivos (nombre, contenido) VALUES ('$nombreArchivo', '$contenido')";
     if ($conn->query($sql)) {
-        echo "<p>✅ Archivo subido y guardado exitosamente.</p>";
-        echo "<p><a href='evaluationJudgments.php'>Ver archivos subidos</a></p>";
+        // ✅ Redireccionar tras éxito (PRG)
+        header("Location: evaluationJudgments.php");
+        exit;
     } else {
         echo "❌ Error al guardar en la base de datos: " . $conn->error;
     }
