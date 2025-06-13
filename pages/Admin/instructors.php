@@ -23,15 +23,10 @@ if ($resultado && $resultado->num_rows > 0) {
     <title>Sensli</title>
     <link rel="stylesheet" href="../../assets/css/tables.css">
     <link rel="stylesheet" href="../../assets/css/ModePage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
      <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .instructor-seleccionado {
-            background-color: rgb(173, 0, 0); 
-        }
-        tr {
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body class="bg-gray-100 flex">
 
