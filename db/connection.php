@@ -2,7 +2,7 @@
 $host = "localhost";
 $usuario = "root"; 
 $contrasena = "123456";  
-$base_datos = "sensli";
+$base_datos = "proyectoformativo";
 
 // Crear conexión
 $conn = new mysqli($host, $usuario, $contrasena, $base_datos);

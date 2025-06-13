@@ -1,43 +1,49 @@
 <?php
 session_start();
-
-// Conexión a la base de datos
-$host = "localhost";
-$user = "root";
-$pass = "123456";
-$db = "sensli";
-$conn = new mysqli($host, $user, $pass, $db);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
-
-// * ------------------------------------------------------------------------------- *
-// Procesar el formulario
+include "../db/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipoDocu = $_POST['tipoDocu'];
-    $no_documento = (int)$_POST['email'];
+    $no_documento = $_POST['no_documento'];
     $password = $_POST['password'];
 
-    // Consulta para buscar solo al administrador
-    $sql = "SELECT * FROM perfil WHERE Tipo_Documento='$tipoDocu' AND No_Documento='$no_documento' AND Rol='Admin' Or Rol = 'Instructor'";
-    $result = $conn->query($sql);
+    // Primero intenta buscar en la tabla de admin
+    $sql_admin = "SELECT * FROM perfil WHERE Tipo_Documento=? AND No_Documento=? AND Contrasena=?";
+    $stmt = $conn->prepare($sql_admin);
+    $stmt->bind_param("sss", $tipoDocu, $no_documento, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($row = $result->fetch_assoc()) {
-        if ($password == $row['contraseña']) {
+        // Validar contraseña
+        if ($password == $row['Contrasena']) {
             $_SESSION['usuario'] = $row['Correo'];
             $_SESSION['nombre'] = $row['Nombre'];
-            header("Location: ../pages/Admin/index.php");
+            header("Location: ../pages/main.php");
             exit();
         } else {
             echo "<script>alert('Contraseña incorrecta');</script>";
         }
     } else {
-        echo "<script>alert('Datos incorrectos o no eres administrador');</script>";
-    }
-}
+        // Si no es admin, intenta buscar en instructores
+        $sql_inst = "SELECT * FROM instructores WHERE Tipo_Documento=? AND No_Documento=? AND Contrasena=?";
+        $stmt2 = $conn->prepare($sql_inst);
+        $stmt2->bind_param("sss", $tipoDocu, $no_documento, $password);
+        $stmt2->execute();
+        $result2 = $stmt2->get_result();
 
+        if ($row2 = $result2->fetch_assoc()) {
+            $_SESSION['usuario'] = $row2['Correo'];
+            $_SESSION['nombre'] = $row2['Nombre'];
+            header("Location: ../pages/main.php");
+            exit();
+        } else {
+            echo "<script>alert('Datos incorrectos');</script>";
+        }
+        $stmt2->close();
+    }
+    $stmt->close();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="container-input">
             <ion-icon name="mail-unread-outline"></ion-icon>
-            <input type="text" name="email" placeholder="Número de documento">
+            <input type="text" name="no_documento" placeholder="Número de documento">
         </div>
         <div class="container-input">
             <ion-icon name="lock-closed-outline"></ion-icon>

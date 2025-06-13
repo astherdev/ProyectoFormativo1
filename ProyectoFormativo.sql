@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2025 a las 14:30:19
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 13-06-2025 a las 22:42:42
+-- Versión del servidor: 8.0.39
+-- Versión de PHP: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sensli`
+-- Base de datos: `proyectoformativo`
 --
 
 -- --------------------------------------------------------
@@ -27,17 +27,33 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `aprendiz`
 --
 
-CREATE TABLE `aprendiz` (
+DROP TABLE IF EXISTS `aprendiz`;
+CREATE TABLE IF NOT EXISTS `aprendiz` (
   `Nombre` varchar(50) NOT NULL,
-  `Apellidos` varchar(20) NOT NULL,
-  `No_Telefonico` bigint(20) NOT NULL,
+  `Apellidos` varchar(50) NOT NULL,
+  `No_Telefonico` int NOT NULL,
   `Correo` varchar(50) NOT NULL,
   `Tipo_Documento` varchar(50) NOT NULL,
-  `No_Documento` bigint(20) NOT NULL,
+  `No_Documento` int NOT NULL,
   `Estado` varchar(20) NOT NULL,
   `Etapa` char(50) NOT NULL,
   `Tipo_Oferta` char(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `archivos`
+--
+
+DROP TABLE IF EXISTS `archivos`;
+CREATE TABLE IF NOT EXISTS `archivos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) DEFAULT NULL,
+  `contenido` longtext,
+  `estado` enum('Activo','Inactivo') NOT NULL DEFAULT 'Activo',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -45,27 +61,22 @@ CREATE TABLE `aprendiz` (
 -- Estructura de tabla para la tabla `fichas`
 --
 
-CREATE TABLE `fichas` (
-  `Codigo_Ficha` int(11) NOT NULL,
-  `Version` int(11) NOT NULL,
+DROP TABLE IF EXISTS `fichas`;
+CREATE TABLE IF NOT EXISTS `fichas` (
+  `Codigo_Ficha` int NOT NULL AUTO_INCREMENT,
+  `Version` int NOT NULL,
   `Denominacion` varchar(50) NOT NULL,
-  `No_Ficha` int(11) NOT NULL,
+  `No_Ficha` int NOT NULL,
   `Jefe_Grupo` varchar(50) NOT NULL,
   `Modalidad` varchar(50) NOT NULL,
-  `Estado` varchar(50) NOT NULL,
+  `Estado` int NOT NULL,
   `Fecha_Inicio` date NOT NULL,
   `Fecha_Fin` date NOT NULL,
-  `Aprendices` int(11) NOT NULL,
+  `Aprendices` int NOT NULL,
   `Etapa` varchar(50) NOT NULL,
-  `Tipo_Oferta` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `fichas`
---
-
-INSERT INTO `fichas` (`Codigo_Ficha`, `Version`, `Denominacion`, `No_Ficha`, `Jefe_Grupo`, `Modalidad`, `Estado`, `Fecha_Inicio`, `Fecha_Fin`, `Aprendices`, `Etapa`, `Tipo_Oferta`) VALUES
-(1, 1, 'Tecnologo', 2895664, 'Yuly Paulin Sáenz', 'Presencial', 'Activo', '2023-12-20', '2026-05-20', 30, 'Lectiva', 'Cerrada');
+  `Tipo_Oferta` varchar(50) NOT NULL,
+  PRIMARY KEY (`Codigo_Ficha`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -73,23 +84,20 @@ INSERT INTO `fichas` (`Codigo_Ficha`, `Version`, `Denominacion`, `No_Ficha`, `Je
 -- Estructura de tabla para la tabla `instructores`
 --
 
-CREATE TABLE `instructores` (
+DROP TABLE IF EXISTS `instructores`;
+CREATE TABLE IF NOT EXISTS `instructores` (
   `Nombre` varchar(50) NOT NULL,
   `Apellidos` varchar(50) NOT NULL,
-  `No_Telefonico` bigint(20) NOT NULL,
+  `No_Telefonico` int NOT NULL,
   `Contraseña` varchar(20) NOT NULL,
   `Correo` varchar(50) NOT NULL,
   `Tipo_Documento` varchar(50) NOT NULL,
-  `No_Documento` bigint(20) NOT NULL,
-  `Cargo` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `instructores`
---
-
-INSERT INTO `instructores` (`Nombre`, `Apellidos`, `No_Telefonico`, `Contraseña`, `Correo`, `Tipo_Documento`, `No_Documento`, `Cargo`) VALUES
-('Juan', 'Pérez Gómez', 3123456789, 'MiContraseñaSegura12', 'juan.perez@example.com', 'Cédula', 1234567890, 'Transversal');
+  `No_Documento` int NOT NULL,
+  `Cargo` varchar(30) NOT NULL,
+  `tipoContrato` enum('Planta','Contratista') NOT NULL DEFAULT 'Contratista',
+  `fechaIniContrato` date DEFAULT NULL,
+  `fechaFinContrato` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -97,18 +105,19 @@ INSERT INTO `instructores` (`Nombre`, `Apellidos`, `No_Telefonico`, `Contraseña
 -- Estructura de tabla para la tabla `juicios_evaluativos`
 --
 
-CREATE TABLE `juicios_evaluativos` (
-  `No_Documento` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `juicios_evaluativos`;
+CREATE TABLE IF NOT EXISTS `juicios_evaluativos` (
+  `No_Documento` int NOT NULL,
   `tipo_documento` char(50) NOT NULL,
   `Nombre` char(50) NOT NULL,
   `Apellido` char(50) NOT NULL,
   `Estado` char(50) NOT NULL,
-  `Competencia` text NOT NULL,
-  `Resultado_Aprendizaje` text NOT NULL,
+  `Competencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Resultado_Aprendizaje` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Juicios_Evaluativos` char(50) NOT NULL,
   `Fecha_Hora_Juicio_Evaluado` datetime NOT NULL,
   `Funcionario_Registro` char(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -116,21 +125,14 @@ CREATE TABLE `juicios_evaluativos` (
 -- Estructura de tabla para la tabla `observaciones`
 --
 
-CREATE TABLE `observaciones` (
+DROP TABLE IF EXISTS `observaciones`;
+CREATE TABLE IF NOT EXISTS `observaciones` (
   `Correo` varchar(50) NOT NULL,
-  `tipo_documento` bigint(20) NOT NULL,
-  `No_documento` bigint(20) NOT NULL,
-  `No_telefonico` bigint(20) NOT NULL,
-  `titulo` varchar(40) NOT NULL,
+  `tipo_documento` int NOT NULL,
+  `No_documento` int NOT NULL,
+  `No_telefonico` int NOT NULL,
   `Observacion` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `observaciones`
---
-
-INSERT INTO `observaciones` (`Correo`, `tipo_documento`, `No_documento`, `No_telefonico`, `titulo`, `Observacion`) VALUES
-('', 0, 0, 0, '', '');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -138,181 +140,22 @@ INSERT INTO `observaciones` (`Correo`, `tipo_documento`, `No_documento`, `No_tel
 -- Estructura de tabla para la tabla `perfil`
 --
 
-CREATE TABLE `perfil` (
-  `Nombre` varchar(50) NOT NULL,
-  `Apellidos` varchar(20) NOT NULL,
-  `No_Telefonico` bigint(20) NOT NULL,
-  `Correo` varchar(50) NOT NULL,
-  `Tipo_Documento` varchar(50) NOT NULL,
-  `No_Documento` bigint(20) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
-  `Rol` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `perfil`
---
-
-INSERT INTO `perfil` (`Nombre`, `Apellidos`, `No_Telefonico`, `Correo`, `Tipo_Documento`, `No_Documento`, `contraseña`, `Rol`) VALUES
-('Yuly Paulin', 'Sáenz Agudelo', 312452452, 'yulypaulinzaen@gmail.com', 'CC', 13353252, 'admin123', 'Admin');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `fichas`
---
-ALTER TABLE `fichas`
-  ADD PRIMARY KEY (`Codigo_Ficha`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `fichas`
---
-ALTER TABLE `fichas`
-  MODIFY `Codigo_Ficha` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `fichas`
---
-
-CREATE TABLE `fichas` (
-  `Codigo_Ficha` int(11) NOT NULL,
-  `Version` int(11) NOT NULL,
-  `Denominacion` varchar(50) NOT NULL,
-  `No_Ficha` int(11) NOT NULL,
-  `Jefe_Grupo` varchar(50) NOT NULL,
-  `Modalidad` varchar(50) NOT NULL,
-  `Estado` varchar(50) NOT NULL,
-  `Fecha_Inicio` date NOT NULL,
-  `Fecha_Fin` date NOT NULL,
-  `Aprendices` int(11) NOT NULL,
-  `Etapa` varchar(50) NOT NULL,
-  `Tipo_Oferta` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `fichas`
---
-
-INSERT INTO `fichas` (`Codigo_Ficha`, `Version`, `Denominacion`, `No_Ficha`, `Jefe_Grupo`, `Modalidad`, `Estado`, `Fecha_Inicio`, `Fecha_Fin`, `Aprendices`, `Etapa`, `Tipo_Oferta`) VALUES
-(1, 1, 'Tecnologo', 2895664, 'Yuly Paulin Sáenz', 'Presencial', 'Activo', '2023-12-20', '2026-05-20', 30, 'Lectiva', 'Cerrada');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `instructores`
---
-
-CREATE TABLE `instructores` (
+DROP TABLE IF EXISTS `perfil`;
+CREATE TABLE IF NOT EXISTS `perfil` (
   `Nombre` varchar(50) NOT NULL,
   `Apellidos` varchar(50) NOT NULL,
-  `No_Telefonico` bigint(20) NOT NULL,
-  `Contraseña` varchar(20) NOT NULL,
+  `No_Telefonico` bigint NOT NULL,
   `Correo` varchar(50) NOT NULL,
   `Tipo_Documento` varchar(50) NOT NULL,
-  `No_Documento` bigint(20) NOT NULL,
-  `Cargo` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `instructores`
---
-
-INSERT INTO `instructores` (`Nombre`, `Apellidos`, `No_Telefonico`, `Contraseña`, `Correo`, `Tipo_Documento`, `No_Documento`, `Cargo`) VALUES
-('Juan', 'Pérez Gómez', 3123456789, 'MiContraseñaSegura12', 'juan.perez@example.com', 'Cédula', 1234567890, 'Transversal');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `juicios_evaluativos`
---
-
-CREATE TABLE `juicios_evaluativos` (
-  `No_Documento` bigint(20) NOT NULL,
-  `tipo_documento` char(50) NOT NULL,
-  `Nombre` char(50) NOT NULL,
-  `Apellido` char(50) NOT NULL,
-  `Estado` char(50) NOT NULL,
-  `Competencia` text NOT NULL,
-  `Resultado_Aprendizaje` text NOT NULL,
-  `Juicios_Evaluativos` char(50) NOT NULL,
-  `Fecha_Hora_Juicio_Evaluado` datetime NOT NULL,
-  `Funcionario_Registro` char(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `observaciones`
---
-
-CREATE TABLE `observaciones` (
-  `Correo` varchar(50) NOT NULL,
-  `tipo_documento` bigint(20) NOT NULL,
-  `No_documento` bigint(20) NOT NULL,
-  `No_telefonico` bigint(20) NOT NULL,
-  `titulo` varchar(40) NOT NULL,
-  `Observacion` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `observaciones`
---
-
-INSERT INTO `observaciones` (`Correo`, `tipo_documento`, `No_documento`, `No_telefonico`, `titulo`, `Observacion`) VALUES
-('', 0, 0, 0, '', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `perfil`
---
-
-CREATE TABLE `perfil` (
-  `Nombre` varchar(50) NOT NULL,
-  `Apellidos` varchar(20) NOT NULL,
-  `No_Telefonico` bigint(20) NOT NULL,
-  `Correo` varchar(50) NOT NULL,
-  `Tipo_Documento` varchar(50) NOT NULL,
-  `No_Documento` bigint(20) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
-  `Rol` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `No_Documento` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `perfil`
 --
 
-INSERT INTO `perfil` (`Nombre`, `Apellidos`, `No_Telefonico`, `Correo`, `Tipo_Documento`, `No_Documento`, `contraseña`, `Rol`) VALUES
-('Yuly Paulin', 'Sáenz Agudelo', 312452452, 'yulypaulinzaen@gmail.com', 'CC', 13353252, 'admin123', 'Admin');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `fichas`
---
-ALTER TABLE `fichas`
-  ADD PRIMARY KEY (`Codigo_Ficha`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `fichas`
---
-ALTER TABLE `fichas`
-  MODIFY `Codigo_Ficha` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+INSERT INTO `perfil` (`Nombre`, `Apellidos`, `No_Telefonico`, `Correo`, `Tipo_Documento`, `No_Documento`) VALUES
+('Isaac', 'Echeverry Garcia', 3217251299, 'isaacecheverry53@gmail.com', 'CC', 1088829637);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
