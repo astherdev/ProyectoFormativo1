@@ -42,36 +42,15 @@
                     <input type="text" placeholder="" id = "phoneInput">
     
                     <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo/assets/icons/mail.png" alt="Icono_Usuario" class = "form_icon">
-                        <label>Correo</label>
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class = "form_icon">
+                        <label>Tipo de Documento</label>
                     </div>
-                    <input type="text" placeholder="@gmail.com" id = "mailInput">
-    
-                    <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
-                        <label>Número de Documento</label>
-                    </div>
-                    <input type="text" placeholder="" id = "idInput">
-                </div>
-                <div class = "columna">
-                    <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
-                        <label>Apellidos</label>
-                    </div>
-                    <input type="text" placeholder="Yuly Paulín Sáenz" id = "nameInput">
-    
-                    <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo/assets/icons/lock.png" alt="Icono_Usuario" class = "form_icon">
-                        <label>Contraseña</label>
-                    </div>
-                    <input type="text" placeholder="" id = "phoneInput">
-    
-                    <div class = "formLabel">
-                        <img src="/Sensli1/ProyectoFormativo/assets/icons/documents.png" alt="Icono_Usuario" class = "form_icon">
-                        <label>Tipo de documento</label>
-                    </div>
-                    <input type="text" placeholder="@gmail.com" id = "mailInput">
-    
+                    <select id = "documentType" name = "documentType" type="select" required>
+                        <option value = "" disabled selected hidden>Selecciona una opción</option>
+                        <option value = "CedulaCiudadania">Cedula de Ciudadania</option>
+                        <option value = "CedulaExtranjeria">Cedula de Extrangería</option>  
+                    </select>
+
                     <div class = "formLabel">
                         <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Cargo</label>
@@ -82,6 +61,51 @@
                         <option value = "CedulaExtranjeria">Instructor Tecnico</option>
                         <option value = "TarjetaIdentidad">Coordinador</option>
                     </select>
+
+                    <div class = "formLabel">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
+                        <label>Fecha de Inicio de Contrato</label>
+                    </div>
+                    <input type="date" placeholder="" id = "idInput">
+
+                </div>
+                <div class = "columna">
+                    <div class = "formLabel">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
+                        <label>Apellidos</label>
+                    </div>
+                    <input type="text" placeholder="Yuly Paulín Sáenz" id = "nameInput">
+    
+
+                    <div class = "formLabel">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/mail.png" alt="Icono_Usuario" class = "form_icon">
+                        <label>Correo</label>
+                    </div>
+                    <input type="text" placeholder="@gmail.com" id = "mailInput">
+
+                    
+                    <div class = "formLabel">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
+                        <label>Número de Documento</label>
+                    </div>
+                    <input type="text" placeholder="" id = "idInput">
+
+                    
+                    <div class = "formLabel">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class = "form_icon">
+                        <label>Tipo de contrato</label>
+                    </div>
+                    <select id = "documentType" name = "documentType" type="select" required>
+                        <option value = "" disabled selected hidden>Selecciona una opción</option>
+                        <option value = "planta">Planta</option>
+                    </select>
+
+
+                    <div class = "formLabel">
+                        <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
+                        <label>Fecha Fin de Contrato</label>
+                    </div>
+                    <input type="date" placeholder="" id = "idInput">
                 </div>
             </div>
             <button id = "Confirm_button" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/instructors.php'">Confirmar</button>
@@ -92,4 +116,3 @@
     <?php include "../../includes/footer.php";?>
 </body>
 </html>
-

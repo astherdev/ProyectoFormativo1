@@ -38,7 +38,7 @@ if ($resultado && $resultado->num_rows > 0) {
         <?php include '../../includes/headersLogIn/headerLogIn.php'; ?>
 
 
-        <main class="flex-grow">
+        <main>
              <div class="w-full flex justify-start mb-0">
                 <button id="backpage" onclick="history.back()">
                 <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />

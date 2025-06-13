@@ -11,10 +11,8 @@
 </head>
 <body class="flex min-h-screen">
 
-  <?php include "../includes/sidebar.php"; ?>
-
   <div class="flex-1 flex flex-col">
-    <?php include "../includes/headerLogIn.php"; ?>
+    <?php include "../includes/headerLogOut.php"; ?>
 
     <main>
       <div class="w-full flex justify-start mb-0">

@@ -65,7 +65,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </div>
             </div>
         </main>
-        <?php include '../includes/Footer.php'; ?>
+        <?php include '../includes/footer.php'; ?>
     </div>
 </body>
 </html>
