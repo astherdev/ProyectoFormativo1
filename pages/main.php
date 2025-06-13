@@ -1,15 +1,21 @@
-<?php
-require_once '../includes/headersLogIn/headerLogIn.php'; 
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Sensli</title>
 </head>
-<body>
+<body class="flex min-h-screen">
+
+  <?php include "../includes/sidebar.php"; ?>
+
+  <div class="flex-1 flex flex-col">
+    <?php include "../includes/headersLogIn/headerLogIn.php"; ?>
+
+
+    <main>
     <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
     <div class="principal-content">
         <h1>Bienvenid@ <span class="admin">[Admin]</span></h1>

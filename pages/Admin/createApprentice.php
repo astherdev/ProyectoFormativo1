@@ -57,10 +57,9 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="/Sensli1/ProyectoFormativo/assets/icons/documents.png" class="form_icon">Número de Identificación</label>
+                        <label><img src="/Sensli1/ProyectoFormativo/assets/icons/encendido.png" class="form_icon">Estado</label>
                         <input type="text">
                     </div>
                 </div>
@@ -81,14 +80,18 @@
                 </div>
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="/Sensli1/ProyectoFormativo/assets/icons/encendido.png" class="form_icon">Estado</label>
+                        <label><img src="/Sensli1/ProyectoFormativo/assets/icons/documents.png" class="form_icon">Número de Identificación</label>
                         <input type="text">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="label-group">
-                        <label><img src="/Sensli1/ProyectoFormativo/assets/icons/pasador-de-ubicacion.png" class="form_icon">Etapa de Formación</label>
-                        <input type="text">
+                        <label><img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" class="form_icon">Etapa de Formacion</label>
+                        <select name="tipoDocumento" id="tipoDocumento">
+                            <option value="CC">Lectiva</option>
+                            <option value="TI">Productiva</option>
+                            <option value="CE">Finalizada</option>
+                        </select>
                     </div>
                 </div>
             </div>

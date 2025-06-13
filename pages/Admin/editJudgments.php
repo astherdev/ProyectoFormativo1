@@ -87,7 +87,6 @@
                         <option value = "" disabled selected hidden>Selecciona una opción</option>
                         <option value = "aprove">Aprobado</option>
                         <option value = "reprobate">Reprobado</option>
-                        <option value = "reprobate"></option>
                     </select>
                 </div>
             </div>
