@@ -32,7 +32,7 @@ if (isset($_FILES['archivo']) && $_FILES['archivo']['error'] === UPLOAD_ERR_OK) 
     $sql = "INSERT INTO archivos (nombre, contenido) VALUES ('$nombreArchivo', '$contenido')";
     if ($conn->query($sql)) {
         echo "<p>✅ Archivo subido y guardado exitosamente.</p>";
-        echo "<p><a href='ver_archivos.php'>Ver archivos subidos</a></p>";
+        echo "<p><a href='evaluationJudgments.php'>Ver archivos subidos</a></p>";
     } else {
         echo "❌ Error al guardar en la base de datos: " . $conn->error;
     }

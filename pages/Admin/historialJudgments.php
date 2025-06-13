@@ -1,7 +1,7 @@
 <?php
 include '../../db/connection.php';
 
-$sql = "SELECT * FROM archivos WHERE estado = 'Activo' ORDER BY id DESC";
+$sql = "SELECT * FROM archivos WHERE estado = 'Inactivo' ORDER BY id DESC";
 $resultado = $conn->query($sql);
 
 function detectarDelimitador($linea) {
@@ -16,7 +16,7 @@ function detectarDelimitador($linea) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juicios Evaluativos</title>
+  <title>Historial de Juicios Evaluativos</title>
   <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/tables.css">
   <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -37,21 +37,19 @@ function detectarDelimitador($linea) {
 
     <div class="flex justify-center items-start min-h-screen px-4 mt-8">
       <div class="bg-white p-8 shadow-lg rounded-lg w-full max-w-7xl">
-        <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold">Juicios Evaluativos</h2>
-          <a href="historialJudgments.php" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">
-            Ver Historial
-          </a>
-        </div>
-
+        <h2 class="text-center text-2xl font-bold mb-6">Historial de Juicios Evaluativos</h2>
 
         <?php
+        if ($resultado->num_rows === 0) {
+            echo "<p class='text-gray-600'>No hay archivos inactivos registrados.</p>";
+        }
+
         while ($row = $resultado->fetch_assoc()) {
             echo "<div class='flex items-center justify-between mb-2'>";
             echo "<h3 class='text-lg font-semibold'>Archivo: " . htmlspecialchars($row['nombre']) . "</h3>";
-            echo "<form method='POST' action='inactivarArchivo.php' onsubmit=\"return confirm('¿Estás seguro de inactivar este archivo?');\">";
+            echo "<form method='POST' action='reactivarJudgments.php' onsubmit=\"return confirm('¿Deseas reactivar este archivo?');\">";
             echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
-            echo "<button type='submit' class='ml-4 px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600'>Inactivar</button>";
+            echo "<button type='submit' class='ml-4 px-3 py-1 text-sm bg-green-600 text-white rounded hover:bg-green-700'>Reactivar</button>";
             echo "</form></div>";
 
 
@@ -67,7 +65,6 @@ function detectarDelimitador($linea) {
 
                     foreach ($lineas as $i => $linea) {
                         $campos = str_getcsv($linea, $delimitador);
-
                         echo "<tr class='border-b border-gray-200'>";
                         foreach ($campos as $campo) {
                             $campo = htmlspecialchars($campo);
