@@ -65,21 +65,19 @@
                             <label for="apellidos"><img src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png" class="viewApprentice-icon">Apellidos</label>
                             <input type="text" id="apellidos" class="viewApprentice-input">
                     </div>
-                        <div class="viewApprentice-group">
-                            <label for="correo"><img src="/Sensli1/ProyectoFormativo/assets/icons/mail.png" class="viewApprentice-icon">Correo</label>
-                            <input type="text" id="correo" class="viewApprentice-input">
-                </div>
-                        <div class="viewApprentice-group">
-                            <label for="estado"><img src="/Sensli1/ProyectoFormativo/assets/icons/encendido.png" class="viewApprentice-icon">Estado</label>
-                            <input type="text" id="estado" class="viewApprentice-input">
+                    <div class="viewApprentice-group">
+                        <label for="correo"><img src="/Sensli1/ProyectoFormativo/assets/icons/mail.png" class="viewApprentice-icon">Correo</label>
+                        <input type="text" id="correo" class="viewApprentice-input">
                     </div>
-                        <div class="viewApprentice-group">
-                            <label for="etapa"><img src="/Sensli1/ProyectoFormativo/assets/icons/pasador-de-ubicacion.png" class="viewApprentice-icon">Etapa de Formación</label>
-                            <input type="text" id="etapa" class="viewApprentice-input">
-                </div>
+                    <div class="viewApprentice-group">
+                        <label for="estado"><img src="/Sensli1/ProyectoFormativo/assets/icons/encendido.png" class="viewApprentice-icon">Estado</label>
+                        <input type="text" id="estado" class="viewApprentice-input">
                     </div>
-                </div>
-
+                    <div class="viewApprentice-group">
+                        <label for="etapa"><img src="/Sensli1/ProyectoFormativo/assets/icons/pasador-de-ubicacion.png" class="viewApprentice-icon">Etapa de Formación</label>
+                        <input type="text" id="etapa" class="viewApprentice-input">
+                    </div>
+                    </div>
             <div class="viewApprentice-buttons">
                 <button onclick="window.location.href='../pages/Admin/editApprentice.php'">Editar</button>
                 <button id="viewApprentice-report">Generar Reporte</button>

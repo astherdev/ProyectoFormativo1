@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    text-align:center; 
+    text-align: center; /* Cambiado para evitar centrar todo el texto por defecto */
 }
 
 #backpage{
