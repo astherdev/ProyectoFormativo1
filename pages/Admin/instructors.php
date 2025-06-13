@@ -26,7 +26,7 @@ if ($resultado && $resultado->num_rows > 0) {
      <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .instructor-seleccionado {
-            background-color: rgb(168, 0, 0); 
+            background-color: rgb(173, 0, 0); 
         }
         tr {
             cursor: pointer;
@@ -35,9 +35,7 @@ if ($resultado && $resultado->num_rows > 0) {
 </head>
 <body class="bg-gray-100 flex">
 
-   
     <?php include '../../includes/sidebar.php'; ?>
-
 
     <div class="flex-1 flex flex-col min-h-screen">
 

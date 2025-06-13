@@ -26,7 +26,7 @@ if ($resultado && $resultado->num_rows > 0) {
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .ficha-seleccionada {
-      background-color: rgb(165, 0, 0);
+       background-color: rgb(173, 0, 0); 
     }
     tr {
       cursor: pointer;
@@ -46,7 +46,7 @@ if ($resultado && $resultado->num_rows > 0) {
                 <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />
                 </button>
             </div>
-            
+
       <div class="flex justify-start items-start min-h-screen ml-[0px] mt-16">
         <div class="ficha-container bg-white p-6 shadow-lg rounded-lg w-full max-w-6xl">
 

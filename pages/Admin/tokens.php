@@ -26,7 +26,7 @@ if ($resultado && $resultado->num_rows > 0) {
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .ficha-seleccionada {
-      background-color: rgb(165, 0, 0);
+       background-color: rgb(173, 0, 0); 
     }
     tr {
       cursor: pointer;
