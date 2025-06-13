@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/Admin/updateApprentice.css">
+    <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/updateApprentice.css">
     <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +12,9 @@
     <title>Update Apprentice</title>
 </head>
 <body class="flex min-h-screen">
-
-    <?php include "../../includes/sidebar.php"; ?>
-
+    <?php include "../includes/sidebar.php"; ?>
     <div class="flex-1 flex flex-col">
-        <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
-
+        <?php include "../includes/headerLogIn.php"; ?>
         <main>
             <button id="backpage" onclick="history.back()"><img id="backImg" src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png"></button>
             <div id="viewApprentice-container">
@@ -80,14 +77,12 @@
                 </div>
 
                 <div class="viewApprentice-buttons">
-                    <button onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/Admin/tokens.php'">Actualizar</button>
+                    <button onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/tokens.php'">Actualizar</button>
                 </div>
             </div>
         </main>
-
         <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
-        <?php include '../../includes/footer.php'; ?>
+        <?php include '../includes/footer.php'; ?>
     </div>
-
 </body>
 </html>

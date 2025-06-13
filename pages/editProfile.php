@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../../assets/css/Admin/editProfile.css">
+    <link rel="stylesheet" href="../assets/css/editProfile.css">
     <title>Edit Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +13,10 @@
 </head>
 <body class="flex min-h-screen">
 
-  <?php include "../../includes/sidebar.php"; ?>
+  <?php include "../includes/sidebar.php"; ?>
 
   <div class="flex-1 flex flex-col">
-    <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+    <?php include "../includes/headerLogIn.php"; ?>
 
 
     <main>
@@ -26,25 +26,25 @@
             <h1>Información Administrador</h1>
             <div id="infoContent">
                 <div class = "formLabel">
-                    <img src="../../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
+                    <img src="../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
                     <label>Nombre</label>
                 </div>
                 <input type="text" placeholder="Yuly Paulín Sáenz" id = "nameInput">
 
                 <div class = "formLabel">
-                    <img src="../../assets/icons/phone.png" alt="Icono_Usuario" class = "form_icon">
+                    <img src="../assets/icons/phone.png" alt="Icono_Usuario" class = "form_icon">
                     <label>Número Telefonico</label>
                 </div>
                 <input type="text" placeholder="" id = "phoneInput">
 
                 <div class = "formLabel">
-                    <img src="../../assets/icons/mail.png" alt="Icono_Usuario" class = "form_icon">
+                    <img src="../assets/icons/mail.png" alt="Icono_Usuario" class = "form_icon">
                     <label>Correo</label>
                 </div>
                 <input type="text" placeholder="@gmail.com" id = "mailInput">
 
                 <div class = "formLabel">
-                    <img src="../../assets/icons/documents.png" alt="Icono_Usuario" class = "form_icon">
+                    <img src="../assets/icons/documents.png" alt="Icono_Usuario" class = "form_icon">
                     <label>Tipo de documento</label>
                 </div>
                 <select id = "documentType" name = "documentType" type="select" required>
@@ -55,17 +55,17 @@
                 </select>
 
                 <div class = "formLabel">
-                    <img src="../../assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
+                    <img src="../assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
                     <label>Número de identificación</label>
                 </div>
                 <input type="text" placeholder="" id = "idInput">
                 
-                <button id = "Confirm_button" onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/Admin/viewProfile.php'">Confirmar</button>
+                <button id = "Confirm_button" onclick="history.back()">Confirmar</button>
             </div>
         </div>
     </div>
     </main>
     <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
-    <?php include "../../includes/footer.php";?>
+    <?php include "../includes/footer.php";?>
 </body>
 </html>

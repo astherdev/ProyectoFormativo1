@@ -8,15 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/Admin/editJudgments.css">
+    <link rel="stylesheet" href="../assets/css/editJudgments.css">
     <title>Edit Judgments</title>
 </head>
 <body class="flex min-h-screen">
 
-  <?php include "../../includes/sidebar.php"; ?>
+  <?php include "../includes/sidebar.php"; ?>
 
   <div class="flex-1 flex flex-col">
-    <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+    <?php include "../includes/headerLogIn.php"; ?>
 
 
     <main>
@@ -42,19 +42,19 @@
             <div id="infoContent">
                 <div class = "columna">
                     <div class = "formLabel">
-                        <img src="../../assets/icons/documents.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="../assets/icons/documents.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Tipo de documento</label>
                     </div>
                     <input type="text" placeholder="Cédula de Ciudadania" id = "learnerDocumentType">
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Nombre</label>
                     </div>
                     <input type="text" placeholder="Isaac" id = "learnerName">
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/turnOnOff.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="../assets/icons/turnOnOff.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Estado</label>
                     </div>
                     <select id = "learnerState" name = "learnerState" type="select" required>
@@ -66,19 +66,19 @@
                 </div>
                 <div class = "columna">
                     <div class = "formLabel">
-                        <img src="../../assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="../assets/icons/seeDocuments.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Número de Documento</label>
                     </div>
                     <input type="text" placeholder="1234567890" id = "learnerDocument">
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Apellidos</label>
                     </div>
                     <input type="text" placeholder="Abierta" id = "learnerLastName">
     
                     <div class = "formLabel">
-                        <img src="../../assets/icons/turnOnOff.png" alt="Icono_Usuario" class = "form_icon">
+                        <img src="../assets/icons/turnOnOff.png" alt="Icono_Usuario" class = "form_icon">
                         <label>Juicio de Evaluación</label>
                     </div>
                     <select id = "judgmentState" name = "judgmentState" type="select" required>
@@ -90,7 +90,7 @@
             </div>
             <div id = "EvaluatorDiv">
                 <div id = "FunctionaryLabel">
-                    <img src="../../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
+                    <img src="../assets/icons/avatar.png" alt="Icono_Usuario" class = "form_icon">
                     <label>Funcionario que registro el juicio evaluativo</label>
                 </div>
                 <select id = "stateInput" name = "stateInput" type="select" required>
@@ -101,11 +101,11 @@
                 </select>
             </div>
             <div id = "buttonsDiv">
-                <button id = "Update_button">Actualizar</button>
+                <button id = "Update_button" onclick="window.location.href='/evaluationJudgments.php'">Actualizar</button>
             </div>
         </div>
     </div>
     </main>
-    <?php include "../../includes/footer.php";?>
+    <?php include "../includes/footer.php";?>
 </body>
 </html>
