@@ -1,4 +1,6 @@
-
+*{
+     font-family: 'Ruda', sans-serif;
+}
 .admin {
     color: #39A900;
 }

@@ -20,6 +20,9 @@ if ($result && mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENSLI | Fichas Activas</title>
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex min-h-screen bg-gray-100">
@@ -30,7 +33,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
         <?php include "../includes/headersLogIn/headerLogIn.php"; ?>
 
-        <main class="flex-1 p-6">
+        <main >
             <div class="w-full flex justify-start mb-0">
                 <button id="backpage" onclick="history.back()">
                 <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />

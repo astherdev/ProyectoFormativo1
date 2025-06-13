@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $usuario = "root"; 
-$contrasena = "";  
+$contrasena = "123456";  
 $base_datos = "sensli";
 
 // Crear conexión

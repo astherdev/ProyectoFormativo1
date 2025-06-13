@@ -23,28 +23,23 @@ if ($resultado && $resultado->num_rows > 0) {
   <title>Sensli</title>
   <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/tables.css">
   <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .ficha-seleccionada {
-       background-color: rgb(173, 0, 0); 
-    }
-    tr {
-      cursor: pointer;
-    }
-  </style>
 </head>
-<body class="flex bg-gray-100">
+<body class="flex min-h-screen bg-gray-100">
 
  
   <?php include "../../includes/sidebar.php"; ?>
 
  
-  <div class="flex-1 flex flex-col min-h-screen">
+  <div class="flex-1 flex flex-col">
 
     <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
 
 
-    <main class="flex-grow">
+    <main class ="flex-1">
       <div class="w-full flex justify-start mb-0">
           <button id="backpage" onclick="history.back()">
           <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />
@@ -117,7 +112,7 @@ if ($resultado && $resultado->num_rows > 0) {
 
 
 
-    <?php include "../../includes/Footer.php"; ?>
+    <?php include "../../includes/footer.php"; ?>
   </div>
 
   <script>
