@@ -4,15 +4,17 @@ session_start();
 // Conexión a la base de datos
 $host = "localhost";
 $user = "root";
-$pass = "123456"; // Cambia si tienes contraseña
+$pass = "123456";
 $db = "sensli";
 $conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
+
 // * ------------------------------------------------------------------------------- *
 // Procesar el formulario
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipoDocu = $_POST['tipoDocu'];
     $no_documento = (int)$_POST['email'];
@@ -35,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('Datos incorrectos o no eres administrador');</script>";
     }
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
