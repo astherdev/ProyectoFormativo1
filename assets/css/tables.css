@@ -6,11 +6,13 @@
 }
 
 body {
-    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
     overflow-x: hidden;
-    background-color: #fff;
-    text-align: center;
-    padding-bottom: 120px;
+    margin: 0;
+    padding: 0;
+    text-align:center; 
 }
 
 #backpage{
@@ -161,6 +163,13 @@ body {
 
 .btn.gris:hover{
   background-color: #00293e;
+  cursor: pointer;
+}
+
+.ficha-seleccionada {
+    background-color: rgb(173, 0, 0); 
+}
+tr {
   cursor: pointer;
 }
 /* ========= RESPONSIVE ========= */

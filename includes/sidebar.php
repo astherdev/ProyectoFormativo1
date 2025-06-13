@@ -16,7 +16,7 @@
         </li>
         <li class="flex items-center gap-3">
           <img src="/Sensli1/ProyectoFormativo/assets/icons/mesa.png" class="w-5 h-5" alt="Mesa" />
-          <a href="/Sensli1/ProyectoFormativo/pages/Admin/viewToken.php" class="hover:underline">Fichas</a>
+          <a href="/Sensli1/ProyectoFormativo/pages/Admin/tokens.php" class="hover:underline">Fichas</a>
         </li>
         <li class="flex items-center gap-3">
           <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" alt="Carpeta" />
@@ -24,7 +24,7 @@
         </li>
         <li class="flex items-center gap-3">
           <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" alt="Carpeta" />
-          <a href="/Sensli1/ProyectoFormativo/pages/Admin/instructors.php" class="hover:underline">Juicios Evaluativos</a>
+          <a href="/Sensli1/ProyectoFormativo/pages/Admin/evaluationJudgments.php" class="hover:underline">Juicios Evaluativos</a>
         </li>
         <li class="flex items-center gap-3">
           <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" alt="Carpeta" />
