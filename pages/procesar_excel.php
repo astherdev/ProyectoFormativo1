@@ -1,6 +1,6 @@
 <?php
-include '../../db/connection.php';
-require __DIR__ . '/../../vendor/autoload.php';
+include '../db/connection.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 

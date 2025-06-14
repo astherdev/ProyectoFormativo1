@@ -1,5 +1,5 @@
 <?php
-include '../../db/connection.php';
+include '../db/connection.php';
 
 $sql = "SELECT * FROM archivos WHERE estado = 'Activo' ORDER BY id DESC";
 $resultado = $conn->query($sql);
@@ -23,10 +23,10 @@ function detectarDelimitador($linea) {
 </head>
 <body class="flex bg-gray-100">
 
-<?php include "../../includes/sidebar.php"; ?>
+<?php include "../includes/sidebar.php"; ?>
 
 <div class="flex-1 flex flex-col min-h-screen">
-  <?php include "../../includes/headersLogIn/headerLogIn.php"; ?>
+  <?php include "../includes/headerLogIn.php"; ?>
 
   <main class="flex-grow">
     <div class="w-full flex justify-start mb-0">
@@ -203,15 +203,14 @@ function detectarDelimitador($linea) {
                     echo "<pre class='bg-gray-100 p-4 rounded'>Formato no compatible</pre>";
                 }
             } else {
-                echo "<p class='text-red-600'>Archivo vacío</p>";
+                echo "<p class='text-red-600'>Archivo vacío</p>'";
             }
         }
         ?>
       </div>
     </div>
   </main>
-
-  <?php include "../../includes/Footer.php"; ?>
+    <?php include "../includes/footer.php"; ?>
 </div>
 
 </body>

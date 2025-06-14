@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos
-include '../../db/connection.php'; // Ajusta la ruta si es necesario
+include '../db/connection.php'; // Ajusta la ruta si es necesario
 
 // Verifica si se envió un archivo sin errores
 if (isset($_FILES['archivo']) && $_FILES['archivo']['error'] === UPLOAD_ERR_OK) {
