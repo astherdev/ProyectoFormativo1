@@ -75,6 +75,14 @@ if ($resultado && $resultado->num_rows > 0) {
 
     <?php include "../../includes/Footer.php"; ?>
   </div>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    if (loader) {
+      loader.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
