@@ -19,6 +19,9 @@ function detectarDelimitador($linea) {
   <title>Juicios Evaluativos</title>
   <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/tables.css">
   <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/ModePage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex bg-gray-100">
@@ -38,7 +41,7 @@ function detectarDelimitador($linea) {
     <div class="flex justify-center items-start min-h-screen px-4 mt-8">
       <div class="bg-white p-8 shadow-lg rounded-lg w-full max-w-7xl">
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold">Juicios Evaluativos</h2>
+          <h2 class="text-2xl font-bold text-center">Juicios Evaluativos</h2>
           <a href="historialJudgments.php" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">
             Ver Historial
           </a>
