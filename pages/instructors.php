@@ -1,4 +1,5 @@
-<?php 
+<?php
+include "../includes/session.php";
 include '../db/connection.php';
 
 if ($conn->connect_error) {

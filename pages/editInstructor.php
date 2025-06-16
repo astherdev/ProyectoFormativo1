@@ -1,4 +1,5 @@
 <?php 
+include "../includes/session.php";
 require_once "../db/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
