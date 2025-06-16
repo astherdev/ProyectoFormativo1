@@ -61,23 +61,21 @@ CREATE TABLE IF NOT EXISTS `archivos` (
 -- Estructura de tabla para la tabla `fichas`
 --
 
-DROP TABLE IF EXISTS `fichas`;
-CREATE TABLE IF NOT EXISTS `fichas` (
-  `Codigo_Ficha` int NOT NULL AUTO_INCREMENT,
-  `Version` int NOT NULL,
-  `Denominacion` varchar(50) NOT NULL,
-  `No_Ficha` int NOT NULL,
-  `Jefe_Grupo` varchar(50) NOT NULL,
-  `Modalidad` varchar(50) NOT NULL,
-  `Estado` int NOT NULL,
-  `Fecha_Inicio` date NOT NULL,
-  `Fecha_Fin` date NOT NULL,
-  `Aprendices` int NOT NULL,
-  `Etapa` varchar(50) NOT NULL,
-  `Tipo_Oferta` varchar(50) NOT NULL,
-  PRIMARY KEY (`Codigo_Ficha`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+CREATE TABLE fichas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_reporte DATE,
+    ficha_caracterizacion BIGINT,
+    codigo INT,
+    version INT,
+    denominacion VARCHAR(255),
+    estado VARCHAR(100),
+    fecha_inicio DATE,
+    fecha_fin DATE,
+    modalidad VARCHAR(50),
+    regional VARCHAR(100),
+    centro_formacion VARCHAR(255),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 -- --------------------------------------------------------
 
 --
