@@ -2,12 +2,16 @@
 include '../db/connection.php';
 
 $fichas = [];
-$sql = "SELECT No_Ficha AS numero, Jefe_Grupo AS instructor, Estado AS estado, Fecha_Inicio AS inicio, Fecha_Fin AS fin, Aprendices AS cantidad, Denominacion AS tipo 
+$sql = "SELECT ficha_caracterizacion AS numero, estado, fecha_inicio AS inicio, fecha_fin AS fin, denominacion AS tipo, modalidad, centro_formacion 
         FROM fichas 
-        WHERE Estado = 'Activo'";
+        WHERE estado = 'EN EJECUCION'";
 
 $result = mysqli_query($conn, $sql);
-if ($result && mysqli_num_rows($result) > 0) {
+if (!$result) {
+    die("Error en la consulta: " . mysqli_error($conn));
+}
+
+if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $fichas[] = $row;
     }
@@ -33,10 +37,10 @@ if ($result && mysqli_num_rows($result) > 0) {
 
         <?php include "../includes/headerLogIn.php"; ?>
 
-        <main >
+        <main>
             <div class="w-full flex justify-start mb-0">
                 <button id="backpage" onclick="history.back()">
-                <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />
+                    <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />
                 </button>
             </div>
             <div class="principal-content">
@@ -44,28 +48,35 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <p class="text-lg text-gray-700 mb-4">Ahora puedes navegar por el sistema <br> libremente</p>
                 <h3 class="titulo-seccion">Fichas activas</h3>
 
-
                 <div class="contenedor-modulos-scroll">
-                    <?php foreach ($fichas as $ficha): ?>
-                        <div class="modulo">
-                            <h4 class="tipo-ficha"><?= htmlspecialchars($ficha['tipo']) ?></h4>
-                            <div class="modulo-header">
-                                <img src="../assets/img/Logo-Sena-Negativo.png" alt="SENA" class="logo-modulo">
-                                <div class="datos">
-                                    <strong><?= htmlspecialchars($ficha['numero']) ?></strong><br>
-                                    Instructor de Grupo: <?= htmlspecialchars($ficha['instructor']) ?><br>
-                                    Estado: <?= htmlspecialchars($ficha['estado']) ?><br>
-                                    Fecha Inicio: <?= htmlspecialchars($ficha['inicio']) ?><br>
-                                    Fecha Fin: <?= htmlspecialchars($ficha['fin']) ?><br>
-                                    Aprendices: <?= htmlspecialchars($ficha['cantidad']) ?>
+                    <?php if (!empty($fichas)): ?>
+                        <?php foreach ($fichas as $ficha): ?>
+                            <div class="modulo">
+                                <h4 class="tipo-ficha"><?= htmlspecialchars($ficha['tipo']) ?></h4>
+                                <div class="modulo-header">
+                                    <img src="../assets/img/Logo-Sena-Negativo.png" alt="SENA" class="logo-modulo">
+                                    <div class="datos">
+                                        <strong><?= htmlspecialchars($ficha['numero']) ?></strong><br>
+                                        Estado: <?= htmlspecialchars($ficha['estado']) ?><br>
+                                        Fecha Inicio: <?= htmlspecialchars($ficha['inicio']) ?><br>
+                                        Fecha Fin: <?= htmlspecialchars($ficha['fin']) ?><br>
+                                        Modalidad: <?= htmlspecialchars($ficha['modalidad']) ?><br>
+                                        Centro de Formación: <?= htmlspecialchars($ficha['centro_formacion']) ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <p class="text-gray-500">No hay fichas en ejecución actualmente.</p>
+                    <?php endif; ?>
                 </div>
             </div>
         </main>
+
         <?php include '../includes/footer.php'; ?>
     </div>
 </body>
 </html>
+<!-- https://tailwindcss.com/plus/ui-blocks?ref=sidebar  para mirar las columnas  para dividir segun si es tecnologo y tecnicos-->
+ <!-- https://prismic.io/blog/tailwind-component-library#tailwind-elements-free 
+  bibliotecas gratis con tailwind -->
