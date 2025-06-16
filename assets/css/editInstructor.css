@@ -5,6 +5,15 @@
     font-family: 'Ruda', sans-serif;
 }
 
+
+#generalDiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
 #backpage {
     display: flex;
     justify-content: start;
@@ -26,12 +35,10 @@
     height: 20px;
 }
 
-
-#infoAdminEditInstructor{
+#infoAdminInstructor {
     background-color: #F2F2F2;
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
     text-align: center;
-    margin-top: 2rem;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
@@ -40,20 +47,21 @@
 }
 
 
-#infoAdminEditInstructor h1 {
+#infoAdminInstructor h1 {
     font-size: 2rem;
     color: #00324D;
     margin-bottom: 2rem;
 }
 
 
-#infoContentInstructorEdit{
+#infoContentInstructor {
     background-color: #f2f2f2;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
 }
+
 
 .columna {
     flex: 1 1 400px;
@@ -113,11 +121,17 @@
 }
 
 #Confirm_button:hover {
-    background-color: #39A900;
+    background-color: #29A900;
 }
+
 
 @media (max-width: 768px) {
     #infoAdmin,
+    #infoAdminEditInstructor,
+    #infoAdminInstructor {
+        padding: 1.5rem;
+    }
+
     #infoContent,
     #infoContentInstructorEdit,
     #infoContentInstructor {
