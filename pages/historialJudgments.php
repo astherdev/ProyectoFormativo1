@@ -1,4 +1,5 @@
 <?php
+include "../includes/session.php";
 include '../db/connection.php';
 
 $sql = "SELECT * FROM archivos WHERE estado = 'Inactivo' ORDER BY id DESC";
