@@ -284,10 +284,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
 
       <div id="formSection" style="display: none;">
         <form class="flex flex-col gap-4 bg-white p-4 rounded shadow-md" method="post" enctype="multipart/form-data">
-          <label class="font-semibold text-gray-700">Selecciona el archivo CSV:</label>
+          <label class="font-semibold text-gray-700">Selecciona el archivo de la ficha CSV:</label>
           <input type="file" name="archivo" accept=".csv" required class="border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-green-500" />
           <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
-            Subir
+            Subir Ficha
           </button>
           <?= $mensaje ?>
         </form>
