@@ -2,10 +2,17 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 13-06-2025 a las 19:00:03
 -- Versión del servidor: 8.0.39
 -- Versión de PHP: 8.2.12
+=======
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 13-06-2025 a las 22:42:42
+-- Versión del servidor: 8.0.39
+-- Versión de PHP: 8.2.18
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +25,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sensli`
+-- Base de datos: `proyectoformativo`
 --
 
 -- --------------------------------------------------------
@@ -27,6 +34,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `aprendiz`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `aprendiz` (
   `Nombre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `No_Telefonico` bigint NOT NULL,
@@ -40,6 +48,35 @@ CREATE TABLE `aprendiz` (
   `Funcionario_Registro` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `Porcentaje_Aprobado` tinyint NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+DROP TABLE IF EXISTS `aprendiz`;
+CREATE TABLE IF NOT EXISTS `aprendiz` (
+  `Nombre` varchar(50) NOT NULL,
+  `Apellidos` varchar(50) NOT NULL,
+  `No_Telefonico` int NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Tipo_Documento` varchar(50) NOT NULL,
+  `No_Documento` int NOT NULL,
+  `Estado` varchar(20) NOT NULL,
+  `Etapa` char(50) NOT NULL,
+  `Tipo_Oferta` char(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `archivos`
+--
+
+DROP TABLE IF EXISTS `archivos`;
+CREATE TABLE IF NOT EXISTS `archivos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) DEFAULT NULL,
+  `contenido` longtext,
+  `estado` enum('Activo','Inactivo') NOT NULL DEFAULT 'Activo',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 
 --
 -- Volcado de datos para la tabla `aprendiz`
@@ -73,6 +110,7 @@ INSERT INTO `archivos` (`id`, `nombre`, `contenido`) VALUES
 -- Estructura de tabla para la tabla `fichas`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `fichas` (
   `Codigo_Ficha` int NOT NULL,
   `Version` int NOT NULL,
@@ -94,6 +132,24 @@ CREATE TABLE `fichas` (
 
 INSERT INTO `fichas` (`Codigo_Ficha`, `Version`, `Denominacion`, `No_Ficha`, `Jefe_Grupo`, `Modalidad`, `Estado`, `Fecha_Inicio`, `Fecha_Fin`, `Aprendices`, `Etapa`, `Tipo_Oferta`) VALUES
 (2895664, 1, 'Tecnología en Análisis de Datos', 1234567, 'Juan Pérez', 'Virtual', 'Activo', '2025-07-01', '2026-01-15', 30, 'Lectiva', 'Cerrada');
+=======
+DROP TABLE IF EXISTS `fichas`;
+CREATE TABLE IF NOT EXISTS `fichas` (
+  `Codigo_Ficha` int NOT NULL AUTO_INCREMENT,
+  `Version` int NOT NULL,
+  `Denominacion` varchar(50) NOT NULL,
+  `No_Ficha` int NOT NULL,
+  `Jefe_Grupo` varchar(50) NOT NULL,
+  `Modalidad` varchar(50) NOT NULL,
+  `Estado` int NOT NULL,
+  `Fecha_Inicio` date NOT NULL,
+  `Fecha_Fin` date NOT NULL,
+  `Aprendices` int NOT NULL,
+  `Etapa` varchar(50) NOT NULL,
+  `Tipo_Oferta` varchar(50) NOT NULL,
+  PRIMARY KEY (`Codigo_Ficha`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 
 -- --------------------------------------------------------
 
@@ -101,6 +157,7 @@ INSERT INTO `fichas` (`Codigo_Ficha`, `Version`, `Denominacion`, `No_Ficha`, `Je
 -- Estructura de tabla para la tabla `instructores`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `instructores` (
   `Nombre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `Apellidos` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
@@ -118,6 +175,22 @@ CREATE TABLE `instructores` (
 
 INSERT INTO `instructores` (`Nombre`, `Apellidos`, `No_Telefonico`, `Contraseña`, `Correo`, `Tipo_Documento`, `No_Documento`, `Cargo`) VALUES
 ('Juan', 'Pérez', 3101234567, 'miContraseña123', 'juan.perez@misena.edu.co', 'CC', 12345678, 'Instructor de Planta');
+=======
+DROP TABLE IF EXISTS `instructores`;
+CREATE TABLE IF NOT EXISTS `instructores` (
+  `Nombre` varchar(50) NOT NULL,
+  `Apellidos` varchar(50) NOT NULL,
+  `No_Telefonico` int NOT NULL,
+  `Contraseña` varchar(20) NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Tipo_Documento` varchar(50) NOT NULL,
+  `No_Documento` int NOT NULL,
+  `Cargo` varchar(30) NOT NULL,
+  `tipoContrato` enum('Planta','Contratista') NOT NULL DEFAULT 'Contratista',
+  `fechaIniContrato` date DEFAULT NULL,
+  `fechaFinContrato` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 
 -- --------------------------------------------------------
 
@@ -125,6 +198,7 @@ INSERT INTO `instructores` (`Nombre`, `Apellidos`, `No_Telefonico`, `Contraseña
 -- Estructura de tabla para la tabla `juicios_evaluativos`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `juicios_evaluativos` (
   `No_Documento` int NOT NULL,
   `tipo_documento` char(50) COLLATE utf8mb4_general_ci NOT NULL,
@@ -138,6 +212,21 @@ CREATE TABLE `juicios_evaluativos` (
   `Funcionario_Registro` char(50) COLLATE utf8mb4_general_ci NOT NULL,
   `Porcentaje_Aprobado` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+DROP TABLE IF EXISTS `juicios_evaluativos`;
+CREATE TABLE IF NOT EXISTS `juicios_evaluativos` (
+  `No_Documento` int NOT NULL,
+  `tipo_documento` char(50) NOT NULL,
+  `Nombre` char(50) NOT NULL,
+  `Apellido` char(50) NOT NULL,
+  `Estado` char(50) NOT NULL,
+  `Competencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Resultado_Aprendizaje` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Juicios_Evaluativos` char(50) NOT NULL,
+  `Fecha_Hora_Juicio_Evaluado` datetime NOT NULL,
+  `Funcionario_Registro` char(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 
 --
 -- Volcado de datos para la tabla `juicios_evaluativos`
@@ -152,6 +241,7 @@ INSERT INTO `juicios_evaluativos` (`No_Documento`, `tipo_documento`, `Nombre`, `
 -- Estructura de tabla para la tabla `observaciones`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `observaciones` (
   `Correo` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `tipo_documento` int NOT NULL,
@@ -159,6 +249,16 @@ CREATE TABLE `observaciones` (
   `No_telefonico` int NOT NULL,
   `Observacion` text COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+DROP TABLE IF EXISTS `observaciones`;
+CREATE TABLE IF NOT EXISTS `observaciones` (
+  `Correo` varchar(50) NOT NULL,
+  `tipo_documento` int NOT NULL,
+  `No_documento` int NOT NULL,
+  `No_telefonico` int NOT NULL,
+  `Observacion` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 
 -- --------------------------------------------------------
 
@@ -166,6 +266,7 @@ CREATE TABLE `observaciones` (
 -- Estructura de tabla para la tabla `perfil`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `perfil` (
   `Nombre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `No_Telefonico` int NOT NULL,
@@ -174,11 +275,23 @@ CREATE TABLE `perfil` (
   `No_Documento` int NOT NULL,
   `Rol` varchar(30) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'aprendiz'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+DROP TABLE IF EXISTS `perfil`;
+CREATE TABLE IF NOT EXISTS `perfil` (
+  `Nombre` varchar(50) NOT NULL,
+  `Apellidos` varchar(50) NOT NULL,
+  `No_Telefonico` bigint NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Tipo_Documento` varchar(50) NOT NULL,
+  `No_Documento` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 
 --
 -- Volcado de datos para la tabla `perfil`
 --
 
+<<<<<<< HEAD
 INSERT INTO `perfil` (`Nombre`, `No_Telefonico`, `Correo`, `Tipo_Documento`, `No_Documento`, `Rol`) VALUES
 ('Yuly Paulin Sáenz Agudelo', 318390416, 'yuly.saenz@misena.edu.co', 'CC', 12534546, 'Admin');
 
@@ -213,6 +326,10 @@ ALTER TABLE `archivos`
 --
 ALTER TABLE `fichas`
   MODIFY `Codigo_Ficha` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2895665;
+=======
+INSERT INTO `perfil` (`Nombre`, `Apellidos`, `No_Telefonico`, `Correo`, `Tipo_Documento`, `No_Documento`) VALUES
+('Isaac', 'Echeverry Garcia', 3217251299, 'isaacecheverry53@gmail.com', 'CC', 1088829637);
+>>>>>>> b9f5696d671c23c43e0eaa47383ec7970c356223
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
