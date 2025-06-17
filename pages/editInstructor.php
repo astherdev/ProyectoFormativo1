@@ -64,13 +64,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "sssssssssi",
         $nombre, $apellidos, $telefono, $correo, $tipo_documento, $cargo, $tipo_contrato, $fecha_ini, $fecha_fin, $where_documento
     );
-    if ($stmt->execute()) {
-        echo "<script>alert('Instructor actualizado exitosamente'); window.location.href='instructors.php';</script>";
-        exit;
-    } else {
-        echo "<script>alert('Error al actualizar instructor');</script>";
-    }
-    $stmt->close();
+   if ($stmt->execute()) {
+    echo "<div id='popup-success' class='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
+            <div class='bg-white rounded-xl shadow-lg p-6 text-center'>
+                <h2 class='text-xl font-semibold text-green-600 mb-4'>¡Instructor actualizado exitosamente!</h2>
+                <button onclick=\"window.location.href='instructors.php'\" class='bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'>Aceptar</button>
+            </div>
+          </div>";
+} else {
+    echo "<div id='popup-error' class='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
+            <div class='bg-white rounded-xl shadow-lg p-6 text-center'>
+                <h2 class='text-xl font-semibold text-red-600 mb-4'>Error al actualizar instructor</h2>
+                <button onclick=\"document.getElementById('popup-error').remove();\" class='bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'>Cerrar</button>
+            </div>
+          </div>";
+}
+
 }
 ?>
 <!DOCTYPE html>

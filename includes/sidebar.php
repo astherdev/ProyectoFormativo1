@@ -26,10 +26,6 @@
           <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" alt="Carpeta" />
           <a href="/Sensli1/ProyectoFormativo/pages/evaluationJudgments.php" class="hover:underline">Juicios Evaluativos</a>
         </li>
-        <li class="flex items-center gap-3">
-          <img src="/Sensli1/ProyectoFormativo/assets/icons/carpeta.png" class="w-5 h-5" alt="Carpeta" />
-          <a href="/Sensli1/ProyectoFormativo/pages/instructors.php" class="hover:underline">Instructores</a>
-        </li>
       </ul>
     </nav>
   </div>

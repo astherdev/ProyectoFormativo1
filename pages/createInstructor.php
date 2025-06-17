@@ -2,8 +2,9 @@
 include "../includes/session.php";
 require_once "../db/connection.php";
 
+$mostrar_modal = false; // bandera para saber si mostrar el modal
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibe los datos del formulario
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
     $telefono = $_POST['telefono'];
@@ -16,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_fin = $_POST['fecha_fin'];
     $contrasena = $no_documento;
 
-    // Prepara y ejecuta el INSERT
     $sql = "INSERT INTO instructores 
         (Nombre, Apellidos, No_Telefonico, Contrasena, Correo, Tipo_Documento, No_Documento, Cargo, tipoContrato, fechaIniContrato, fechaFinContrato)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -27,8 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombre, $apellidos, $telefono, $contrasena, $correo, $tipo_documento, $no_documento, $cargo, $tipo_contrato, $fecha_ini, $fecha_fin
     );
     if ($stmt->execute()) {
-        echo "<script>alert('Instructor creado exitosamente'); window.location.href='instructors.php';</script>";
-        exit;
+        $mostrar_modal = true;
     } else {
         echo "<script>alert('Error al crear instructor');</script>";
     }
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
-    <title>Create Intructors</title>
+    <title>Create Instructors</title>
 </head>
 <body class="flex min-h-screen">
     <?php include "../includes/sidebar.php"; ?>
@@ -70,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/phone.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Número Telefonico</label>
                                 </div>
-                                <input type="text" placeholder="" name="telefono" required>
+                                <input type="text" name="telefono" required>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
@@ -116,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Número de Documento</label>
                                 </div>
-                                <input type="text" placeholder="" name="no_documento" required>
+                                <input type="text" name="no_documento" required>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
@@ -139,9 +138,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </form>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm w-full">
+                    <h2 class="text-xl font-bold mb-4 text-green-700">Instructor creado exitosamente</h2>
+                    <button id="modalBtn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">Aceptar</button>
+                </div>
+            </div>
         </main>
+
         <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
-        <?php include "../includes/footer.php";?>
+        <?php include "../includes/footer.php"; ?>
+
+        <?php if ($mostrar_modal): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const modal = document.getElementById("modal");
+                const btn = document.getElementById("modalBtn");
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+
+                btn.addEventListener("click", function () {
+                    window.location.href = "instructors.php";
+                });
+            });
+        </script>
+        <?php endif; ?>
     </div>
 </body>
 </html>
