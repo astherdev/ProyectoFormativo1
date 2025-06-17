@@ -228,7 +228,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
 
         <!-- Botón y mini pestaña para agregar nuevo juicio -->
         <div class="mb-6">
-          <button onclick="toggleFormulario()" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 text-sm">
+          <button onclick="toggleFormulario()"  style="background-color: #39A900" class="px-4 py-2 text-white rounded hover:bg-green-700 text-sm">
             Agregar Juicio de Excel a CSV
           </button>
 
@@ -242,7 +242,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
                 <label class="block text-sm font-medium">Sube el archivo Excel:</label>
                 <input type="file" name="archivo_excel" accept=".xlsx, .xls" required class="w-full border border-gray-300 p-2 rounded">
               </div>
-              <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Convertir</button>
+              <button type="submit" style="background-color: #00324D"  class="text-white px-4 py-2 rounded hover:bg-blue-700">Convertir</button>
             </form>
           </div>
         </div>
@@ -256,7 +256,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
 
         <!-- Botón y mini pestaña para subir juicio CSV -->
       <div class="mb-6">
-        <button onclick="toggleFormularioCSV()" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-sm">
+        <button onclick="toggleFormularioCSV()"  style="background-color: #39A900"  class="px-4 py-2  text-white rounded hover:bg-purple-700 text-sm">
           Subir Juicio CSV
         </button>
 
@@ -266,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
               <label class="block text-sm font-medium">Selecciona un archivo CSV o TXT:</label>
               <input type="file" name="archivo" id="archivo" accept=".txt,.csv" required class="w-full border border-gray-300 p-2 rounded">
             </div>
-            <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Subir archivo</button>
+            <button type="submit" style="background-color: #00324D" class="text-white px-4 py-2 rounded hover:bg-purple-700">Subir archivo</button>
           </form>
         </div>
       </div>
@@ -278,7 +278,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
         }
       </script>
 
-      <button  onclick="toggleForm()" class="bg-green-600 hover:bg-green-700 text-white font-bold text-sm py-2 px-4 rounded mb-4">
+      <button  onclick="toggleForm()"  style="background-color: #39A900" class="bg-green-600 hover:bg-green-700 text-white font-bold text-sm py-2 px-4 rounded mb-4">
         Cargar Ficha de Caracterización
       </button>
 
@@ -286,7 +286,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
         <form class="flex flex-col gap-4 bg-white p-4 rounded shadow-md" method="post" enctype="multipart/form-data">
           <label class="font-semibold text-gray-700">Selecciona el archivo de la ficha CSV:</label>
           <input type="file" name="archivo" accept=".csv" required class="border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-green-500" />
-          <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
+          <button type="submit" style="background-color: #00324D"  class="bg-green-600 hover:bg-black text-white font-semibold py-2 px-4 rounded">
             Subir Ficha
           </button>
           <?= $mensaje ?>
@@ -302,126 +302,126 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
       </script>
         <!-- Resto del contenido (subida de archivos, resultados, tablas, etc.) -->
         <?php
-while ($row = $resultado->fetch_assoc()) {
-    $idArchivo = $row['id'];
-    $paramNombre = $_GET['nombre_' . $idArchivo] ?? '';
-    $nombreFiltro = strtoupper(trim($paramNombre));
+        while ($row = $resultado->fetch_assoc()) {
+            $idArchivo = $row['id'];
+            $paramNombre = $_GET['nombre_' . $idArchivo] ?? '';
+            $nombreFiltro = strtoupper(trim($paramNombre));
 
-    echo "<div class='flex items-center justify-between mb-2'>";
-    echo "<h3 class='text-lg font-semibold'>Archivo: " . htmlspecialchars($row['nombre']) . "</h3>";
-    echo "<form method='POST' action='inactivarArchivo.php' onsubmit=\"return confirm('¿Estás seguro de inactivar este archivo?');\">";
-    echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
-    echo "<button type='submit' class='ml-4 px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600'>Inactivar</button>";
-    echo "</form></div>";
+            echo "<div class='flex items-center justify-between mb-2'>";
+            echo "<h3 class='text-lg font-semibold'>Archivo: " . htmlspecialchars($row['nombre']) . "</h3>";
+            echo "<form method='POST' action='inactivarArchivo.php' onsubmit=\"return confirm('¿Estás seguro de inactivar este archivo?');\">";
+            echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
+            echo "<button type='submit' class='ml-4 px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600'>Inactivar</button>";
+            echo "</form></div>";
 
-    $lineas = explode("\n", $row['contenido']);
-    $lineas = array_filter($lineas);
+            $lineas = explode("\n", $row['contenido']);
+            $lineas = array_filter($lineas);
 
-    if (count($lineas) > 0) {
-        $delimitador = detectarDelimitador($lineas[0]);
+            if (count($lineas) > 0) {
+                $delimitador = detectarDelimitador($lineas[0]);
 
-        if ($delimitador) {
-            echo "<div id='archivo_$idArchivo' class='mb-6 p-4 bg-gray-50 rounded border'>";
-            echo "<h3 class='font-bold mb-2'>Información del Reporte:</h3><ul class='list-disc pl-5'>";
+                if ($delimitador) {
+                    echo "<div id='archivo_$idArchivo' class='mb-6 p-4 bg-gray-50 rounded border'>";
+                    echo "<h3 class='font-bold mb-2'>Información del Reporte:</h3><ul class='list-disc pl-5'>";
 
-            while (count($lineas) > 0) {
-                $lineaActual = array_shift($lineas);
-                if ($lineaActual === null || trim($lineaActual) === '') continue;
-                $campos = str_getcsv($lineaActual, $delimitador);
-                $primerCampo = strtoupper(trim($campos[0] ?? ''));
+                    while (count($lineas) > 0) {
+                        $lineaActual = array_shift($lineas);
+                        if ($lineaActual === null || trim($lineaActual) === '') continue;
+                        $campos = str_getcsv($lineaActual, $delimitador);
+                        $primerCampo = strtoupper(trim($campos[0] ?? ''));
 
-                if (in_array("Nombre", $campos) || in_array("Nombres", $campos) || in_array("Juicio de Evaluación", $campos)) {
-                    array_unshift($lineas, $lineaActual);
-                    break;
+                        if (in_array("Nombre", $campos) || in_array("Nombres", $campos) || in_array("Juicio de Evaluación", $campos)) {
+                            array_unshift($lineas, $lineaActual);
+                            break;
+                        }
+
+                        if (!empty($primerCampo)) {
+                            $etiqueta = rtrim($campos[0], " \t\n\r\0\x0B");
+                            $etiqueta .= (str_ends_with($etiqueta, ':') ? '' : ':');
+                            echo "<li><strong>" . htmlspecialchars($etiqueta) . "</strong> " . htmlspecialchars($campos[2] ?? '') . "</li>";
+                        }
+                    }
+
+                    echo "</ul></div>";
+
+                    if (count($lineas) === 0) {
+                        echo "<p class='text-red-600'>No se encontraron datos evaluativos.</p>";
+                        continue;
+                    }
+
+                    // Formulario con conservación de parámetros previos
+                    echo '<form method="GET" action="" class="mb-6 flex gap-2 items-center">';
+                    
+                    // Mantener todos los parámetros anteriores
+                    foreach ($_GET as $key => $value) {
+                        if ($key !== 'nombre_' . $idArchivo && $key !== 'ancla') {
+                            echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
+                        }
+                    }
+
+                    echo "<input type='text' name='nombre_$idArchivo' value='" . htmlspecialchars($paramNombre) . "' placeholder='Buscar por nombre completo' class='px-3 py-2 border border-gray-300 rounded shadow-sm text-sm'>";
+                    echo "<input type='hidden' name='ancla' value='archivo_$idArchivo'>";
+                    echo "<button type='submit' class='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm'>Buscar</button>";
+                    echo "</form>";
+
+                    $cabecera = str_getcsv(array_shift($lineas), $delimitador);
+                    $cabecera[] = "Porcentaje_TyT";
+
+                    $porcentajes = [];
+                    foreach ($lineas as $linea) {
+                        $campos = str_getcsv($linea, $delimitador);
+                        if (count($campos) < 8) continue;
+                        $nombreCompleto = strtoupper(trim($campos[2] . ' ' . $campos[3]));
+                        $juicio = strtoupper(trim($campos[7]));
+
+                        if (!isset($porcentajes[$nombreCompleto])) {
+                            $porcentajes[$nombreCompleto] = ['total' => 0, 'aprobados' => 0];
+                        }
+
+                        $porcentajes[$nombreCompleto]['total']++;
+                        if ($juicio === 'APROBADO') {
+                            $porcentajes[$nombreCompleto]['aprobados']++;
+                        }
+                    }
+
+                    echo "<div class='overflow-auto max-h-[700px] border border-gray-300 rounded-lg mb-10'>";
+                    echo "<table class='min-w-full text-left text-sm text-gray-800 border border-gray-300 table-auto'>";
+                    echo "<tr class='border-b border-gray-200'>";
+                    foreach ($cabecera as $campo) {
+                        echo "<th class='px-4 py-2 bg-gray-200 border border-gray-300 font-medium text-sm'>" . htmlspecialchars($campo) . "</th>";
+                    }
+                    echo "</tr>";
+
+                    foreach ($lineas as $linea) {
+                        $campos = str_getcsv($linea, $delimitador);
+                        if (count($campos) < 8) continue;
+                        $nombreCompleto = strtoupper(trim($campos[2] . ' ' . $campos[3]));
+
+                        if (!empty($nombreFiltro) && strpos($nombreCompleto, $nombreFiltro) === false) {
+                            continue;
+                        }
+
+                        $total = $porcentajes[$nombreCompleto]['total'] ?? 0;
+                        $aprobados = $porcentajes[$nombreCompleto]['aprobados'] ?? 0;
+                        $porcentaje = $total > 0 ? round(($aprobados / $total) * 100, 2) . "%" : "0%";
+
+                        echo "<tr class='border-b border-gray-200'>";
+                        foreach ($campos as $campo) {
+                            echo "<td class='px-4 py-2 border border-gray-200'>" . htmlspecialchars($campo) . "</td>";
+                        }
+                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje</td>";
+                        echo "</tr>";
+                    }
+
+                    echo "</table></div>";
+                } else {
+                    echo "<pre class='bg-gray-100 p-4 rounded'>Formato no compatible</pre>";
                 }
-
-                if (!empty($primerCampo)) {
-                    $etiqueta = rtrim($campos[0], " \t\n\r\0\x0B");
-                    $etiqueta .= (str_ends_with($etiqueta, ':') ? '' : ':');
-                    echo "<li><strong>" . htmlspecialchars($etiqueta) . "</strong> " . htmlspecialchars($campos[2] ?? '') . "</li>";
-                }
+            } else {
+                echo "<p class='text-red-600'>Archivo vacío</p>";
             }
-
-            echo "</ul></div>";
-
-            if (count($lineas) === 0) {
-                echo "<p class='text-red-600'>No se encontraron datos evaluativos.</p>";
-                continue;
-            }
-
-            // Formulario con conservación de parámetros previos
-            echo '<form method="GET" action="" class="mb-6 flex gap-2 items-center">';
-            
-            // Mantener todos los parámetros anteriores
-            foreach ($_GET as $key => $value) {
-                if ($key !== 'nombre_' . $idArchivo && $key !== 'ancla') {
-                    echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
-                }
-            }
-
-            echo "<input type='text' name='nombre_$idArchivo' value='" . htmlspecialchars($paramNombre) . "' placeholder='Buscar por nombre completo' class='px-3 py-2 border border-gray-300 rounded shadow-sm text-sm'>";
-            echo "<input type='hidden' name='ancla' value='archivo_$idArchivo'>";
-            echo "<button type='submit' class='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm'>Buscar</button>";
-            echo "</form>";
-
-            $cabecera = str_getcsv(array_shift($lineas), $delimitador);
-            $cabecera[] = "Porcentaje_TyT";
-
-            $porcentajes = [];
-            foreach ($lineas as $linea) {
-                $campos = str_getcsv($linea, $delimitador);
-                if (count($campos) < 8) continue;
-                $nombreCompleto = strtoupper(trim($campos[2] . ' ' . $campos[3]));
-                $juicio = strtoupper(trim($campos[7]));
-
-                if (!isset($porcentajes[$nombreCompleto])) {
-                    $porcentajes[$nombreCompleto] = ['total' => 0, 'aprobados' => 0];
-                }
-
-                $porcentajes[$nombreCompleto]['total']++;
-                if ($juicio === 'APROBADO') {
-                    $porcentajes[$nombreCompleto]['aprobados']++;
-                }
-            }
-
-            echo "<div class='overflow-auto max-h-[700px] border border-gray-300 rounded-lg mb-10'>";
-            echo "<table class='min-w-full text-left text-sm text-gray-800 border border-gray-300 table-auto'>";
-            echo "<tr class='border-b border-gray-200'>";
-            foreach ($cabecera as $campo) {
-                echo "<th class='px-4 py-2 bg-gray-200 border border-gray-300 font-medium text-sm'>" . htmlspecialchars($campo) . "</th>";
-            }
-            echo "</tr>";
-
-            foreach ($lineas as $linea) {
-                $campos = str_getcsv($linea, $delimitador);
-                if (count($campos) < 8) continue;
-                $nombreCompleto = strtoupper(trim($campos[2] . ' ' . $campos[3]));
-
-                if (!empty($nombreFiltro) && strpos($nombreCompleto, $nombreFiltro) === false) {
-                    continue;
-                }
-
-                $total = $porcentajes[$nombreCompleto]['total'] ?? 0;
-                $aprobados = $porcentajes[$nombreCompleto]['aprobados'] ?? 0;
-                $porcentaje = $total > 0 ? round(($aprobados / $total) * 100, 2) . "%" : "0%";
-
-                echo "<tr class='border-b border-gray-200'>";
-                foreach ($campos as $campo) {
-                    echo "<td class='px-4 py-2 border border-gray-200'>" . htmlspecialchars($campo) . "</td>";
-                }
-                echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje</td>";
-                echo "</tr>";
-            }
-
-            echo "</table></div>";
-        } else {
-            echo "<pre class='bg-gray-100 p-4 rounded'>Formato no compatible</pre>";
         }
-    } else {
-        echo "<p class='text-red-600'>Archivo vacío</p>";
-    }
-}
-?>
+        ?>
 
 
       </div>
