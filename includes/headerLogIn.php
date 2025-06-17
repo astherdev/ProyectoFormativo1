@@ -27,9 +27,9 @@
         <li>
           <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Perfil</a>
         </li>
-        <li>
-          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cerrar Sesión</a>
-        </li>
+       <li>
+           <a href="../includes/logout.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cerrar Sesión</a>
+          </li>
       </ul>
     </div>
   </div>
