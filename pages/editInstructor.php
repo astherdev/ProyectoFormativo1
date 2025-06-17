@@ -1,5 +1,45 @@
 <?php 
+include "../includes/session.php";
 require_once "../db/connection.php";
+
+$datos = [
+    'nombre' => '',
+    'apellidos' => '',
+    'telefono' => '',
+    'correo' => '',
+    'tipo_documento' => '',
+    'no_documento' => '',
+    'cargo' => '',
+    'tipo_contrato' => '',
+    'fecha_ini' => '',
+    'fecha_fin' => ''
+];
+
+$no_documento = isset($_GET['no_documento']) ? $_GET['no_documento'] : $_POST['no_documento'];
+
+if (isset($_GET['no_documento'])) {
+    $no_documento = $_GET['no_documento'];
+    $sql = "SELECT * FROM instructores WHERE No_Documento = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $no_documento);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($row = $result->fetch_assoc()) {
+        $datos = [
+            'nombre' => $row['Nombre'],
+            'apellidos' => $row['Apellidos'],
+            'telefono' => $row['No_Telefonico'],
+            'correo' => $row['Correo'],
+            'tipo_documento' => $row['Tipo_Documento'],
+            'no_documento' => $row['No_Documento'],
+            'cargo' => $row['Cargo'],
+            'tipo_contrato' => $row['tipoContrato'],
+            'fecha_ini' => $row['fechaIniContrato'],
+            'fecha_fin' => $row['fechaFinContrato']
+        ];
+    }
+    $stmt->close();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recibe los datos del formulario
@@ -13,23 +53,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipo_contrato = $_POST['tipo_contrato'];
     $fecha_ini = $_POST['fecha_ini'];
     $fecha_fin = $_POST['fecha_fin'];
-    $contrasena = $no_documento;
 
-    // Prepara y ejecuta el INSERT
-    $sql = "INSERT INTO instructores 
-        (Nombre, Apellidos, No_Telefonico, Contraseña, Correo, Tipo_Documento, No_Documento, Cargo, tipoContrato, fechaIniContrato, fechaFinContrato)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
+    // UPDATE sin cambiar la contraseña
+    $where_documento = isset($_GET['no_documento']) ? $_GET['no_documento'] : $no_documento;
+    $sql = "UPDATE instructores SET 
+        Nombre=?, Apellidos=?, No_Telefonico=?, Correo=?, Tipo_Documento=?, Cargo=?, tipoContrato=?, fechaIniContrato=?, fechaFinContrato=?
+        WHERE No_Documento=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        "ssssssissss",
-        $nombre, $apellidos, $telefono, $contrasena, $correo, $tipo_documento, $no_documento, $cargo, $tipo_contrato, $fecha_ini, $fecha_fin
+        "sssssssssi",
+        $nombre, $apellidos, $telefono, $correo, $tipo_documento, $cargo, $tipo_contrato, $fecha_ini, $fecha_fin, $where_documento
     );
     if ($stmt->execute()) {
-        echo "<script>alert('Instructor creado exitosamente'); window.location.href='instructors.php';</script>";
+        echo "<script>alert('Instructor actualizado exitosamente'); window.location.href='instructors.php';</script>";
         exit;
     } else {
-        echo "<script>alert('Error al crear instructor');</script>";
+        echo "<script>alert('Error al actualizar instructor');</script>";
     }
     $stmt->close();
 }
@@ -45,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
-    <title>Create Intructors</title>
+    <title>Editar Instructor</title>
 </head>
 <body class="flex min-h-screen">
     <?php include "../includes/sidebar.php"; ?>
@@ -63,22 +102,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Nombre</label>
                                 </div>
-                                <input type="text" placeholder="Yuly Paulín Sáenz" name="nombre" required>
+                                <input type="text" placeholder="Yuly Paulín Sáenz" name="nombre" value="<?php echo $datos['nombre']; ?>" required>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/phone.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Número Telefonico</label>
                                 </div>
-                                <input type="text" placeholder="" name="telefono" required>
+                                <input type="text" placeholder="" name="telefono" value="<?php echo $datos['telefono']; ?>" required>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Tipo de Documento</label>
                                 </div>
                                 <select name="tipo_documento" required>
-                                    <option value="" disabled selected hidden>Selecciona una opción</option>
-                                    <option value="CC">Cédula de Ciudadanía</option>
-                                    <option value="CE">Cédula de Extranjería</option>  
+                                    <option value="" disabled hidden>Selecciona una opción</option>
+                                    <option value="CC" <?php if($datos['tipo_documento'] == 'CC') echo 'selected'; ?>>Cédula de Ciudadanía</option>
+                                    <option value="CE" <?php if($datos['tipo_documento'] == 'CE') echo 'selected'; ?>>Cédula de Extranjería</option>  
                                 </select>
 
                                 <div class="formLabel">
@@ -86,55 +125,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <label>Cargo</label>
                                 </div>
                                 <select name="cargo" required>
-                                    <option value="" disabled selected hidden>Selecciona una opción</option>
-                                    <option value="Instructor Transversal">Instructor Transversal</option>
-                                    <option value="Instructor Tecnico">Instructor Técnico</option>
-                                    <option value="Coordinador">Coordinador</option>
+                                    <option value="" disabled hidden>Selecciona una opción</option>
+                                    <option value="Instructor Transversal" <?php if($datos['cargo'] == 'Instructor Transversal') echo 'selected'; ?>>Instructor Transversal</option>
+                                    <option value="Instructor Tecnico" <?php if($datos['cargo'] == 'Instructor Tecnico') echo 'selected'; ?>>Instructor Técnico</option>
+                                    <option value="Coordinador" <?php if($datos['cargo'] == 'Coordinador') echo 'selected'; ?>>Coordinador</option>
                                 </select>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Fecha de Inicio de Contrato</label>
                                 </div>
-                                <input type="date" name="fecha_ini" required>
+                                <input type="date" name="fecha_ini" value="<?php echo $datos['fecha_ini']; ?>" required>
                             </div>
                             <div class="columna">
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/avatar.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Apellidos</label>
                                 </div>
-                                <input type="text" placeholder="Apellidos" name="apellidos" required>
+                                <input type="text" placeholder="Apellidos" name="apellidos" value="<?php echo $datos['apellidos']; ?>" required>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/mail.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Correo</label>
                                 </div>
-                                <input type="email" placeholder="@gmail.com" name="correo" required>
+                                <input type="email" placeholder="@gmail.com" name="correo" value="<?php echo $datos['correo']; ?>" required>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Número de Documento</label>
                                 </div>
-                                <input type="text" placeholder="" name="no_documento" required>
+                                <input type="text" placeholder="" name="no_documento" value="<?php echo $datos['no_documento']; ?>" required readonly>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Tipo de contrato</label>
                                 </div>
                                 <select name="tipo_contrato" required>
-                                    <option value="" disabled selected hidden>Selecciona una opción</option>
-                                    <option value="Planta">Planta</option>
-                                    <option value="Contratista">Contratista</option>
+                                    <option value="" disabled hidden>Selecciona una opción</option>
+                                    <option value="Planta" <?php if($datos['tipo_contrato'] == 'Planta') echo 'selected'; ?>>Planta</option>
+                                    <option value="Contratista" <?php if($datos['tipo_contrato'] == 'Contratista') echo 'selected'; ?>>Contratista</option>
                                 </select>
 
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Fecha Fin de Contrato</label>
                                 </div>
-                                <input type="date" name="fecha_fin" required>
+                                <input type="date" name="fecha_fin" value="<?php echo $datos['fecha_fin']; ?>" required>
                             </div>
                         </div>
-                        <button id="Confirm_button" type="submit" onclick="window.location.href = '/Sensli1/ProyectoFormativo/pages/instructors.php'">Aceptar</button>
+                        <button id="Confirm_button" type="submit">Aceptar</button>
                     </form>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 <?php
+  include "../includes/session.php";
   // conexión
   include '../db/connection.php';
 

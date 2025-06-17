@@ -17,8 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row = $result->fetch_assoc()) {
         // Validar contraseña
         if ($password == $row['Contrasena']) {
+            // Si es admin
             $_SESSION['usuario'] = $row['Correo'];
             $_SESSION['nombre'] = $row['Nombre'];
+            $_SESSION['rol'] = 'admin';
             header("Location: ../pages/main.php");
             exit();
         } else {
@@ -33,8 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result2 = $stmt2->get_result();
 
         if ($row2 = $result2->fetch_assoc()) {
+            // Si es instructor
             $_SESSION['usuario'] = $row2['Correo'];
             $_SESSION['nombre'] = $row2['Nombre'];
+            $_SESSION['rol'] = 'instructor';
             header("Location: ../pages/main.php");
             exit();
         } else {
