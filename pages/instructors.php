@@ -104,7 +104,7 @@ if ($resultado && $resultado->num_rows > 0) {
 
                         <button class="px-6 py-2 rounded-md text-white hover:brightness-110" 
                                 style="background-color: #00324D;"
-                                onclick="window.location.href='/Sensli1/ProyectoFormativo/pages/editInstructor.php'">
+                                onclick="editarInstructorSeleccionado()">
                             Editar
                         </button>
 
@@ -195,6 +195,14 @@ if ($resultado && $resultado->num_rows > 0) {
         document.getElementById('confirmCancel').addEventListener('click', () => {
             ocultarConfirmModal();
         });
+
+        function editarInstructorSeleccionado() {
+            if (!instructorDocumento) {
+                alert('Selecciona un instructor para editar.');
+                return;
+            }
+            window.location.href = '/Sensli1/ProyectoFormativo/pages/editInstructor.php?no_documento=' + encodeURIComponent(instructorDocumento);
+        }
     </script>
 </body>
 </html>
