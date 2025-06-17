@@ -81,23 +81,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <option value="CC">Cédula de Ciudadanía</option>
                                     <option value="CE">Cédula de Extranjería</option>  
                                 </select>
-
                                 <div class="formLabel">
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Cargo</label>
                                 </div>
-                                <select name="cargo" required>
+                                <select name="cargo" id="cargo" required>
                                     <option value="" disabled selected hidden>Selecciona una opción</option>
                                     <option value="Instructor Transversal">Instructor Transversal</option>
                                     <option value="Instructor Tecnico">Instructor Técnico</option>
                                     <option value="Coordinador">Coordinador</option>
                                 </select>
-
-                                <div class="formLabel">
-                                    <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
-                                    <label>Fecha de Inicio de Contrato</label>
+                                <div id="div_fecha_ini">
+                                    <div class="formLabel">
+                                        <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
+                                        <label>Fecha de Inicio de Contrato</label>
+                                    </div>
+                                    <input type="date" name="fecha_ini" id="fecha_ini" required>
                                 </div>
-                                <input type="date" name="fecha_ini" required>
                             </div>
                             <div class="columna">
                                 <div class="formLabel">
@@ -117,22 +117,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <label>Número de Documento</label>
                                 </div>
                                 <input type="text" placeholder="" name="no_documento" required>
-
-                                <div class="formLabel">
-                                    <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
-                                    <label>Tipo de contrato</label>
+                                <div id = "div_tipo_contrato">
+                                    <div class="formLabel">
+                                        <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
+                                        <label>Tipo de contrato</label>
+                                    </div>
+                                    <select name="tipo_contrato" id="tipo_contrato" required>
+                                        <option value="" disabled selected hidden>Selecciona una opción</option>
+                                        <option value="Planta">Planta</option>
+                                        <option value="Contratista">Contratista</option>
+                                    </select>
                                 </div>
-                                <select name="tipo_contrato" required>
-                                    <option value="" disabled selected hidden>Selecciona una opción</option>
-                                    <option value="Planta">Planta</option>
-                                    <option value="Contratista">Contratista</option>
-                                </select>
 
-                                <div class="formLabel">
-                                    <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
-                                    <label>Fecha Fin de Contrato</label>
+                                <div id="div_fecha_fin">
+                                    <div class="formLabel">
+                                        <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
+                                        <label>Fecha Fin de Contrato</label>
+                                    </div>
+                                    <input type="date" name="fecha_fin" id="fecha_fin" required>
                                 </div>
-                                <input type="date" name="fecha_fin" required>
                             </div>
                         </div>
                         <button id="Confirm_button" type="submit">Confirmar</button>
@@ -143,5 +146,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <script src="/Sensli1/ProyectoFormativo/assets/js/ModePage.js"></script>
         <?php include "../includes/footer.php";?>
     </div>
+    <script>
+function actualizarCampos() {
+    const cargo = document.getElementById('cargo').value;
+    const tipoContrato = document.getElementById('tipo_contrato').value;
+    const divTipoContrato = document.getElementById('div_tipo_contrato');
+    const divFechaIni = document.getElementById('div_fecha_ini');
+    const divFechaFin = document.getElementById('div_fecha_fin');
+    const tipoContratoSelect = document.getElementById('tipo_contrato');
+    const fechaIni = document.getElementById('fecha_ini');
+    const fechaFin = document.getElementById('fecha_fin');
+
+    if (cargo === 'Coordinador') {
+        tipoContratoSelect.required = false;
+        fechaIni.required = false;
+        fechaFin.required = false;
+        divTipoContrato.style.display = 'none';
+        divFechaIni.style.display = 'none';
+        divFechaFin.style.display = 'none';
+    } else {
+        divTipoContrato.style.display = '';
+        // Si es instructor de planta, oculta fechas
+        if (tipoContrato === 'Planta') {
+            fechaIni.required = false;
+            fechaFin.required = false;
+            divFechaIni.style.display = 'none';
+            divFechaFin.style.display = 'none';
+        } else {
+            fechaIni.required = true;
+            fechaFin.required = true;
+            divFechaIni.style.display = '';
+            divFechaFin.style.display = '';
+        }
+        tipoContratoSelect.required = true;
+    }
+}
+
+// Listeners
+document.getElementById('cargo').addEventListener('change', actualizarCampos);
+document.getElementById('tipo_contrato').addEventListener('change', actualizarCampos);
+
+// Ejecuta al cargar
+window.addEventListener('DOMContentLoaded', actualizarCampos);
+</script>
 </body>
 </html>
