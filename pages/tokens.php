@@ -1,7 +1,6 @@
 <?php
 include "../includes/session.php";
 include '../db/connection.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -10,14 +9,13 @@ include '../db/connection.php';
   <meta charset="UTF-8">
   <title>Gestión de Fichas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/style.css">
   <link rel="stylesheet" href="/Sensli1/ProyectoFormativo/assets/css/tokens.css">
   <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
 </head>
-<body class="body-container">
-  <?php include "../includes/sidebar.php"; ?>
-  <div class="main-container">
-    <?php include "../includes/headerLogIn.php"; ?>
+<body class="bg-gray-100 flex">
+    <?php include '../includes/sidebar.php'; ?>
+    <div class="flex-1 flex flex-col min-h-screen">
+        <?php include '../includes/headerLogIn.php'; ?>
     <main class="content-area">
       <button id="backpage" onclick="history.back()" class="m-4">
         <img src="/Sensli1/ProyectoFormativo/assets/icons/flecha-izquierda.png" alt="Atrás" class="w-5 h-5" />
@@ -28,7 +26,7 @@ include '../db/connection.php';
         <thead>
           <tr>
             <?php
-            $th = ['Fecha Reporte','Ficha','Código','Versión','Denominación','Estado','Inicio','Fin','Modalidad','Regional','Centro'];
+            $th = ['Fecha Reporte','Ficha','Código','Versión','Denominación','Estado','Inicio','Fin','Modalidad'];
             foreach ($th as $h) echo "<th>$h</th>";
             ?>
           </tr>
@@ -48,8 +46,6 @@ include '../db/connection.php';
               echo "<td>{$row['fecha_inicio']}</td>";
               echo "<td>{$row['fecha_fin']}</td>";
               echo "<td>{$row['modalidad']}</td>";
-              echo "<td>{$row['regional']}</td>";
-              echo "<td>{$row['centro_formacion']}</td>";
               echo "</tr>";
             }
           } else {

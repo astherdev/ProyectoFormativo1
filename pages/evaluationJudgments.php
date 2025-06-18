@@ -64,13 +64,10 @@ if (isset($_GET['msg'])) {
   <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Indie+Flower&family=Parkinsans:wght@300..800&family=Ruda:wght@400..900&family=Underdog&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex bg-gray-100">
-
-<?php include "../includes/sidebar.php"; ?>
-
-<div class="flex-1 flex flex-col min-h-screen">
-  <?php include "../includes/headerLogIn.php"; ?>
-
+<body class="bg-gray-100 flex">
+    <?php include '../includes/sidebar.php'; ?>
+    <div class="flex-1 flex flex-col min-h-screen">
+        <?php include '../includes/headerLogIn.php'; ?>
   <main class="flex-grow">
     <div class="w-full flex justify-start mb-0">
       <button id="backpage" onclick="history.back()" class="m-4">
@@ -141,7 +138,7 @@ if (isset($_GET['msg'])) {
         <!-- Botón y mini pestaña para subir juicio CSV -->
       <div class="mb-6">
         <button onclick="toggleFormularioCSV()"  style="background-color: #39A900"  class="px-4 py-2  text-white rounded hover:bg-purple-700 text-sm">
-          Subir Juicio CSV
+          Subir Juicio y Ficha CSV
         </button>
 
         <div id="formularioJuicioCSV" class="mt-4 p-4 bg-gray-100 rounded-lg border border-gray-300 hidden max-w-md">
@@ -270,7 +267,11 @@ if (isset($_GET['msg'])) {
                         foreach ($campos as $campo) {
                             echo "<td class='px-4 py-2 border border-gray-200'>" . htmlspecialchars($campo) . "</td>";
                         }
-                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje</td>";
+                        if($porcentaje < 75){
+                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-red-600'>$porcentaje No Aprueba a TyT</td>";
+                        } else {
+                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje Si Aprueba a TyT</td>";
+                        }
                         echo "</tr>";
                     }
 
@@ -283,8 +284,6 @@ if (isset($_GET['msg'])) {
             }
         }
         ?>
-
-
       </div>
     </div>
   </main>
