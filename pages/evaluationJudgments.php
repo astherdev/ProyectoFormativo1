@@ -2,32 +2,26 @@
 include "../includes/session.php";
 include '../db/connection.php';
 
-$fichaFiltro = $_GET['ficha'] ?? '';
-$denominacionFiltro = $_GET['denominacion'] ?? '';
-
+// Construir consulta SQL con filtros
 $sql = "SELECT * FROM archivos WHERE estado = 'Activo'";
-
 if (!empty($fichaFiltro)) {
     $fichaFiltro = $conn->real_escape_string($fichaFiltro);
     $sql .= " AND contenido LIKE '%$fichaFiltro%'";
 }
-
 if (!empty($denominacionFiltro)) {
     $denominacionFiltro = $conn->real_escape_string($denominacionFiltro);
     $sql .= " AND contenido LIKE '%$denominacionFiltro%'";
 }
-
 $sql .= " ORDER BY id DESC";
 $resultado = $conn->query($sql);
 
+// Funciones auxiliares
 function detectarDelimitador($linea) {
     if (strpos($linea, ';') !== false) return ';';
     if (strpos($linea, ',') !== false) return ',';
     if (strpos($linea, "\t") !== false) return "\t";
     return false;
 }
-?>
-<?php
 
 function limpiar_clave($clave) {
     $clave = mb_strtolower($clave, 'UTF-8');
@@ -36,7 +30,6 @@ function limpiar_clave($clave) {
     return trim($clave, '_');
 }
 
-// Función para convertir fechas de dd/mm/yyyy a yyyy-mm-dd
 function convertir_fecha($fecha) {
     $partes = explode('/', $fecha);
     if (count($partes) == 3) {
@@ -45,129 +38,20 @@ function convertir_fecha($fecha) {
     return null;
 }
 
-// Mostrar mensaje por GET
+// Mensaje por GET
 $mensaje = "";
 if (isset($_GET['msg'])) {
     if ($_GET['msg'] === 'ok') {
-        $mensaje = "<p class='mensaje' style='color:green;'> Ficha insertada correctamente.</p>";
+        $mensaje = "<p class='mensaje' style='color:green;'>Ficha insertada correctamente.</p>";
     } elseif ($_GET['msg'] === 'error') {
-        $mensaje = "<p class='mensaje' style='color:red;'> Error al insertar la ficha.</p>";
+        $mensaje = "<p class='mensaje' style='color:red;'>Error al insertar la ficha.</p>";
     } elseif ($_GET['msg'] === 'faltan') {
         $faltantes = isset($_GET['faltantes']) ? urldecode($_GET['faltantes']) : '';
-        $mensaje = "<p class='mensaje' style='color:orange;'> Faltan campos requeridos: " . htmlspecialchars($faltantes) . "</p>";
+        $mensaje = "<p class='mensaje' style='color:orange;'>Faltan campos requeridos: " . htmlspecialchars($faltantes) . "</p>";
     }
 }
 
-// Procesamiento de carga de archivo
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
-    $archivo = $_FILES['archivo']['tmp_name'];
-
-    $sinonimos = [
-        'fecha_del_reporte' => 'fecha_del_reporte',
-        'fecha del reporte' => 'fecha_del_reporte',
-        'ficha_de_caracterizacion' => 'ficha_de_caracterizacion',
-        'ficha de caracterizacion' => 'ficha_de_caracterizacion',
-        'codigo' => 'codigo',
-        'cogigo' => 'codigo',
-        'código' => 'codigo',
-        'version' => 'version',
-        'versión' => 'version',
-        'denominacion' => 'denominacion',
-        'denominación' => 'denominacion',
-        'estado_de_la_ficha_de_caracterizacion' => 'estado_de_la_ficha_de_caracterizacion',
-        'estado de la ficha de caracterizacion' => 'estado_de_la_ficha_de_caracterizacion',
-        'fecha_inicio' => 'fecha_inicio',
-        'fecha inicio' => 'fecha_inicio',
-        'fecha_fin' => 'fecha_fin',
-        'fecha fin' => 'fecha_fin',
-        'modalidad_de_formacion' => 'modalidad_de_formacion',
-        'modalidad de formacion' => 'modalidad_de_formacion',
-        'modalidad de formación' => 'modalidad_de_formacion',
-        'regional' => 'regional',
-        'centro_de_formacion' => 'centro_de_formacion',
-        'centro de formacion' => 'centro_de_formacion',
-        'centro de formación' => 'centro_de_formacion'
-    ];
-
-    $requeridos = [
-        'fecha_del_reporte',
-        'ficha_de_caracterizacion',
-        'codigo',
-        'version',
-        'denominacion',
-        'estado_de_la_ficha_de_caracterizacion',
-        'fecha_inicio',
-        'fecha_fin',
-        'modalidad_de_formacion',
-        'regional',
-        'centro_de_formacion'
-    ];
-
-    $datos_transformados = [];
-
-    if (($gestor = fopen($archivo, "r")) !== false) {
-        $contador = 0;
-        while (($linea = fgetcsv($gestor, 1000, ",")) !== false && $contador < 20) {
-            if (count($linea) >= 3 && !empty(trim($linea[0]))) {
-                $clave_original = trim(str_replace([':', '"'], '', $linea[0]));
-                $clave_limpia = limpiar_clave($clave_original);
-                foreach ($sinonimos as $original => $estandar) {
-                    if ($clave_limpia === limpiar_clave($original)) {
-                        $valor = isset($linea[2]) ? trim($linea[2], " \"") : '';
-                        $datos_transformados[$estandar] = $valor;
-                        break;
-                    }
-                }
-            }
-            $contador++;
-        }
-        fclose($gestor);
-
-        $faltantes = array_diff($requeridos, array_keys($datos_transformados));
-
-        if (empty($faltantes)) {
-            $valores = [];
-            foreach ($requeridos as $campo) {
-                $valores[$campo] = $datos_transformados[$campo] ?? '';
-            }
-
-            $fecha_reporte = convertir_fecha($valores['fecha_del_reporte']);
-            $ficha_caracterizacion = (int)$valores['ficha_de_caracterizacion'];
-            $codigo = (int)$valores['codigo'];
-            $version = (int)$valores['version'];
-            $denominacion = $conn->real_escape_string($valores['denominacion']);
-            $estado = $conn->real_escape_string($valores['estado_de_la_ficha_de_caracterizacion']);
-            $fecha_inicio = convertir_fecha($valores['fecha_inicio']);
-            $fecha_fin = convertir_fecha($valores['fecha_fin']);
-            $modalidad = $conn->real_escape_string($valores['modalidad_de_formacion']);
-            $regional = $conn->real_escape_string($valores['regional']);
-            $centro = $conn->real_escape_string($valores['centro_de_formacion']);
-
-            $sql = "INSERT INTO fichas (
-                        fecha_reporte, ficha_caracterizacion, codigo, version, denominacion,
-                        estado, fecha_inicio, fecha_fin, modalidad, regional, centro_formacion
-                    ) VALUES (
-                        '$fecha_reporte', $ficha_caracterizacion, $codigo, $version, '$denominacion',
-                        '$estado', '$fecha_inicio', '$fecha_fin', '$modalidad', '$regional', '$centro'
-                    )";
-
-            if ($conn->query($sql)) {
-                header("Location: " . $_SERVER['PHP_SELF'] . "?msg=ok");
-                exit;
-            } else {
-                header("Location: " . $_SERVER['PHP_SELF'] . "?msg=error");
-                exit;
-            }
-        } else {
-            header("Location: " . $_SERVER['PHP_SELF'] . "?msg=faltan&faltantes=" . urlencode(implode(', ', $faltantes)));
-            exit;
-        }
-    } else {
-        $mensaje = "<p class='mensaje' style='color:red;'> Error al procesar el archivo.</p>";
-    }
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -275,29 +159,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['archivo'])) {
         function toggleFormularioCSV() {
           const form = document.getElementById('formularioJuicioCSV');
           form.classList.toggle('hidden');
-        }
-      </script>
-
-      <button  onclick="toggleForm()"  style="background-color: #39A900" class="bg-green-600 hover:bg-green-700 text-white font-bold text-sm py-2 px-4 rounded mb-4">
-        Cargar Ficha de Caracterización
-      </button>
-
-      <div id="formSection" style="display: none;">
-        <form class="flex flex-col gap-4 bg-white p-4 rounded shadow-md" method="post" enctype="multipart/form-data">
-          <label class="font-semibold text-gray-700">Selecciona el archivo de la ficha CSV:</label>
-          <input type="file" name="archivo" accept=".csv" required class="border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-green-500" />
-          <button type="submit" style="background-color: #00324D"  class="bg-green-600 hover:bg-black text-white font-semibold py-2 px-4 rounded">
-            Subir Ficha
-          </button>
-          <?= $mensaje ?>
-        </form>
-      </div>
-
-
-      <script>
-        function toggleForm() {
-          const form = document.getElementById('formSection');
-          form.style.display = (form.style.display === 'none') ? 'block' : 'none';
         }
       </script>
         <!-- Resto del contenido (subida de archivos, resultados, tablas, etc.) -->
