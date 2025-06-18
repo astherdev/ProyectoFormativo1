@@ -2,9 +2,7 @@
 include "../includes/session.php";
 include '../db/connection.php';
 
-// Variables de filtro
-$fichaFiltro = $_GET['ficha'] ?? '';
-$denominacionFiltro = $_GET['denominacion'] ?? '';
+
 
 // Consulta base
 $sql = "SELECT * FROM archivos WHERE estado = 'Activo'";

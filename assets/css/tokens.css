@@ -48,21 +48,21 @@ body.body-container {
 }
 
 
-    .button-cargar1 {
-        font-size: 15px;
-        font-weight: bold;
-        background-color: #39A900;
-        border: none;
-        color: white;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 3px;
-        margin-bottom: 1rem;
-    }
+.button-cargar1 {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #39A900;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
 
-    .button-cargar:hover {
-        background-color: #2e8c00;
-    }
+.button-cargar:hover {
+    background-color: #2e8c00;
+}
 
 
 .subtitle {
