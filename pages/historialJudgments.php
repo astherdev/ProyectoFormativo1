@@ -135,7 +135,11 @@ function detectarDelimitador($linea) {
                         foreach ($campos as $campo) {
                             echo "<td class='px-4 py-2 border border-gray-200'>" . htmlspecialchars($campo) . "</td>";
                         }
-                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje</td>";
+                        if($porcentaje < 75){
+                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-red-600'>$porcentaje No Aprueba a TyT</td>";
+                        } else {
+                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje Si Aprueba a TyT</td>";
+                        }
                         echo "</tr>";
                     }
 
