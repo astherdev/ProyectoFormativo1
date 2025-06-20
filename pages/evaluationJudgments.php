@@ -6,6 +6,9 @@ include '../db/connection.php';
 // Variables de filtro
 $fichaFiltro = $_GET['ficha'] ?? '';
 $denominacionFiltro = $_GET['denominacion'] ?? '';
+$aprobadosFiltro = $_GET['aprobados'] ?? '';
+
+
 
 
 // Construir consulta SQL con filtros
@@ -17,6 +20,12 @@ if (!empty($fichaFiltro)) {
 if (!empty($denominacionFiltro)) {
     $denominacionFiltro = $conn->real_escape_string($denominacionFiltro);
     $sql .= " AND contenido LIKE '%$denominacionFiltro%'";
+    
+}
+
+if (!empty($aprobadosFiltro)) {
+    $aprobadosFiltro = $conn->real_escape_string($aprobadosFiltro);
+    $sql .= " AND contenido LIKE '%$aprobadosFiltro%'";
 }
 $sql .= " ORDER BY id DESC";
 $resultado = $conn->query($sql);
@@ -107,6 +116,14 @@ if (isset($_GET['msg'])) {
                     placeholder="Ingrese denominación"
                     class="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200">
             </div>
+            <div>
+              <label for="aprobados" class="block mb-1 text-sm font-medium text-gray-700">Filtrar por Aprendices Aprobados:</label>
+              <select name="aprobados" id="aprobados" class="w-full p-2 border border-gray-300 rounded-md">
+                  <option value="">Seleccione un porcentaje</option>
+                  <option value="0"<?php if(isset($_GET['aprobados']) && $_GET['aprobados']<'75') echo ' selected'; ?>> No Aprobados</option>
+                  <option value="75"<?php if(isset($_GET['aprobados']) && $_GET['aprobados']>'75') echo ' selected'; ?>>Aprobados</option>
+              </select>
+            </div>
           </div>
           <button type="submit" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">Filtrar</button>
         </form>
@@ -164,7 +181,7 @@ if (isset($_GET['msg'])) {
           form.classList.toggle('hidden');
         }
       </script>
-        <!-- Resto del contenido (subida de archivos, resultados, tablas, etc.) -->
+
         <?php
         while ($row = $resultado->fetch_assoc()) {
             $idArchivo = $row['id'];
@@ -213,24 +230,11 @@ if (isset($_GET['msg'])) {
                         continue;
                     }
 
-                    // Formulario con conservación de parámetros previos
-                    echo '<form method="GET" action="" class="mb-6 flex gap-2 items-center">';
-                    
-                    // Mantener todos los parámetros anteriores
-                    foreach ($_GET as $key => $value) {
-                        if ($key !== 'nombre_' . $idArchivo && $key !== 'ancla') {
-                            echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
-                        }
-                    }
-
-                    echo "<input type='text' name='nombre_$idArchivo' value='" . htmlspecialchars($paramNombre) . "' placeholder='Buscar por nombre completo' class='px-3 py-2 border border-gray-300 rounded shadow-sm text-sm'>";
-                    echo "<input type='hidden' name='ancla' value='archivo_$idArchivo'>";
-                    echo "<button type='submit' class='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm'>Buscar</button>";
-                    echo "</form>";
-
+                    // Cabecera
                     $cabecera = str_getcsv(array_shift($lineas), $delimitador);
                     $cabecera[] = "Porcentaje_TyT";
 
+                    // Calcular porcentajes de aprobados por aprendiz
                     $porcentajes = [];
                     foreach ($lineas as $linea) {
                         $campos = str_getcsv($linea, $delimitador);
@@ -267,26 +271,30 @@ if (isset($_GET['msg'])) {
 
                         $total = $porcentajes[$nombreCompleto]['total'] ?? 0;
                         $aprobados = $porcentajes[$nombreCompleto]['aprobados'] ?? 0;
-                        $porcentaje = $total > 0 ? round(($aprobados / $total) * 100, 2) . "%" : "0%";
+                        $porcentaje = $total > 0 ? round(($aprobados / $total) * 100, 2) : 0;
 
+                        if ($aprobadosFiltro == '75' && $porcentaje < 74) {
+                            continue;
+                        }
+                        if ($aprobadosFiltro == '0' && $porcentaje > 75) {
+                            continue;
+                        }
+
+                        
+                        $porcentajeTexto = $porcentaje . "%";
                         echo "<tr class='border-b border-gray-200'>";
                         foreach ($campos as $campo) {
                             echo "<td class='px-4 py-2 border border-gray-200'>" . htmlspecialchars($campo) . "</td>";
                         }
                         if($porcentaje < 75){
-                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-red-600'>$porcentaje No Aprueba a TyT</td>";
+                            echo "<td class='px-4 py-2 border border-gray-200 font-bold text-red-600'>$porcentajeTexto No Aprueba a TyT</td>";
                         } else {
-                        echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentaje Si Aprueba a TyT</td>";
+                            echo "<td class='px-4 py-2 border border-gray-200 font-bold text-green-600'>$porcentajeTexto Si Aprueba a TyT</td>";
                         }
                         echo "</tr>";
                     }
-
                     echo "</table></div>";
-                } else {
-                    echo "<pre class='bg-gray-100 p-4 rounded'>Formato no compatible</pre>";
                 }
-            } else {
-                echo "<p class='text-red-600'>Archivo vacío</p>";
             }
         }
         ?>
