@@ -20,8 +20,12 @@
       class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg hidden"
     >
       <div class="px-4 py-3 text-gray-800 border-b border-gray-200">
-        <p class="text-sm font-semibold">Yuly Saénz</p>
-        <p class="text-xs truncate">admin@gmail.com</p>
+        <p class="text-sm font-semibold">
+          <?php echo isset($_SESSION['nombre']) ? htmlspecialchars($_SESSION['nombre']) : 'Usuario'; ?>
+        </p>
+        <p class="text-xs truncate">
+          <?php echo isset($_SESSION['usuario']) ? htmlspecialchars($_SESSION['usuario']) : 'correo@ejemplo.com'; ?>
+        </p>
       </div>
       <ul>
         <li>
