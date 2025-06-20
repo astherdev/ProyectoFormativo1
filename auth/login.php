@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="container-input">
             <ion-icon name="mail-unread-outline"></ion-icon>
-            <input type="text" name="no_documento" placeholder="Número de documento">
+            <input type="number" name="no_documento" placeholder="Número de documento" min="0" step="1" required>
         </div>
         <div class="container-input">
             <ion-icon name="lock-closed-outline"></ion-icon>
