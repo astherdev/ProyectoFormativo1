@@ -1,8 +1,22 @@
-<form method="POST" action="forgotPassword.php">
-    <input type="email" name="correo" placeholder="Tu correo" required>
-    <button type="submit">Recuperar contraseña</button>
-</form>
-
+<!-- forgotPassword.php -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/css/">
+    <title>Recuperar contraseña</title>
+</head>
+<body>
+    <div id="modal-bg">
+        <div id="modal-content">
+            <h2>Recuperar contraseña</h2>
+            <form method="POST" action="forgotPassword.php">
+                <input type="email" name="correo" placeholder="Tu correo" required>
+                <br>
+                <button type="submit">Recuperar contraseña</button>
+            </form>
+        </div>
+    </div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once "../db/connection.php";
@@ -31,28 +45,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = '*****@gmail.com';
-            $mail->Password = 'sdpk rcfo jwfl eqmt';
+            $mail->Username = 'asistenciasensli@gmail.com';
+            $mail->Password = 'ocjz gofb vurq hzho';
             $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
             // Destinatario
-            $mail->setFrom('*****@gmail.com', 'Sensli');
+            $mail->setFrom('asistenciasensli@gmail.com', 'Sensli');
             $mail->addAddress($correo);
 
             // Contenido
             $mail->isHTML(true);
-            $mail->Subject = 'Recupera tu contraseña';
-            $mail->Body = "Haz clic en el siguiente enlace para restablecer tu contraseña:<br>
-                <a href='http://localhost/Sensli1/ProyectoFormativo/auth/resetPassword.php?token=$token'>Restablecer contraseña</a>";
+            $mail->Subject = 'Recupera tu contraseña en Sensli';
+            $mail->Body = "
+            <p>Hola,</p>
+            <p>Recibimos una solicitud para restablecer tu contraseña. Haz clic en el siguiente enlace:</p>
+            <p><a href='http://localhost/Sensli1/ProyectoFormativo/auth/resetPassword.php?token=$token'>Restablecer contraseña</a></p>
+            <p>Si no solicitaste este cambio, ignora este correo.</p>
+            <p>Saludos,<br>Equipo Sensli</p>
+            ";
+            $mail->AltBody = "Recibiste este correo para restablecer tu contraseña en Sensli. Si no fuiste tú, ignóralo.";
 
             $mail->send();
-            echo "Correo enviado. Revisa tu bandeja de entrada.";
+            echo "<script>alert('Correo enviado. Revisa tu bandeja de entrada.'); window.location.href='login.php';</script>";
         } catch (Exception $e) {
-            echo "Error al enviar el correo: {$mail->ErrorInfo}";
+            echo "<script>alert('Error al enviar el correo: {$mail->ErrorInfo}');</script>";
         }
     } else {
-        echo "Correo no encontrado.";
+        echo "<script>alert('Correo no encontrado.');</script>";
     }
 }
 ?>
+</body>
+</html>
