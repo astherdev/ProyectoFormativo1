@@ -85,6 +85,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" name="password" placeholder="Password">
         </div>
+        <div style="text-align:right; margin-bottom:10px;">
+            <a href="forgotPassword.php" style="color:#007bff; text-decoration:none; font-size:0.95em;">
+                ¿Olvidaste tu contraseña?
+            </a>
+        </div>
         <button type="submit">Iniciar Sesión</button>
     </form>
     </div>
