@@ -31,13 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'isaacecheverry53@gmail.com';
+            $mail->Username = '*****@gmail.com';
             $mail->Password = 'sdpk rcfo jwfl eqmt';
             $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
             // Destinatario
-            $mail->setFrom('isaacecheverry53@gmail.com', 'Sensli');
+            $mail->setFrom('*****@gmail.com', 'Sensli');
             $mail->addAddress($correo);
 
             // Contenido
