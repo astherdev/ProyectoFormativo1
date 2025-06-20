@@ -26,7 +26,7 @@ include '../db/connection.php';
         <thead>
           <tr>
             <?php
-            $th = ['Fecha Reporte','Ficha','Código','Versión','Denominación','Estado','Inicio','Fin','Modalidad', 'Tipo de Oferta', 'Horario'];
+            $th = ['Fecha Reporte','Ficha','Código','Versión','Denominación','Estado','Inicio','Fin','Modalidad', 'Tipo de Oferta', 'Horario','Jefe De Grupo'];
             foreach ($th as $h) echo "<th>$h</th>";
             ?>
           </tr>
@@ -48,6 +48,7 @@ include '../db/connection.php';
               echo "<td>{$row['modalidad']}</td>";
               echo "<td>{$row['tipo_oferta']}</td>";
               echo "<td>{$row['horario']}</td>";
+              echo "<td>{$row['jefe_grupo']}</td>";
               echo "</tr>";
             }
           } else {
@@ -63,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ficha_id'])) {
     $ficha_id = $conn->real_escape_string($_POST['ficha_id']);
     $tipo_oferta = $conn->real_escape_string($_POST['tipo_oferta']);
     $horario = $conn->real_escape_string($_POST['horario']);
+    
 
     // Solo si se recibió jefe_grupo
     if (isset($_POST['jefe_grupo']) && !empty($_POST['jefe_grupo'])) {
@@ -114,22 +116,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ficha_id'])) {
   </div>
 
   <!-- Para cuando funcione lo de asignar instructores a fichas -->
-  <!-- <div class="mb-6">
+<div class="mb-6">
   <label for="jefe_grupo" class="block text-gray-700 font-bold mb-2">Jefe de Grupo:</label>
   <select name="jefe_grupo" id="jefe_grupo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
     <?php
-    //$jefes = $conn->query("SELECT id, nombres FROM usuarios WHERE tipo_usuario = 'Instructor'");
-    // if ($jefes && $jefes->num_rows > 0) {
-    //     while ($jefe = $jefes->fetch_assoc()) {
-    //         $nombre = htmlspecialchars($jefe['nombres']);
-    //         echo "<option value=\"$nombre\">$nombre</option>";
-    //     }
-    // } else {
-    //     echo "<option value=\"\" disabled selected>No hay instructores disponibles</option>";
-    // }
+    $jefes = $conn->query("SELECT nombre, Apellidos FROM instructores");
+    if ($jefes && $jefes->num_rows > 0) {
+        while ($jefe = $jefes->fetch_assoc()) {
+            $nombreCompleto = htmlspecialchars($jefe['nombre'] . ' ' . $jefe['Apellidos']);
+            echo "<option value=\"$nombreCompleto\">$nombreCompleto</option>";
+        }
+    } else {
+        echo "<option value=\"\" disabled selected>No hay instructores disponibles</option>";
+    }
     ?>
   </select>
-</div> -->
+</div>
+
 <div class="flex items-center justify-between">
         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Guardar Cambios

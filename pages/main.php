@@ -51,26 +51,29 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="contenedor-modulos-scroll">
                     <?php if (!empty($fichas)): ?>
-                        <?php foreach ($fichas as $ficha): ?>
-                            <div class="modulo">
-                                <h4 class="tipo-ficha"><?= htmlspecialchars($ficha['tipo']) ?></h4>
-                                <div class="modulo-header">
-                                    <img src="../assets/img/Logo-Sena-Negativo.png" alt="SENA" class="logo-modulo">
-                                    <div class="datos">
-                                        <strong><?= htmlspecialchars($ficha['numero']) ?></strong><br>
-                                        Estado: <?= htmlspecialchars($ficha['estado']) ?><br>
-                                        Fecha Inicio: <?= htmlspecialchars($ficha['inicio']) ?><br>
-                                        Fecha Fin: <?= htmlspecialchars($ficha['fin']) ?><br>
-                                        Modalidad: <?= htmlspecialchars($ficha['modalidad']) ?><br>
-                                        Centro de Formación: <?= htmlspecialchars($ficha['centro_formacion']) ?>
+                        <div class="grid grid-cols-4 gap-4">
+                            <?php foreach ($fichas as $ficha): ?>
+                                <div class="modulo">
+                                    <h4 class="tipo-ficha text-white"><?= htmlspecialchars($ficha['tipo']) ?></h4>
+                                    <div class="modulo-header">
+                                        <img src="../assets/img/Logo-Sena-Negativo.png" alt="SENA" class="logo-modulo">
+                                        <div class="datos">
+                                            <strong><?= htmlspecialchars($ficha['numero']) ?></strong><br>
+                                            Estado: <?= htmlspecialchars($ficha['estado']) ?><br>
+                                            Fecha Inicio: <?= htmlspecialchars($ficha['inicio']) ?><br>
+                                            Fecha Fin: <?= htmlspecialchars($ficha['fin']) ?><br>
+                                            Modalidad: <?= htmlspecialchars($ficha['modalidad']) ?><br>
+                                            Centro de Formación: <?= htmlspecialchars($ficha['centro_formacion']) ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </div>
                     <?php else: ?>
                         <p class="text-gray-500">No hay fichas en ejecución actualmente.</p>
                     <?php endif; ?>
                 </div>
+
             </div>
         </main>
 

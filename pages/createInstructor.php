@@ -115,13 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <img src="/Sensli1/ProyectoFormativo/assets/icons/seeDocuments.png" alt="Icono_Usuario" class="form_icon">
                                     <label>Número de Documento</label>
                                 </div>
-<<<<<<< HEAD
-                                <input type="text" name="no_documento" required>
-
-                                <div class="formLabel">
-                                    <img src="/Sensli1/ProyectoFormativo/assets/icons/prize.png" alt="Icono_Usuario" class="form_icon">
-                                    <label>Tipo de contrato</label>
-=======
                                 <input type="text" placeholder="" name="no_documento" required>
                                 <div id = "div_tipo_contrato">
                                     <div class="formLabel">
@@ -133,7 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <option value="Planta">Planta</option>
                                         <option value="Contratista">Contratista</option>
                                     </select>
->>>>>>> fc9e38c6d47d68b30ade8b7447d1b30d069dd749
                                 </div>
 
                                 <div id="div_fecha_fin">
