@@ -1,8 +1,22 @@
-<form method="POST" action="forgotPassword.php">
-    <input type="email" name="correo" placeholder="Tu correo" required>
-    <button type="submit">Recuperar contraseña</button>
-</form>
-
+<!-- forgotPassword.php -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/css/">
+    <title>Recuperar contraseña</title>
+</head>
+<body>
+    <div id="modal-bg">
+        <div id="modal-content">
+            <h2>Recuperar contraseña</h2>
+            <form method="POST" action="forgotPassword.php">
+                <input type="email" name="correo" placeholder="Tu correo" required>
+                <br>
+                <button type="submit">Recuperar contraseña</button>
+            </form>
+        </div>
+    </div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once "../db/connection.php";
@@ -53,12 +67,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->AltBody = "Recibiste este correo para restablecer tu contraseña en Sensli. Si no fuiste tú, ignóralo.";
 
             $mail->send();
-            echo "Correo enviado. Revisa tu bandeja de entrada.";
+            echo "<script>alert('Correo enviado. Revisa tu bandeja de entrada.'); window.location.href='login.php';</script>";
         } catch (Exception $e) {
-            echo "Error al enviar el correo: {$mail->ErrorInfo}";
+            echo "<script>alert('Error al enviar el correo: {$mail->ErrorInfo}');</script>";
         }
     } else {
-        echo "Correo no encontrado.";
+        echo "<script>alert('Correo no encontrado.');</script>";
     }
 }
 ?>
+</body>
+</html>
