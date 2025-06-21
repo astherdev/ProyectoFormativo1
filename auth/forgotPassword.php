@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/">
+    <link rel="stylesheet" href="../assets/css/forgotPassword.css">
     <title>Recuperar contraseña</title>
 </head>
 <body>

@@ -19,15 +19,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $nueva, $token);
         $stmt->execute();
-        echo "Contraseña actualizada. Ahora puedes iniciar sesión.";
+        echo "<script>alert('Contraseña actualizada. Ahora puedes iniciar sesión.'); window.location.href='login.php';</script>";
+        exit;
     } else {
-        echo "El enlace es inválido o ha expirado.";
+        echo "<script>alert('El enlace es inválido o ha expirado.');</script>";
     }
 }
 ?>
-
-<form method="POST" action="">
-    <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
-    <input type="password" name="nueva" placeholder="Nueva contraseña" required>
-    <button type="submit">Actualizar contraseña</button>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/css/resetPassword.css">
+    <title>Actualizar contraseña</title>
+</head>
+<div id = "modal-bg">
+    <div id = "modal-content">
+        <form method="POST" action="">
+            <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
+            <input type="password" name="nueva" placeholder="Nueva contraseña" required>
+            <button type="submit">Actualizar contraseña</button>
+        </form>
+    </div>
+</div>
